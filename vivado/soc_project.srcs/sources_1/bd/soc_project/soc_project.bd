@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xCC6CFA53809FFAAC" bd:device="xc7z020clg484-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2017.3" bd:top="soc_project" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x4320A59A0EC36C9" bd:device="xc7z020clg484-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2017.3" bd:top="soc_project" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -155,7 +155,62 @@
           <spirit:hierarchyRef spirit:library="BlockDiagram" spirit:name="soc_project_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
-      <spirit:ports/>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>AC_ADR0</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_ADR1</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_GPIO0</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_GPIO1</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_GPIO2</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_GPIO3</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_MCLK</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_SCK</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>AC_SDA</spirit:name>
+          <spirit:wire>
+            <spirit:direction>inout</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
     </spirit:model>
   </spirit:component>
 
@@ -434,6 +489,20 @@
           <spirit:configurableElementValue spirit:referenceId="PCW_FPGA_FCLK0_ENABLE">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>zed_audio_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="zed_audio" spirit:vendor="ttu.ee" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">soc_project_zed_audio_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconstant_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">soc_project_xlconstant_0_1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections/>
     <spirit:adHocConnections>
@@ -441,6 +510,68 @@
         <spirit:name>processing_system7_0_FCLK_CLK0</spirit:name>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK0"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="clk_100"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>zed_audio_0_AC_ADR0</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_ADR0"/>
+        <spirit:externalPortReference spirit:portRef="AC_ADR0"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>zed_audio_0_AC_ADR1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_ADR1"/>
+        <spirit:externalPortReference spirit:portRef="AC_ADR1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>zed_audio_0_AC_GPIO0</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_GPIO0"/>
+        <spirit:externalPortReference spirit:portRef="AC_GPIO0"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>AC_GPIO1_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="AC_GPIO1"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_GPIO1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>AC_GPIO2_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="AC_GPIO2"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_GPIO2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>AC_GPIO3_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="AC_GPIO3"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_GPIO3"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>zed_audio_0_AC_MCLK</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_MCLK"/>
+        <spirit:externalPortReference spirit:portRef="AC_MCLK"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>zed_audio_0_AC_SCK</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_SCK"/>
+        <spirit:externalPortReference spirit:portRef="AC_SCK"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>Net</spirit:name>
+        <spirit:externalPortReference spirit:portRef="AC_SDA"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="AC_SDA"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconstant_0_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="hphone_l_valid"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="hphone_r_valid_dummy"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>zed_audio_0_line_in_l</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="line_in_l"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="hphone_l"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>zed_audio_0_line_in_r</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="line_in_r"/>
+        <spirit:internalPortReference spirit:componentRef="zed_audio_0" spirit:portRef="hphone_r"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

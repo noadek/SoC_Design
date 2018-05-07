@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
---Date        : Mon May  7 15:20:17 2018
+--Date        : Mon May  7 17:06:41 2018
 --Host        : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 --Command     : generate_target soc_project_wrapper.bd
 --Design      : soc_project_wrapper
@@ -13,6 +13,15 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity soc_project_wrapper is
   port (
+    AC_ADR0 : out STD_LOGIC;
+    AC_ADR1 : out STD_LOGIC;
+    AC_GPIO0 : out STD_LOGIC;
+    AC_GPIO1 : in STD_LOGIC;
+    AC_GPIO2 : in STD_LOGIC;
+    AC_GPIO3 : in STD_LOGIC;
+    AC_MCLK : out STD_LOGIC;
+    AC_SCK : out STD_LOGIC;
+    AC_SDA : inout STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -60,12 +69,30 @@ architecture STRUCTURE of soc_project_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    AC_ADR0 : out STD_LOGIC;
+    AC_ADR1 : out STD_LOGIC;
+    AC_GPIO0 : out STD_LOGIC;
+    AC_GPIO1 : in STD_LOGIC;
+    AC_GPIO2 : in STD_LOGIC;
+    AC_GPIO3 : in STD_LOGIC;
+    AC_MCLK : out STD_LOGIC;
+    AC_SCK : out STD_LOGIC;
+    AC_SDA : inout STD_LOGIC
   );
   end component soc_project;
 begin
 soc_project_i: component soc_project
      port map (
+      AC_ADR0 => AC_ADR0,
+      AC_ADR1 => AC_ADR1,
+      AC_GPIO0 => AC_GPIO0,
+      AC_GPIO1 => AC_GPIO1,
+      AC_GPIO2 => AC_GPIO2,
+      AC_GPIO3 => AC_GPIO3,
+      AC_MCLK => AC_MCLK,
+      AC_SCK => AC_SCK,
+      AC_SDA => AC_SDA,
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,

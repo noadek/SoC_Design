@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
---Date        : Mon May  7 15:20:17 2018
+--Date        : Mon May  7 17:06:41 2018
 --Host        : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 --Command     : generate_target soc_project.bd
 --Design      : soc_project
@@ -13,6 +13,15 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity soc_project is
   port (
+    AC_ADR0 : out STD_LOGIC;
+    AC_ADR1 : out STD_LOGIC;
+    AC_GPIO0 : out STD_LOGIC;
+    AC_GPIO1 : in STD_LOGIC;
+    AC_GPIO2 : in STD_LOGIC;
+    AC_GPIO3 : in STD_LOGIC;
+    AC_MCLK : out STD_LOGIC;
+    AC_SCK : out STD_LOGIC;
+    AC_SDA : inout STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -36,7 +45,7 @@ entity soc_project is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of soc_project : entity is "soc_project,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=soc_project,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=1,numReposBlks=1,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of soc_project : entity is "soc_project,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=soc_project,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=3,numReposBlks=3,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of soc_project : entity is "soc_project.hwdef";
 end soc_project;
@@ -114,6 +123,37 @@ architecture STRUCTURE of soc_project is
     PS_PORB : inout STD_LOGIC
   );
   end component soc_project_processing_system7_0_0;
+  component soc_project_zed_audio_0_0 is
+  port (
+    clk_100 : in STD_LOGIC;
+    AC_ADR0 : out STD_LOGIC;
+    AC_ADR1 : out STD_LOGIC;
+    AC_GPIO0 : out STD_LOGIC;
+    AC_GPIO1 : in STD_LOGIC;
+    AC_GPIO2 : in STD_LOGIC;
+    AC_GPIO3 : in STD_LOGIC;
+    hphone_l : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    hphone_l_valid : in STD_LOGIC;
+    hphone_r : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    hphone_r_valid_dummy : in STD_LOGIC;
+    line_in_l : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    line_in_r : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    new_sample : out STD_LOGIC;
+    sample_clk_48k : out STD_LOGIC;
+    AC_MCLK : out STD_LOGIC;
+    AC_SCK : out STD_LOGIC;
+    AC_SDA : inout STD_LOGIC
+  );
+  end component soc_project_zed_audio_0_0;
+  component soc_project_xlconstant_0_1 is
+  port (
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component soc_project_xlconstant_0_1;
+  signal AC_GPIO1_1 : STD_LOGIC;
+  signal AC_GPIO2_1 : STD_LOGIC;
+  signal AC_GPIO3_1 : STD_LOGIC;
+  signal Net : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -136,6 +176,14 @@ architecture STRUCTURE of soc_project is
   signal processing_system7_0_FIXED_IO_PS_CLK : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
+  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal zed_audio_0_AC_ADR0 : STD_LOGIC;
+  signal zed_audio_0_AC_ADR1 : STD_LOGIC;
+  signal zed_audio_0_AC_GPIO0 : STD_LOGIC;
+  signal zed_audio_0_AC_MCLK : STD_LOGIC;
+  signal zed_audio_0_AC_SCK : STD_LOGIC;
+  signal zed_audio_0_line_in_l : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal zed_audio_0_line_in_r : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
@@ -169,6 +217,8 @@ architecture STRUCTURE of soc_project is
   signal NLW_processing_system7_0_M_AXI_GP0_WID_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal NLW_processing_system7_0_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_zed_audio_0_new_sample_UNCONNECTED : STD_LOGIC;
+  signal NLW_zed_audio_0_sample_clk_48k_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
   attribute X_INTERFACE_INFO of DDR_ck_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CK_N";
@@ -195,6 +245,14 @@ architecture STRUCTURE of soc_project is
   attribute X_INTERFACE_INFO of DDR_dqs_p : signal is "xilinx.com:interface:ddrx:1.0 DDR DQS_P";
   attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
 begin
+  AC_ADR0 <= zed_audio_0_AC_ADR0;
+  AC_ADR1 <= zed_audio_0_AC_ADR1;
+  AC_GPIO0 <= zed_audio_0_AC_GPIO0;
+  AC_GPIO1_1 <= AC_GPIO1;
+  AC_GPIO2_1 <= AC_GPIO2;
+  AC_GPIO3_1 <= AC_GPIO3;
+  AC_MCLK <= zed_audio_0_AC_MCLK;
+  AC_SCK <= zed_audio_0_AC_SCK;
 processing_system7_0: component soc_project_processing_system7_0_0
      port map (
       DDR_Addr(14 downto 0) => DDR_addr(14 downto 0),
@@ -265,5 +323,30 @@ processing_system7_0: component soc_project_processing_system7_0_0
       USB0_PORT_INDCTL(1 downto 0) => NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED(1 downto 0),
       USB0_VBUS_PWRFAULT => '0',
       USB0_VBUS_PWRSELECT => NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED
+    );
+xlconstant_0: component soc_project_xlconstant_0_1
+     port map (
+      dout(0) => xlconstant_0_dout(0)
+    );
+zed_audio_0: component soc_project_zed_audio_0_0
+     port map (
+      AC_ADR0 => zed_audio_0_AC_ADR0,
+      AC_ADR1 => zed_audio_0_AC_ADR1,
+      AC_GPIO0 => zed_audio_0_AC_GPIO0,
+      AC_GPIO1 => AC_GPIO1_1,
+      AC_GPIO2 => AC_GPIO2_1,
+      AC_GPIO3 => AC_GPIO3_1,
+      AC_MCLK => zed_audio_0_AC_MCLK,
+      AC_SCK => zed_audio_0_AC_SCK,
+      AC_SDA => AC_SDA,
+      clk_100 => processing_system7_0_FCLK_CLK0,
+      hphone_l(23 downto 0) => zed_audio_0_line_in_l(23 downto 0),
+      hphone_l_valid => xlconstant_0_dout(0),
+      hphone_r(23 downto 0) => zed_audio_0_line_in_r(23 downto 0),
+      hphone_r_valid_dummy => xlconstant_0_dout(0),
+      line_in_l(23 downto 0) => zed_audio_0_line_in_l(23 downto 0),
+      line_in_r(23 downto 0) => zed_audio_0_line_in_r(23 downto 0),
+      new_sample => NLW_zed_audio_0_new_sample_UNCONNECTED,
+      sample_clk_48k => NLW_zed_audio_0_sample_clk_48k_UNCONNECTED
     );
 end STRUCTURE;
