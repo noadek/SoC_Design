@@ -14,7 +14,7 @@ if (udp_client_setup(broadcast_address, broadcast_port) == 1) {
 	return 1;
 }
 
-while (udp_client_recv(buffer,buffer_size) != 1) {
+while (udp_client_recv(buffer, buffer_size) != 1) {
 	// copy buffer content into audio IP input register.
 }
 

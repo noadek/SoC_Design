@@ -15,4 +15,16 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_zed
 # IP: bd/soc_project/ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_xlconstant_0_1 || ORIG_REF_NAME==soc_project_xlconstant_0_1} -quiet] -quiet
 
+# IP: bd/soc_project/ip/soc_project_FILTER_IIR_0_0/soc_project_FILTER_IIR_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_FILTER_IIR_0_0 || ORIG_REF_NAME==soc_project_FILTER_IIR_0_0} -quiet] -quiet
+
+# IP: bd/soc_project/ip/soc_project_ps7_0_axi_periph_0/soc_project_ps7_0_axi_periph_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_ps7_0_axi_periph_0 || ORIG_REF_NAME==soc_project_ps7_0_axi_periph_0} -quiet] -quiet
+
+# IP: bd/soc_project/ip/soc_project_rst_ps7_0_100M_0/soc_project_rst_ps7_0_100M_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_rst_ps7_0_100M_0 || ORIG_REF_NAME==soc_project_rst_ps7_0_100M_0} -quiet] -quiet
+
+# IP: bd/soc_project/ip/soc_project_auto_pc_0/soc_project_auto_pc_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_auto_pc_0 || ORIG_REF_NAME==soc_project_auto_pc_0} -quiet] -quiet
+
 # XDC: bd/soc_project/soc_project_ooc.xdc

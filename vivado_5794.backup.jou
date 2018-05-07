@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon May  7 17:05:57 2018
+# Process ID: 5794
+# Current directory: /home/adadek/SoC_Design
+# Command line: vivado
+# Log file: /home/adadek/SoC_Design/vivado.log
+# Journal file: /home/adadek/SoC_Design/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/adadek/SoC_Design/vivado/soc_project.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+reset_run soc_project_processing_system7_0_0_synth_1
+reset_run soc_project_xlconstant_0_1_synth_1
+reset_run soc_project_zed_audio_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_bd_design {/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd}
+file copy -force /home/adadek/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+file mkdir /home/adadek/SoC_Design/vivado/soc_project.sdk
+file copy -force /home/adadek/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf

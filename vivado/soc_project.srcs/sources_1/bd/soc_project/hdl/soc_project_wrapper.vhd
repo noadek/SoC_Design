@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
---Date        : Mon May  7 17:06:41 2018
+--Date        : Mon May  7 19:12:49 2018
 --Host        : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 --Command     : generate_target soc_project_wrapper.bd
 --Design      : soc_project_wrapper

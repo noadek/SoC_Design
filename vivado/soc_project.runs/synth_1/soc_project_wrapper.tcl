@@ -24,16 +24,23 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/adadek/SoC_Design/vivado/soc_project.cache/wt [current_project]
 set_property parent.project_path /home/adadek/SoC_Design/vivado/soc_project.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_FIFO XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
-set_property ip_repo_paths /home/adadek/SoC_Design/IPs/zedboard_audio [current_project]
+set_property ip_repo_paths {
+  /home/adadek/SoC_Design/IPs/zedboard_audio
+  /home/adadek/SoC_Design/IPs/FILTER_IIR_1.0
+} [current_project]
 set_property ip_output_repo /home/adadek/SoC_Design/vivado/soc_project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hdl/soc_project_wrapper.vhd
 add_files /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd
 set_property used_in_implementation false [get_files -all /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_rst_ps7_0_100M_0/soc_project_rst_ps7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_rst_ps7_0_100M_0/soc_project_rst_ps7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_rst_ps7_0_100M_0/soc_project_rst_ps7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_auto_pc_0/soc_project_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

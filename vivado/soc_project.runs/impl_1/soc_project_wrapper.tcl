@@ -71,10 +71,13 @@ set rc [catch {
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/adadek/SoC_Design/vivado/soc_project.cache/wt [current_project]
   set_property parent.project_path /home/adadek/SoC_Design/vivado/soc_project.xpr [current_project]
-  set_property ip_repo_paths /home/adadek/SoC_Design/IPs/zedboard_audio [current_project]
+  set_property ip_repo_paths {
+  /home/adadek/SoC_Design/IPs/zedboard_audio
+  /home/adadek/SoC_Design/IPs/FILTER_IIR_1.0
+} [current_project]
   set_property ip_output_repo /home/adadek/SoC_Design/vivado/soc_project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_FIFO XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   add_files -quiet /home/adadek/SoC_Design/vivado/soc_project.runs/synth_1/soc_project_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
@@ -160,7 +163,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_FIFO XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force soc_project_wrapper.mmi }
   write_bitstream -force soc_project_wrapper.bit 
   catch { write_sysdef -hwdef soc_project_wrapper.hwdef -bitfile soc_project_wrapper.bit -meminfo soc_project_wrapper.mmi -file soc_project_wrapper.sysdef }

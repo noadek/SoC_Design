@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
-| Date         : Mon May  7 17:11:53 2018
+| Date         : Mon May  7 19:19:02 2018
 | Host         : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 | Command      : report_drc -file soc_project_wrapper_drc_opted.rpt -pb soc_project_wrapper_drc_opted.pb -rpx soc_project_wrapper_drc_opted.rpx
 | Design       : soc_project_wrapper
