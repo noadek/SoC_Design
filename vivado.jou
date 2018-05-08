@@ -2,27 +2,70 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Mon May  7 17:05:57 2018
-# Process ID: 5794
-# Current directory: /home/adadek/SoC_Design
+# Start of session at: Tue May  8 10:29:08 2018
+# Process ID: 31633
+# Current directory: /home/adosid/SoC_Design
 # Command line: vivado
-# Log file: /home/adadek/SoC_Design/vivado.log
-# Journal file: /home/adadek/SoC_Design/vivado.jou
+# Log file: /home/adosid/SoC_Design/vivado.log
+# Journal file: /home/adosid/SoC_Design/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /home/adadek/SoC_Design/vivado/soc_project.xpr
+open_project /home/adosid/SoC_Design/vivado/soc_project.xpr
 update_compile_order -fileset sources_1
+open_bd_design {/home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd}
+set_property  ip_repo_paths  {/home/adosid/SoC_Design/IPs/zedboard_audio /home/adosid/SoC_Design/IPs/Volume_Pregain_1.0 /home/adosid/SoC_Design/IPs/FILTER_IIR_1.0} [current_project]
+update_ip_catalog
+startgroup
+create_bd_cell -type ip -vlnv tsotnep:userLibrary:Volume_Pregain:1.0 Volume_Pregain_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" intc_ip "/ps7_0_axi_periph" Clk_xbar "Auto" Clk_master "Auto" Clk_slave "Auto" }  [get_bd_intf_pins Volume_Pregain_0/S00_AXI]
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets zed_audio_0_new_sample]
+connect_bd_net [get_bd_pins Volume_Pregain_0/OUT_RDY] [get_bd_pins FILTER_IIR_0/SAMPLE_TRIG]
+regenerate_bd_layout
+set_property location {4 1322 430} [get_bd_cells FILTER_IIR_0]
+set_property location {4 1343 598} [get_bd_cells Volume_Pregain_0]
+set_property location {4 1361 219} [get_bd_cells FILTER_IIR_0]
+set_property location {4 1350 509} [get_bd_cells Volume_Pregain_0]
+delete_bd_objs [get_bd_nets zed_audio_0_line_in_l]
+connect_bd_net [get_bd_pins FILTER_IIR_0/AUDIO_IN_L] [get_bd_pins Volume_Pregain_0/OUT_VOLCTRL_L]
+delete_bd_objs [get_bd_nets zed_audio_0_line_in_r]
+connect_bd_net [get_bd_pins FILTER_IIR_0/AUDIO_IN_R] [get_bd_pins Volume_Pregain_0/OUT_VOLCTRL_R]
+connect_bd_net [get_bd_pins Volume_Pregain_0/IN_SIG_L] [get_bd_pins zed_audio_0/line_in_l]
+connect_bd_net [get_bd_pins Volume_Pregain_0/IN_SIG_R] [get_bd_pins zed_audio_0/line_in_r]
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
 reset_run synth_1
-reset_run soc_project_processing_system7_0_0_synth_1
-reset_run soc_project_xlconstant_0_1_synth_1
-reset_run soc_project_zed_audio_0_0_synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
-open_bd_design {/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd}
-file copy -force /home/adadek/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 
-launch_sdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
-file mkdir /home/adadek/SoC_Design/vivado/soc_project.sdk
-file copy -force /home/adadek/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 
-launch_sdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+validate_bd_design -force
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+regenerate_bd_layout
+validate_bd_design -force
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf

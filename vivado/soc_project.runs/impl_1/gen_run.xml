@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1525709589">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1525792836">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="soc_project_wrapper.drc"/>
   <File Type="BG-BGN" Name="soc_project_wrapper.bgn"/>
@@ -97,9 +97,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -110,8 +108,9 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="soc_project_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_project_Volume_Pregain_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_FILTER_IIR_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="soc_project_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_rst_ps7_0_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_zed_audio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_xlconstant_0_1"/>

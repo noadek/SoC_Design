@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/adadek/SoC_Design/vivado/soc_project.runs/impl_1'
+HD_PWD='/home/adosid/SoC_Design/vivado/soc_project.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

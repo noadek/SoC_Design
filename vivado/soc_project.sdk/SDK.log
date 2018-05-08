@@ -1,763 +1,458 @@
-17:15:57 INFO  : Registering command handlers for SDK TCF services
-17:16:00 INFO  : Launching XSCT server: xsct -n -interactive /home/adadek/SoC_Design/vivado/soc_project.sdk/temp_xsdb_launch_script.tcl
-17:16:02 INFO  : XSCT server has started successfully.
-17:16:02 INFO  : Successfully done setting XSCT server connection channel  
-17:16:03 INFO  : Successfully done setting SDK workspace  
-17:16:03 INFO  : Processing command line option -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf.
-17:16:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-17:16:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-17:16:54 ERROR : fpga initialization failed
-17:17:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-17:17:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-17:17:05 INFO  : FPGA configured successfully with bitstream "/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/soc_project_wrapper.bit"
-17:17:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-17:17:33 INFO  : 'fpga -state' command is executed.
-17:17:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-17:17:33 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-17:17:33 INFO  : 'jtag frequency' command is executed.
-17:17:33 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-17:17:33 INFO  : Context for 'APU' is selected.
-17:17:33 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-17:17:33 INFO  : 'configparams force-mem-access 1' command is executed.
-17:17:33 INFO  : Context for 'APU' is selected.
-17:17:33 INFO  : 'stop' command is executed.
-17:17:33 INFO  : 'ps7_init' command is executed.
-17:17:33 INFO  : 'ps7_post_config' command is executed.
-17:17:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-17:17:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-17:17:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-17:17:34 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
-17:17:34 INFO  : 'configparams force-mem-access 0' command is executed.
-17:17:34 INFO  : ----------------XSDB Script----------------
+18:26:47 INFO  : Registering command handlers for SDK TCF services
+18:26:49 INFO  : Launching XSCT server: xsct -n -interactive /home/adosid/SoC_Design/vivado/soc_project.sdk/temp_xsdb_launch_script.tcl
+18:26:51 INFO  : XSCT server has started successfully.
+18:26:51 INFO  : Successfully done setting XSCT server connection channel  
+18:26:52 INFO  : Successfully done setting SDK workspace  
+18:26:52 INFO  : Processing command line option -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf.
+18:44:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:44:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:44:52 INFO  : FPGA configured successfully with bitstream "/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/soc_project_wrapper.bit"
+18:45:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:45:27 INFO  : 'fpga -state' command is executed.
+18:45:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:45:27 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:45:27 INFO  : 'jtag frequency' command is executed.
+18:45:27 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:45:27 INFO  : Context for 'APU' is selected.
+18:45:27 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:45:27 INFO  : 'configparams force-mem-access 1' command is executed.
+18:45:27 INFO  : Context for 'APU' is selected.
+18:45:27 INFO  : 'stop' command is executed.
+18:45:28 INFO  : 'ps7_init' command is executed.
+18:45:28 INFO  : 'ps7_post_config' command is executed.
+18:45:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:45:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:28 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:45:28 INFO  : 'configparams force-mem-access 0' command is executed.
+18:45:28 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-17:17:34 INFO  : Memory regions updated for context APU
-17:17:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-17:17:34 INFO  : 'con' command is executed.
-17:17:34 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:45:28 INFO  : Memory regions updated for context APU
+18:45:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:28 INFO  : 'con' command is executed.
+18:45:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-17:17:34 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_helloworld.elf_on_local.tcl'
-17:18:49 INFO  : Disconnected from the channel tcfchan#1.
-19:21:53 INFO  : Registering command handlers for SDK TCF services
-19:21:54 INFO  : Launching XSCT server: xsct -n -interactive /home/adadek/SoC_Design/vivado/soc_project.sdk/temp_xsdb_launch_script.tcl
-19:21:56 INFO  : XSCT server has started successfully.
-19:21:57 INFO  : Successfully done setting XSCT server connection channel  
-19:21:57 INFO  : Successfully done setting SDK workspace  
-19:21:57 INFO  : Processing command line option -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf.
-19:21:57 INFO  : Checking for hwspec changes in the project soc_project_wrapper_hw_platform_0.
-19:21:59 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1525710066000,  Project:1525702358000
-19:21:59 INFO  : The hardware specification for project 'soc_project_wrapper_hw_platform_0' is different from /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf.
-19:21:59 INFO  : Copied contents of /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf into /soc_project_wrapper_hw_platform_0/system.hdf.
-19:22:01 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
-19:22:03 INFO  : 
-19:22:03 INFO  : Updating hardware inferred compiler options for HelloWorld.
-19:22:03 INFO  : Clearing existing target manager status.
-19:22:03 WARN  : Given IPC port value is invalid. Using default port 2350
-19:22:04 WARN  : Given XMD timeout value is invalid. Using default value of 50000
-19:22:07 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
-19:22:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:22:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:22:30 ERROR : fpga initialization failed
-19:22:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:22:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:22:47 INFO  : FPGA configured successfully with bitstream "/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/soc_project_wrapper.bit"
-19:25:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:25:22 INFO  : 'fpga -state' command is executed.
-19:25:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:25:22 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:25:22 INFO  : 'jtag frequency' command is executed.
-19:25:22 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:25:22 INFO  : Context for 'APU' is selected.
-19:25:22 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:25:22 INFO  : 'configparams force-mem-access 1' command is executed.
-19:25:22 INFO  : Context for 'APU' is selected.
-19:25:22 INFO  : 'stop' command is executed.
-19:25:22 INFO  : 'ps7_init' command is executed.
-19:25:22 INFO  : 'ps7_post_config' command is executed.
-19:25:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:25:22 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:25:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:25:22 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:25:22 INFO  : 'configparams force-mem-access 0' command is executed.
-19:25:22 INFO  : ----------------XSDB Script----------------
+18:45:28 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:45:47 INFO  : Disconnected from the channel tcfchan#1.
+18:45:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:45:48 INFO  : 'fpga -state' command is executed.
+18:45:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:45:48 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:45:48 INFO  : 'jtag frequency' command is executed.
+18:45:48 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:45:48 INFO  : Context for 'APU' is selected.
+18:45:49 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:45:49 INFO  : 'configparams force-mem-access 1' command is executed.
+18:45:49 INFO  : Context for 'APU' is selected.
+18:45:49 INFO  : 'stop' command is executed.
+18:45:49 INFO  : 'ps7_init' command is executed.
+18:45:49 INFO  : 'ps7_post_config' command is executed.
+18:45:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:45:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:50 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:45:50 INFO  : 'configparams force-mem-access 0' command is executed.
+18:45:50 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:25:22 INFO  : Memory regions updated for context APU
-19:25:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:25:23 INFO  : 'con' command is executed.
-19:25:23 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:45:50 INFO  : Memory regions updated for context APU
+18:45:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:45:50 INFO  : 'con' command is executed.
+18:45:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:25:23 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_helloworld.elf_on_local.tcl'
-19:25:49 INFO  : Disconnected from the channel tcfchan#1.
-19:25:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:25:50 INFO  : 'fpga -state' command is executed.
-19:25:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:25:50 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:25:50 INFO  : 'jtag frequency' command is executed.
-19:25:50 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:25:50 INFO  : Context for 'APU' is selected.
-19:25:51 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:25:51 INFO  : 'configparams force-mem-access 1' command is executed.
-19:25:51 INFO  : Context for 'APU' is selected.
-19:25:51 INFO  : 'stop' command is executed.
-19:25:52 INFO  : 'ps7_init' command is executed.
-19:25:52 INFO  : 'ps7_post_config' command is executed.
-19:25:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:25:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:25:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:25:52 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:25:52 INFO  : 'configparams force-mem-access 0' command is executed.
-19:25:52 INFO  : ----------------XSDB Script----------------
+18:45:50 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:46:08 INFO  : Disconnected from the channel tcfchan#2.
+18:46:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:46:09 INFO  : 'fpga -state' command is executed.
+18:46:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:46:09 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:46:09 INFO  : 'jtag frequency' command is executed.
+18:46:09 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:46:09 INFO  : Context for 'APU' is selected.
+18:46:10 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:46:10 INFO  : 'configparams force-mem-access 1' command is executed.
+18:46:10 INFO  : Context for 'APU' is selected.
+18:46:10 INFO  : 'stop' command is executed.
+18:46:11 INFO  : 'ps7_init' command is executed.
+18:46:11 INFO  : 'ps7_post_config' command is executed.
+18:46:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:46:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:11 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:46:11 INFO  : 'configparams force-mem-access 0' command is executed.
+18:46:11 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:25:52 INFO  : Memory regions updated for context APU
-19:25:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:25:52 INFO  : 'con' command is executed.
-19:25:52 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:46:11 INFO  : Memory regions updated for context APU
+18:46:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:46:11 INFO  : 'con' command is executed.
+18:46:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:25:52 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_helloworld.elf_on_local.tcl'
-19:26:55 INFO  : Disconnected from the channel tcfchan#2.
-19:26:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:26:57 INFO  : 'fpga -state' command is executed.
-19:26:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:26:57 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:26:57 INFO  : 'jtag frequency' command is executed.
-19:26:57 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:26:57 INFO  : Context for 'APU' is selected.
-19:26:57 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:26:57 INFO  : 'configparams force-mem-access 1' command is executed.
-19:26:57 INFO  : Context for 'APU' is selected.
-19:26:57 INFO  : 'stop' command is executed.
-19:26:57 INFO  : 'ps7_init' command is executed.
-19:26:57 INFO  : 'ps7_post_config' command is executed.
-19:26:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:26:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:26:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:26:57 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:26:57 INFO  : 'configparams force-mem-access 0' command is executed.
-19:26:57 INFO  : ----------------XSDB Script----------------
+18:46:11 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:47:31 INFO  : Disconnected from the channel tcfchan#3.
+18:47:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:47:32 INFO  : 'fpga -state' command is executed.
+18:47:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:47:32 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:47:32 INFO  : 'jtag frequency' command is executed.
+18:47:32 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:47:32 INFO  : Context for 'APU' is selected.
+18:47:33 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:47:33 INFO  : 'configparams force-mem-access 1' command is executed.
+18:47:33 INFO  : Context for 'APU' is selected.
+18:47:33 INFO  : 'stop' command is executed.
+18:47:34 INFO  : 'ps7_init' command is executed.
+18:47:34 INFO  : 'ps7_post_config' command is executed.
+18:47:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:47:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:47:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:47:34 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:47:34 INFO  : 'configparams force-mem-access 0' command is executed.
+18:47:34 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:26:57 INFO  : Memory regions updated for context APU
-19:26:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:26:57 INFO  : 'con' command is executed.
-19:26:57 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:47:34 INFO  : Memory regions updated for context APU
+18:47:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:47:34 INFO  : 'con' command is executed.
+18:47:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:26:57 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_helloworld.elf_on_local.tcl'
-19:27:24 INFO  : Disconnected from the channel tcfchan#3.
-19:27:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:27:25 INFO  : 'fpga -state' command is executed.
-19:27:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:27:25 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:27:25 INFO  : 'jtag frequency' command is executed.
-19:27:25 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:27:25 INFO  : Context for 'APU' is selected.
-19:27:25 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:27:25 INFO  : 'configparams force-mem-access 1' command is executed.
-19:27:25 INFO  : Context for 'APU' is selected.
-19:27:25 INFO  : 'stop' command is executed.
-19:27:26 INFO  : 'ps7_init' command is executed.
-19:27:26 INFO  : 'ps7_post_config' command is executed.
-19:27:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:27:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:27:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:27:26 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:27:26 INFO  : 'configparams force-mem-access 0' command is executed.
-19:27:26 INFO  : ----------------XSDB Script----------------
+18:47:34 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:51:49 INFO  : Disconnected from the channel tcfchan#4.
+18:51:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:51:51 INFO  : 'fpga -state' command is executed.
+18:51:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:51:51 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:51:51 INFO  : 'jtag frequency' command is executed.
+18:51:51 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:51:51 INFO  : Context for 'APU' is selected.
+18:51:52 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:51:52 INFO  : 'configparams force-mem-access 1' command is executed.
+18:51:52 INFO  : Context for 'APU' is selected.
+18:51:52 INFO  : 'stop' command is executed.
+18:51:52 INFO  : 'ps7_init' command is executed.
+18:51:52 INFO  : 'ps7_post_config' command is executed.
+18:51:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:51:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:51:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:51:53 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:51:53 INFO  : 'configparams force-mem-access 0' command is executed.
+18:51:53 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:27:26 INFO  : Memory regions updated for context APU
-19:27:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:27:26 INFO  : 'con' command is executed.
-19:27:26 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:51:53 INFO  : Memory regions updated for context APU
+18:51:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:51:53 INFO  : 'con' command is executed.
+18:51:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:27:26 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:28:35 INFO  : Disconnected from the channel tcfchan#4.
-19:28:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:28:36 INFO  : 'fpga -state' command is executed.
-19:28:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:28:36 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:28:36 INFO  : 'jtag frequency' command is executed.
-19:28:36 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:28:36 INFO  : Context for 'APU' is selected.
-19:28:36 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:28:36 INFO  : 'configparams force-mem-access 1' command is executed.
-19:28:36 INFO  : Context for 'APU' is selected.
-19:28:36 INFO  : 'stop' command is executed.
-19:28:36 INFO  : 'ps7_init' command is executed.
-19:28:36 INFO  : 'ps7_post_config' command is executed.
-19:28:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:28:36 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:28:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:28:36 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:28:36 INFO  : 'configparams force-mem-access 0' command is executed.
-19:28:36 INFO  : ----------------XSDB Script----------------
+18:51:53 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:52:06 INFO  : Disconnected from the channel tcfchan#5.
+18:52:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:52:07 INFO  : 'fpga -state' command is executed.
+18:52:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:52:07 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:52:07 INFO  : 'jtag frequency' command is executed.
+18:52:07 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:52:07 INFO  : Context for 'APU' is selected.
+18:52:08 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:52:08 INFO  : 'configparams force-mem-access 1' command is executed.
+18:52:08 INFO  : Context for 'APU' is selected.
+18:52:08 INFO  : 'stop' command is executed.
+18:52:09 INFO  : 'ps7_init' command is executed.
+18:52:09 INFO  : 'ps7_post_config' command is executed.
+18:52:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:52:09 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:52:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:52:09 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:52:09 INFO  : 'configparams force-mem-access 0' command is executed.
+18:52:09 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:28:36 INFO  : Memory regions updated for context APU
-19:28:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:28:36 INFO  : 'con' command is executed.
-19:28:36 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:52:09 INFO  : Memory regions updated for context APU
+18:52:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:52:09 INFO  : 'con' command is executed.
+18:52:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:28:36 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:28:49 INFO  : Disconnected from the channel tcfchan#5.
-19:28:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:28:50 INFO  : 'fpga -state' command is executed.
-19:28:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:28:50 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:28:50 INFO  : 'jtag frequency' command is executed.
-19:28:50 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:28:50 INFO  : Context for 'APU' is selected.
-19:28:50 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:28:50 INFO  : 'configparams force-mem-access 1' command is executed.
-19:28:50 INFO  : Context for 'APU' is selected.
-19:28:50 INFO  : 'stop' command is executed.
-19:28:50 INFO  : 'ps7_init' command is executed.
-19:28:50 INFO  : 'ps7_post_config' command is executed.
-19:28:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:28:50 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:28:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:28:50 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:28:50 INFO  : 'configparams force-mem-access 0' command is executed.
-19:28:50 INFO  : ----------------XSDB Script----------------
+18:52:09 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:55:23 INFO  : Disconnected from the channel tcfchan#6.
+18:55:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:55:24 INFO  : 'fpga -state' command is executed.
+18:55:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:55:24 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:55:24 INFO  : 'jtag frequency' command is executed.
+18:55:24 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:55:24 INFO  : Context for 'APU' is selected.
+18:55:25 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:55:25 INFO  : 'configparams force-mem-access 1' command is executed.
+18:55:25 INFO  : Context for 'APU' is selected.
+18:55:25 INFO  : 'stop' command is executed.
+18:55:25 INFO  : 'ps7_init' command is executed.
+18:55:25 INFO  : 'ps7_post_config' command is executed.
+18:55:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:55:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:26 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:55:26 INFO  : 'configparams force-mem-access 0' command is executed.
+18:55:26 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/HelloWorld/Debug/HelloWorld.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:28:50 INFO  : Memory regions updated for context APU
-19:28:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:28:50 INFO  : 'con' command is executed.
-19:28:50 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:55:26 INFO  : Memory regions updated for context APU
+18:55:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:55:26 INFO  : 'con' command is executed.
+18:55:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:28:50 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_helloworld.elf_on_local.tcl'
-19:29:09 INFO  : Disconnected from the channel tcfchan#6.
-19:29:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:29:10 INFO  : 'fpga -state' command is executed.
-19:29:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:29:11 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:29:11 INFO  : 'jtag frequency' command is executed.
-19:29:11 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:29:11 INFO  : Context for 'APU' is selected.
-19:29:11 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:29:11 INFO  : 'configparams force-mem-access 1' command is executed.
-19:29:11 INFO  : Context for 'APU' is selected.
-19:29:11 INFO  : 'stop' command is executed.
-19:29:11 INFO  : 'ps7_init' command is executed.
-19:29:11 INFO  : 'ps7_post_config' command is executed.
-19:29:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:29:11 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:29:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:29:11 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:29:11 INFO  : 'configparams force-mem-access 0' command is executed.
-19:29:11 INFO  : ----------------XSDB Script----------------
+18:55:26 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:56:31 INFO  : Disconnected from the channel tcfchan#7.
+18:56:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:56:32 INFO  : 'fpga -state' command is executed.
+18:56:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:32 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:56:32 INFO  : 'jtag frequency' command is executed.
+18:56:32 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:56:32 INFO  : Context for 'APU' is selected.
+18:56:34 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:56:34 INFO  : 'configparams force-mem-access 1' command is executed.
+18:56:34 INFO  : Context for 'APU' is selected.
+18:56:34 INFO  : 'stop' command is executed.
+18:56:34 INFO  : 'ps7_init' command is executed.
+18:56:34 INFO  : 'ps7_post_config' command is executed.
+18:56:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:56:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:34 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:34 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:34 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:29:11 INFO  : Memory regions updated for context APU
-19:29:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:29:11 INFO  : 'con' command is executed.
-19:29:11 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:56:34 INFO  : Memory regions updated for context APU
+18:56:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:34 INFO  : 'con' command is executed.
+18:56:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:29:11 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:29:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:29:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:29:24 ERROR : fpga initialization failed
-19:29:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:29:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:29:44 INFO  : FPGA configured successfully with bitstream "/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/soc_project_wrapper.bit"
-19:29:54 INFO  : Disconnected from the channel tcfchan#7.
-19:29:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:29:55 INFO  : 'fpga -state' command is executed.
-19:29:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:29:55 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:29:55 INFO  : 'jtag frequency' command is executed.
-19:29:55 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:29:55 INFO  : Context for 'APU' is selected.
-19:29:55 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:29:55 INFO  : 'configparams force-mem-access 1' command is executed.
-19:29:55 INFO  : Context for 'APU' is selected.
-19:29:55 INFO  : 'stop' command is executed.
-19:29:55 INFO  : 'ps7_init' command is executed.
-19:29:55 INFO  : 'ps7_post_config' command is executed.
-19:29:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:29:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:29:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:29:55 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:29:55 INFO  : 'configparams force-mem-access 0' command is executed.
-19:29:55 INFO  : ----------------XSDB Script----------------
+18:56:34 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:56:48 INFO  : Disconnected from the channel tcfchan#8.
+18:56:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:56:49 INFO  : 'fpga -state' command is executed.
+18:56:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:50 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:56:50 INFO  : 'jtag frequency' command is executed.
+18:56:50 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:56:50 INFO  : Context for 'APU' is selected.
+18:56:51 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:56:51 INFO  : 'configparams force-mem-access 1' command is executed.
+18:56:51 INFO  : Context for 'APU' is selected.
+18:56:51 INFO  : 'stop' command is executed.
+18:56:51 INFO  : 'ps7_init' command is executed.
+18:56:51 INFO  : 'ps7_post_config' command is executed.
+18:56:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:51 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:56:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:51 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:51 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:51 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:29:55 INFO  : Memory regions updated for context APU
-19:29:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:29:55 INFO  : 'con' command is executed.
-19:29:55 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:56:51 INFO  : Memory regions updated for context APU
+18:56:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:51 INFO  : 'con' command is executed.
+18:56:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:29:55 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:32:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:32:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:32:43 INFO  : FPGA configured successfully with bitstream "/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/soc_project_wrapper.bit"
-19:32:54 INFO  : Disconnected from the channel tcfchan#8.
-19:32:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:32:55 INFO  : 'fpga -state' command is executed.
-19:32:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:32:55 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:32:55 INFO  : 'jtag frequency' command is executed.
-19:32:55 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:32:55 INFO  : Context for 'APU' is selected.
-19:32:55 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:32:55 INFO  : 'configparams force-mem-access 1' command is executed.
-19:32:55 INFO  : Context for 'APU' is selected.
-19:32:55 INFO  : 'stop' command is executed.
-19:32:56 INFO  : 'ps7_init' command is executed.
-19:32:56 INFO  : 'ps7_post_config' command is executed.
-19:32:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:32:56 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:32:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:32:56 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:32:56 INFO  : 'configparams force-mem-access 0' command is executed.
-19:32:56 INFO  : ----------------XSDB Script----------------
+18:56:51 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'
+18:57:16 INFO  : Disconnected from the channel tcfchan#9.
+18:57:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248518536" && level==0} -index 1' command is executed.
+18:57:17 INFO  : 'fpga -state' command is executed.
+18:57:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:57:17 INFO  : Jtag cable 'Digilent Zed 210248518536' is selected.
+18:57:17 INFO  : 'jtag frequency' command is executed.
+18:57:17 INFO  : Sourcing of '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:57:17 INFO  : Context for 'APU' is selected.
+18:57:19 INFO  : Hardware design information is loaded from '/home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
+18:57:19 INFO  : 'configparams force-mem-access 1' command is executed.
+18:57:19 INFO  : Context for 'APU' is selected.
+18:57:19 INFO  : 'stop' command is executed.
+18:57:19 INFO  : 'ps7_init' command is executed.
+18:57:19 INFO  : 'ps7_post_config' command is executed.
+18:57:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+18:57:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:19 INFO  : The application '/home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:57:19 INFO  : 'configparams force-mem-access 0' command is executed.
+18:57:19 INFO  : ----------------XSDB Script----------------
 connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+source /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+loadhw -hw /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
 configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 stop
 ps7_init
 ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
+dow /home/adosid/SoC_Design/vivado/soc_project.sdk/Audio_driver/Debug/Audio_driver.elf
 configparams force-mem-access 0
 ----------------End of Script----------------
 
-19:32:56 INFO  : Memory regions updated for context APU
-19:32:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:32:56 INFO  : 'con' command is executed.
-19:32:56 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
+18:57:19 INFO  : Memory regions updated for context APU
+18:57:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:19 INFO  : 'con' command is executed.
+18:57:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248518536"} -index 0
 con
 ----------------End of Script----------------
 
-19:32:56 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:37:38 INFO  : Disconnected from the channel tcfchan#9.
-19:37:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:37:39 INFO  : 'fpga -state' command is executed.
-19:37:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:37:39 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:37:39 INFO  : 'jtag frequency' command is executed.
-19:37:39 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:37:39 INFO  : Context for 'APU' is selected.
-19:37:39 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:37:39 INFO  : 'configparams force-mem-access 1' command is executed.
-19:37:39 INFO  : Context for 'APU' is selected.
-19:37:39 INFO  : 'stop' command is executed.
-19:37:39 INFO  : 'ps7_init' command is executed.
-19:37:39 INFO  : 'ps7_post_config' command is executed.
-19:37:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:37:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:37:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:37:39 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:37:39 INFO  : 'configparams force-mem-access 0' command is executed.
-19:37:39 INFO  : ----------------XSDB Script----------------
-connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
-configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-stop
-ps7_init
-ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
-configparams force-mem-access 0
-----------------End of Script----------------
-
-19:37:40 INFO  : Memory regions updated for context APU
-19:37:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:37:40 INFO  : 'con' command is executed.
-19:37:40 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-con
-----------------End of Script----------------
-
-19:37:40 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:38:00 INFO  : Disconnected from the channel tcfchan#10.
-19:38:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:38:01 INFO  : 'fpga -state' command is executed.
-19:38:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:38:01 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:38:01 INFO  : 'jtag frequency' command is executed.
-19:38:01 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:38:01 INFO  : Context for 'APU' is selected.
-19:38:01 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:38:01 INFO  : 'configparams force-mem-access 1' command is executed.
-19:38:01 INFO  : Context for 'APU' is selected.
-19:38:01 INFO  : 'stop' command is executed.
-19:38:01 INFO  : 'ps7_init' command is executed.
-19:38:01 INFO  : 'ps7_post_config' command is executed.
-19:38:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:38:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:38:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:38:02 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:38:02 INFO  : 'configparams force-mem-access 0' command is executed.
-19:38:02 INFO  : ----------------XSDB Script----------------
-connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
-configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-stop
-ps7_init
-ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
-configparams force-mem-access 0
-----------------End of Script----------------
-
-19:38:02 INFO  : Memory regions updated for context APU
-19:38:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:38:02 INFO  : 'con' command is executed.
-19:38:02 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-con
-----------------End of Script----------------
-
-19:38:02 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:38:26 INFO  : Disconnected from the channel tcfchan#11.
-19:38:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:38:27 INFO  : 'fpga -state' command is executed.
-19:38:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:38:27 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:38:27 INFO  : 'jtag frequency' command is executed.
-19:38:27 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:38:27 INFO  : Context for 'APU' is selected.
-19:38:27 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:38:27 INFO  : 'configparams force-mem-access 1' command is executed.
-19:38:27 INFO  : Context for 'APU' is selected.
-19:38:27 INFO  : 'stop' command is executed.
-19:38:27 INFO  : 'ps7_init' command is executed.
-19:38:27 INFO  : 'ps7_post_config' command is executed.
-19:38:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:38:27 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:38:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:38:27 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:38:27 INFO  : 'configparams force-mem-access 0' command is executed.
-19:38:27 INFO  : ----------------XSDB Script----------------
-connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
-configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-stop
-ps7_init
-ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
-configparams force-mem-access 0
-----------------End of Script----------------
-
-19:38:27 INFO  : Memory regions updated for context APU
-19:38:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:38:28 INFO  : 'con' command is executed.
-19:38:28 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-con
-----------------End of Script----------------
-
-19:38:28 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:39:44 INFO  : Disconnected from the channel tcfchan#12.
-19:39:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:39:45 INFO  : 'fpga -state' command is executed.
-19:39:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:39:45 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:39:45 INFO  : 'jtag frequency' command is executed.
-19:39:45 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:39:46 INFO  : Context for 'APU' is selected.
-19:39:46 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:39:46 INFO  : 'configparams force-mem-access 1' command is executed.
-19:39:46 INFO  : Context for 'APU' is selected.
-19:39:46 INFO  : 'stop' command is executed.
-19:39:46 INFO  : 'ps7_init' command is executed.
-19:39:46 INFO  : 'ps7_post_config' command is executed.
-19:39:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:39:46 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:39:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:39:46 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:39:46 INFO  : 'configparams force-mem-access 0' command is executed.
-19:39:46 INFO  : ----------------XSDB Script----------------
-connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
-configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-stop
-ps7_init
-ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
-configparams force-mem-access 0
-----------------End of Script----------------
-
-19:39:46 INFO  : Memory regions updated for context APU
-19:39:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:39:46 INFO  : 'con' command is executed.
-19:39:46 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-con
-----------------End of Script----------------
-
-19:39:46 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:45:38 INFO  : Disconnected from the channel tcfchan#13.
-19:45:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:45:39 INFO  : 'fpga -state' command is executed.
-19:45:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:45:39 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:45:39 INFO  : 'jtag frequency' command is executed.
-19:45:39 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:45:39 INFO  : Context for 'APU' is selected.
-19:45:39 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:45:39 INFO  : 'configparams force-mem-access 1' command is executed.
-19:45:39 INFO  : Context for 'APU' is selected.
-19:45:39 INFO  : 'stop' command is executed.
-19:45:39 INFO  : 'ps7_init' command is executed.
-19:45:39 INFO  : 'ps7_post_config' command is executed.
-19:45:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:45:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:45:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:45:39 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:45:39 INFO  : 'configparams force-mem-access 0' command is executed.
-19:45:39 INFO  : ----------------XSDB Script----------------
-connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
-configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-stop
-ps7_init
-ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
-configparams force-mem-access 0
-----------------End of Script----------------
-
-19:45:39 INFO  : Memory regions updated for context APU
-19:45:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:45:39 INFO  : 'con' command is executed.
-19:45:39 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-con
-----------------End of Script----------------
-
-19:45:39 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
-19:45:57 INFO  : Disconnected from the channel tcfchan#14.
-19:45:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248570491" && level==0} -index 1' command is executed.
-19:45:58 INFO  : 'fpga -state' command is executed.
-19:45:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
-19:45:58 INFO  : Jtag cable 'Digilent Zed 210248570491' is selected.
-19:45:58 INFO  : 'jtag frequency' command is executed.
-19:45:58 INFO  : Sourcing of '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl' is done.
-19:45:58 INFO  : Context for 'APU' is selected.
-19:45:58 INFO  : Hardware design information is loaded from '/home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf'.
-19:45:58 INFO  : 'configparams force-mem-access 1' command is executed.
-19:45:58 INFO  : Context for 'APU' is selected.
-19:45:58 INFO  : 'stop' command is executed.
-19:45:58 INFO  : 'ps7_init' command is executed.
-19:45:58 INFO  : 'ps7_post_config' command is executed.
-19:45:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:45:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
-19:45:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:45:58 INFO  : The application '/home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf' is downloaded to processor 'ps7_cortexa9_0'.
-19:45:58 INFO  : 'configparams force-mem-access 0' command is executed.
-19:45:58 INFO  : ----------------XSDB Script----------------
-connect -url tcp:127.0.0.1:3121
-source /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.tcl
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-loadhw -hw /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
-configparams force-mem-access 1
-targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-stop
-ps7_init
-ps7_post_config
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-rst -processor
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-dow /home/adadek/SoC_Design/vivado/soc_project.sdk/AudioDriver/Debug/AudioDriver.elf
-configparams force-mem-access 0
-----------------End of Script----------------
-
-19:45:58 INFO  : Memory regions updated for context APU
-19:45:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
-19:45:58 INFO  : 'con' command is executed.
-19:45:58 INFO  : ----------------XSDB Script (After Launch)----------------
-targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248570491"} -index 0
-con
-----------------End of Script----------------
-
-19:45:58 INFO  : Launch script is exported to file '/home/adadek/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audiodriver.elf_on_local.tcl'
+18:57:19 INFO  : Launch script is exported to file '/home/adosid/SoC_Design/vivado/soc_project.sdk/.sdk/launch_scripts/xilinx_c-c++_application_(system_debugger)/system_debugger_using_debug_audio_driver.elf_on_local.tcl'

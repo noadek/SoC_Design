@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
-| Date             : Mon May  7 19:20:51 2018
-| Host             : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
+| Date             : Tue May  8 18:24:47 2018
+| Host             : lx24 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 | Command          : report_power -file soc_project_wrapper_power_routed.rpt -pb soc_project_wrapper_power_summary_routed.pb -rpx soc_project_wrapper_power_routed.rpx
 | Design           : soc_project_wrapper
 | Device           : xc7z020clg484-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.836        |
+| Total On-Chip Power (W)  | 1.844        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.687        |
+| Dynamic (W)              | 1.696        |
 | Device Static (W)        | 0.149        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 63.8         |
-| Junction Temperature (C) | 46.2         |
+| Max Ambient (C)          | 63.7         |
+| Junction Temperature (C) | 46.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.015 |        5 |       --- |             --- |
-| Slice Logic             |     0.009 |    11182 |       --- |             --- |
-|   LUT as Logic          |     0.008 |     3653 |     53200 |            6.87 |
-|   CARRY4                |     0.001 |      280 |     13300 |            2.11 |
-|   Register              |    <0.001 |     6015 |    106400 |            5.65 |
-|   F7/F8 Muxes           |    <0.001 |       64 |     53200 |            0.12 |
-|   LUT as Shift Register |    <0.001 |       66 |     17400 |            0.38 |
-|   Others                |     0.000 |      227 |       --- |             --- |
-| Signals                 |     0.010 |     9090 |       --- |             --- |
+| Clocks                  |     0.016 |        5 |       --- |             --- |
+| Slice Logic             |     0.014 |    12729 |       --- |             --- |
+|   LUT as Logic          |     0.012 |     4174 |     53200 |            7.85 |
+|   CARRY4                |     0.002 |      308 |     13300 |            2.32 |
+|   Register              |    <0.001 |     6777 |    106400 |            6.37 |
+|   LUT as Shift Register |    <0.001 |       68 |     17400 |            0.39 |
+|   Others                |     0.000 |      246 |       --- |             --- |
+|   F7/F8 Muxes           |     0.000 |       64 |     53200 |            0.12 |
+| Signals                 |     0.012 |    10108 |       --- |             --- |
 | Block RAM               |    <0.001 |      0.5 |       140 |            0.36 |
 | MMCM                    |     0.121 |        1 |         4 |           25.00 |
 | I/O                     |     0.003 |        9 |       200 |            4.50 |
 | PS7                     |     1.529 |        1 |       --- |             --- |
 | Static Power            |     0.149 |          |           |                 |
-| Total                   |     1.836 |          |           |                 |
+| Total                   |     1.844 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.050 |       0.035 |      0.016 |
+| Vccint    |       1.000 |     0.059 |       0.043 |      0.016 |
 | Vccaux    |       1.800 |     0.083 |       0.067 |      0.016 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -154,31 +154,39 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| soc_project_wrapper                              |     1.687 |
-|   soc_project_i                                  |     1.684 |
-|     FILTER_IIR_0                                 |     0.027 |
-|       U0                                         |     0.027 |
-|         FILTER_IIR_v1_0_S00_AXI_inst             |     0.027 |
-|           Filter_Top_Level_inst                  |     0.024 |
-|             IIR_BP_L                             |     0.004 |
+| soc_project_wrapper                              |     1.696 |
+|   soc_project_i                                  |     1.693 |
+|     FILTER_IIR_0                                 |     0.028 |
+|       U0                                         |     0.028 |
+|         FILTER_IIR_v1_0_S00_AXI_inst             |     0.028 |
+|           Filter_Top_Level_inst                  |     0.026 |
+|             IIR_BP_L                             |     0.005 |
 |               mul                                |     0.003 |
 |             IIR_BP_R                             |     0.004 |
-|               mul                                |     0.002 |
-|             IIR_HP_L                             |     0.004 |
-|               mul                                |     0.002 |
+|               mul                                |     0.003 |
+|             IIR_HP_L                             |     0.005 |
+|               mul                                |     0.003 |
 |             IIR_HP_R                             |     0.004 |
-|               mul                                |     0.002 |
-|             IIR_LP_L                             |     0.004 |
-|               mul                                |     0.002 |
+|               mul                                |     0.003 |
+|             IIR_LP_L                             |     0.005 |
+|               mul                                |     0.003 |
 |             IIR_LP_R                             |     0.004 |
-|               mul                                |     0.002 |
+|               mul                                |     0.003 |
+|     Volume_Pregain_0                             |     0.007 |
+|       U0                                         |     0.007 |
+|         Volume_Pregain_v1_0_S00_AXI_inst         |     0.007 |
+|           Volume_Pregain_Top_Module_inst         |     0.007 |
+|             AmplifierFP_L                        |     0.004 |
+|               Amp_multiplier                     |     0.004 |
+|             AmplifierFP_R                        |     0.003 |
+|               Amp_multiplier                     |     0.003 |
 |     processing_system7_0                         |     1.530 |
 |       inst                                       |     1.530 |
 |     ps7_0_axi_periph                             |     0.004 |
-|       s00_couplers                               |     0.004 |
-|         auto_pc                                  |     0.004 |
-|           inst                                   |     0.004 |
-|             gen_axilite.gen_b2s_conv.axilite_b2s |     0.004 |
+|       s00_couplers                               |     0.003 |
+|         auto_pc                                  |     0.003 |
+|           inst                                   |     0.003 |
+|             gen_axilite.gen_b2s_conv.axilite_b2s |     0.003 |
 |               RD.ar_channel_0                    |    <0.001 |
 |                 ar_cmd_fsm_0                     |    <0.001 |
 |                 cmd_translator_0                 |    <0.001 |
@@ -200,6 +208,14 @@ Table of Contents
 |               WR.b_channel_0                     |    <0.001 |
 |                 bid_fifo_0                       |    <0.001 |
 |                 bresp_fifo_0                     |    <0.001 |
+|       xbar                                       |    <0.001 |
+|         inst                                     |    <0.001 |
+|           gen_sasd.crossbar_sasd_0               |    <0.001 |
+|             addr_arbiter_inst                    |    <0.001 |
+|             gen_decerr.decerr_slave_inst         |    <0.001 |
+|             reg_slice_r                          |    <0.001 |
+|             splitter_ar                          |    <0.001 |
+|             splitter_aw                          |    <0.001 |
 |     rst_ps7_0_100M                               |    <0.001 |
 |       U0                                         |    <0.001 |
 |         EXT_LPF                                  |    <0.001 |
@@ -211,10 +227,10 @@ Table of Contents
 |     zed_audio_0                                  |     0.123 |
 |       U0                                         |     0.123 |
 |         Inst_adau1761_izedboard                  |     0.002 |
-|           Inst_i2c                               |    <0.001 |
+|           Inst_i2c                               |     0.001 |
 |             Inst_adau1761_configuraiton_data     |    <0.001 |
 |             Inst_i3c2                            |    <0.001 |
-|           Inst_i2s_data_interface                |    <0.001 |
+|           Inst_i2s_data_interface                |     0.001 |
 |           i_ADAU1761_interface                   |    <0.001 |
 |           i_i2s_sda_obuf                         |     0.000 |
 |         i_clocking                               |     0.121 |

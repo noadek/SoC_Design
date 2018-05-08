@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
-| Date         : Mon May  7 19:19:24 2018
-| Host         : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
+| Date         : Tue May  8 18:23:41 2018
+| Host         : lx24 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 | Command      : report_control_sets -file soc_project_wrapper_control_sets_placed.rpt
 | Design       : soc_project_wrapper
 | Device       : xc7z020
@@ -21,7 +21,7 @@ Table of Contents
 +-------------------------------+-------+
 |             Status            | Count |
 +-------------------------------+-------+
-| Number of unique control sets |   196 |
+| Number of unique control sets |   221 |
 +-------------------------------+-------+
 
 
@@ -31,12 +31,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             206 |           88 |
+| No           | No                    | No                     |             225 |           92 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              88 |           38 |
-| Yes          | No                    | No                     |            1847 |          436 |
-| Yes          | No                    | Yes                    |             396 |           89 |
-| Yes          | Yes                   | No                     |            3478 |         1078 |
+| No           | Yes                   | No                     |             371 |          100 |
+| Yes          | No                    | No                     |            2078 |          486 |
+| Yes          | No                    | Yes                    |             396 |           90 |
+| Yes          | Yes                   | No                     |            3707 |         1148 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 

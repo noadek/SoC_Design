@@ -173,6 +173,9 @@ proc create_root_design { parentCell } {
   # Create instance: FILTER_IIR_0, and set properties
   set FILTER_IIR_0 [ create_bd_cell -type ip -vlnv tsotnep:userLibrary:FILTER_IIR:1.0 FILTER_IIR_0 ]
 
+  # Create instance: Volume_Pregain_0, and set properties
+  set Volume_Pregain_0 [ create_bd_cell -type ip -vlnv tsotnep:userLibrary:Volume_Pregain:1.0 Volume_Pregain_0 ]
+
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
   set_property -dict [ list \
@@ -573,7 +576,7 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {1} \
+   CONFIG.NUM_MI {2} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
@@ -590,6 +593,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins FILTER_IIR_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M00_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins Volume_Pregain_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
 
   # Create port connections
   connect_bd_net -net AC_GPIO1_1 [get_bd_ports AC_GPIO1] [get_bd_pins zed_audio_0/AC_GPIO1]
@@ -599,22 +603,25 @@ proc create_root_design { parentCell } {
   connect_bd_net -net FILTER_IIR_0_AUDIO_OUT_R [get_bd_pins FILTER_IIR_0/AUDIO_OUT_R] [get_bd_pins zed_audio_0/hphone_r]
   connect_bd_net -net FILTER_IIR_0_FILTER_DONE [get_bd_pins FILTER_IIR_0/FILTER_DONE] [get_bd_pins processing_system7_0/IRQ_F2P]
   connect_bd_net -net Net [get_bd_ports AC_SDA] [get_bd_pins zed_audio_0/AC_SDA]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins FILTER_IIR_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins zed_audio_0/clk_100]
+  connect_bd_net -net Volume_Pregain_0_OUT_RDY [get_bd_pins FILTER_IIR_0/SAMPLE_TRIG] [get_bd_pins Volume_Pregain_0/OUT_RDY]
+  connect_bd_net -net Volume_Pregain_0_OUT_VOLCTRL_L [get_bd_pins FILTER_IIR_0/AUDIO_IN_L] [get_bd_pins Volume_Pregain_0/OUT_VOLCTRL_L]
+  connect_bd_net -net Volume_Pregain_0_OUT_VOLCTRL_R [get_bd_pins FILTER_IIR_0/AUDIO_IN_R] [get_bd_pins Volume_Pregain_0/OUT_VOLCTRL_R]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins FILTER_IIR_0/s00_axi_aclk] [get_bd_pins Volume_Pregain_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins zed_audio_0/clk_100]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins FILTER_IIR_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins FILTER_IIR_0/s00_axi_aresetn] [get_bd_pins Volume_Pregain_0/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xlconstant_0/dout] [get_bd_pins zed_audio_0/hphone_l_valid] [get_bd_pins zed_audio_0/hphone_r_valid_dummy]
   connect_bd_net -net zed_audio_0_AC_ADR0 [get_bd_ports AC_ADR0] [get_bd_pins zed_audio_0/AC_ADR0]
   connect_bd_net -net zed_audio_0_AC_ADR1 [get_bd_ports AC_ADR1] [get_bd_pins zed_audio_0/AC_ADR1]
   connect_bd_net -net zed_audio_0_AC_GPIO0 [get_bd_ports AC_GPIO0] [get_bd_pins zed_audio_0/AC_GPIO0]
   connect_bd_net -net zed_audio_0_AC_MCLK [get_bd_ports AC_MCLK] [get_bd_pins zed_audio_0/AC_MCLK]
   connect_bd_net -net zed_audio_0_AC_SCK [get_bd_ports AC_SCK] [get_bd_pins zed_audio_0/AC_SCK]
-  connect_bd_net -net zed_audio_0_line_in_l [get_bd_pins FILTER_IIR_0/AUDIO_IN_L] [get_bd_pins zed_audio_0/line_in_l]
-  connect_bd_net -net zed_audio_0_line_in_r [get_bd_pins FILTER_IIR_0/AUDIO_IN_R] [get_bd_pins zed_audio_0/line_in_r]
-  connect_bd_net -net zed_audio_0_new_sample [get_bd_pins FILTER_IIR_0/SAMPLE_TRIG] [get_bd_pins zed_audio_0/new_sample]
+  connect_bd_net -net zed_audio_0_line_in_l [get_bd_pins Volume_Pregain_0/IN_SIG_L] [get_bd_pins zed_audio_0/line_in_l]
+  connect_bd_net -net zed_audio_0_line_in_r [get_bd_pins Volume_Pregain_0/IN_SIG_R] [get_bd_pins zed_audio_0/line_in_r]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs FILTER_IIR_0/S00_AXI/S00_AXI_reg] SEG_FILTER_IIR_0_S00_AXI_reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x43C10000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs Volume_Pregain_0/S00_AXI/S00_AXI_reg] SEG_Volume_Pregain_0_S00_AXI_reg
 
 
   # Restore current instance

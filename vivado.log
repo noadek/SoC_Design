@@ -2,140 +2,185 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Mon May  7 17:05:57 2018
-# Process ID: 5794
-# Current directory: /home/adadek/SoC_Design
+# Start of session at: Tue May  8 10:29:08 2018
+# Process ID: 31633
+# Current directory: /home/adosid/SoC_Design
 # Command line: vivado
-# Log file: /home/adadek/SoC_Design/vivado.log
-# Journal file: /home/adadek/SoC_Design/vivado.jou
+# Log file: /home/adosid/SoC_Design/vivado.log
+# Journal file: /home/adosid/SoC_Design/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /home/adadek/SoC_Design/vivado/soc_project.xpr
+open_project /home/adosid/SoC_Design/vivado/soc_project.xpr
+INFO: [Project 1-313] Project file moved from '/home/adadek/SoC_Design/vivado' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/adadek/SoC_Design/IPs/zedboard_audio'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/adosid/SoC_Design/IPs/zedboard_audio'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/adosid/SoC_Design/IPs/FILTER_IIR_1.0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/cad/x_17/Vivado/2017.3/data/ip'.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0.xdc'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/hdl/verilog/soc_project_processing_system7_0_0.hwdef'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/ps7_init.c'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/ps7_init.h'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/ps7_init_gpl.c'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/ps7_init_gpl.h'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/ps7_init.tcl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/ps7_init.html'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/8fd3/hdl/verilog/processing_system7_v5_5_aw_atc.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/8fd3/hdl/verilog/processing_system7_v5_5_b_atc.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/8fd3/hdl/verilog/processing_system7_v5_5_w_atc.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/8fd3/hdl/verilog/processing_system7_v5_5_atc.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/8fd3/hdl/verilog/processing_system7_v5_5_trace_buffer.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/synth/soc_project_processing_system7_0_0.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/ec67/hdl/axi_infrastructure_v1_1_0.vh'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/d5d3/hdl/verilog/sc_util_v1_0_2_constants.vh'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/d5d3/hdl/verilog/sc_util_v1_0_2_structs.svh'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/d5d3/hdl/sc_util_v1_0_vl_rfs.sv'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/d5c1/hdl/axi_protocol_checker_v2_0_vl_rfs.sv'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/8b42/hdl/axi_vip_v1_1_vl_rfs.sv'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_local_params.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_vl_rfs.sv'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_reg_params.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_reg_init.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_apis.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_unused_ports.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_axi_gp.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_axi_acp.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/e0a2/hdl/processing_system7_vip_v1_0_2_axi_hp.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/sim/libps7.so'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/sim/libps7.dll'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/sim/libremoteport.so'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/sim/libremoteport.dll'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/sim/soc_project_processing_system7_0_0.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/sim/soc_project_processing_system7_0_0.sv'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0.dcp'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0_stub.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0_stub.vhdl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0_sim_netlist.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_processing_system7_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0_sim_netlist.vhdl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/ADAU1761_interface.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/adau1761_configuraiton_data.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/adau1761_izedboard.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/audio_top.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/clocking.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/i2c.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/i2s_data_interface.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/i3c2.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_zed_audio_0_0/synth/soc_project_zed_audio_0_0.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/ADAU1761_interface.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/adau1761_configuraiton_data.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/adau1761_izedboard.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/audio_top.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/clocking.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/i2c.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/i2s_data_interface.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/6bc0/hdl/i3c2.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_zed_audio_0_0/sim/soc_project_zed_audio_0_0.vhd'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_zed_audio_0_0/soc_project_zed_audio_0_0.dcp'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_zed_audio_0_0/soc_project_zed_audio_0_0_stub.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_zed_audio_0_0/soc_project_zed_audio_0_0_stub.vhdl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_zed_audio_0_0/soc_project_zed_audio_0_0_sim_netlist.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_zed_audio_0_0' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_zed_audio_0_0/soc_project_zed_audio_0_0_sim_netlist.vhdl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_xlconstant_0_1/synth/soc_project_xlconstant_0_1.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_xlconstant_0_1/sim/soc_project_xlconstant_0_1.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1.dcp'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1_stub.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1_stub.vhdl'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1_sim_netlist.v'. Please regenerate to continue.
-WARNING: [IP_Flow 19-3664] IP 'soc_project_xlconstant_0_1' generated file not found '/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1_sim_netlist.vhdl'. Please regenerate to continue.
-open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 6064.992 ; gain = 25.438 ; free physical = 4989 ; free virtual = 14284
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 6147.332 ; gain = 84.949 ; free physical = 6226 ; free virtual = 15063
 update_compile_order -fileset sources_1
-reset_run synth_1
-reset_run soc_project_processing_system7_0_0_synth_1
-reset_run soc_project_xlconstant_0_1_synth_1
-reset_run soc_project_zed_audio_0_0_synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /zed_audio_0/clk_100(undef)
-Wrote  : </home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd> 
-VHDL Output written to : /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.vhd
-VHDL Output written to : /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/sim/soc_project.vhd
-VHDL Output written to : /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hdl/soc_project_wrapper.vhd
-INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_audio_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
-Exporting to file /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project.hwh
-Generated Block Design Tcl file /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project_bd.tcl
-Generated Hardware Definition File /home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.hwdef
-[Mon May  7 17:06:55 2018] Launched soc_project_processing_system7_0_0_synth_1, soc_project_xlconstant_0_1_synth_1, soc_project_zed_audio_0_0_synth_1, synth_1...
-Run output will be captured here:
-soc_project_processing_system7_0_0_synth_1: /home/adadek/SoC_Design/vivado/soc_project.runs/soc_project_processing_system7_0_0_synth_1/runme.log
-soc_project_xlconstant_0_1_synth_1: /home/adadek/SoC_Design/vivado/soc_project.runs/soc_project_xlconstant_0_1_synth_1/runme.log
-soc_project_zed_audio_0_0_synth_1: /home/adadek/SoC_Design/vivado/soc_project.runs/soc_project_zed_audio_0_0_synth_1/runme.log
-synth_1: /home/adadek/SoC_Design/vivado/soc_project.runs/synth_1/runme.log
-[Mon May  7 17:06:55 2018] Launched impl_1...
-Run output will be captured here: /home/adadek/SoC_Design/vivado/soc_project.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 6283.566 ; gain = 171.402 ; free physical = 4778 ; free virtual = 14081
-open_bd_design {/home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd}
+open_bd_design {/home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd}
 Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
 Adding cell -- ttu.ee:user:zed_audio:1.0 - zed_audio_0
 Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- tsotnep:userLibrary:FILTER_IIR:1.0 - FILTER_IIR_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
 WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/FCLK_CLK0(clk) and /zed_audio_0/clk_100(undef)
-Successfully read diagram <soc_project> from BD file </home/adadek/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd>
-open_bd_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 6354.113 ; gain = 56.535 ; free physical = 4225 ; free virtual = 13529
-file copy -force /home/adadek/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+WARNING: [BD 41-1731] Type mismatch between connected pins: /FILTER_IIR_0/FILTER_DONE(undef) and /processing_system7_0/IRQ_F2P(intr)
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Successfully read diagram <soc_project> from BD file </home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd>
+set_property  ip_repo_paths  {/home/adosid/SoC_Design/IPs/zedboard_audio /home/adosid/SoC_Design/IPs/Volume_Pregain_1.0 /home/adosid/SoC_Design/IPs/FILTER_IIR_1.0} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/adosid/SoC_Design/IPs/zedboard_audio'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/adosid/SoC_Design/IPs/Volume_Pregain_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/adosid/SoC_Design/IPs/FILTER_IIR_1.0'.
+startgroup
+create_bd_cell -type ip -vlnv tsotnep:userLibrary:Volume_Pregain:1.0 Volume_Pregain_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" intc_ip "/ps7_0_axi_periph" Clk_xbar "Auto" Clk_master "Auto" Clk_slave "Auto" }  [get_bd_intf_pins Volume_Pregain_0/S00_AXI]
+</Volume_Pregain_0/S00_AXI/S00_AXI_reg> is being mapped into </processing_system7_0/Data> at <0x43C10000 [ 64K ]>
+regenerate_bd_layout
+delete_bd_objs [get_bd_nets zed_audio_0_new_sample]
+connect_bd_net [get_bd_pins Volume_Pregain_0/OUT_RDY] [get_bd_pins FILTER_IIR_0/SAMPLE_TRIG]
+regenerate_bd_layout
+set_property location {4 1322 430} [get_bd_cells FILTER_IIR_0]
+set_property location {4 1343 598} [get_bd_cells Volume_Pregain_0]
+set_property location {4 1361 219} [get_bd_cells FILTER_IIR_0]
+set_property location {4 1350 509} [get_bd_cells Volume_Pregain_0]
+delete_bd_objs [get_bd_nets zed_audio_0_line_in_l]
+connect_bd_net [get_bd_pins FILTER_IIR_0/AUDIO_IN_L] [get_bd_pins Volume_Pregain_0/OUT_VOLCTRL_L]
+delete_bd_objs [get_bd_nets zed_audio_0_line_in_r]
+connect_bd_net [get_bd_pins FILTER_IIR_0/AUDIO_IN_R] [get_bd_pins Volume_Pregain_0/OUT_VOLCTRL_R]
+connect_bd_net [get_bd_pins Volume_Pregain_0/IN_SIG_L] [get_bd_pins zed_audio_0/line_in_l]
+connect_bd_net [get_bd_pins Volume_Pregain_0/IN_SIG_R] [get_bd_pins zed_audio_0/line_in_r]
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
+Wrote  : </home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd> 
+Wrote  : </home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ui/bd_14377381.ui> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [BD 41-1662] The design 'soc_project.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.vhd
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/sim/soc_project.vhd
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hdl/soc_project_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_audio_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block FILTER_IIR_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block Volume_Pregain_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_auto_pc_0/soc_project_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project.hwh
+Generated Block Design Tcl file /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project_bd.tcl
+Generated Hardware Definition File /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP soc_project_auto_pc_0, cache-ID = 6ad8981a62bd9ad5; cache size = 9.447 MB.
+[Tue May  8 10:45:26 2018] Launched soc_project_Volume_Pregain_0_0_synth_1, soc_project_xbar_0_synth_1, synth_1...
+Run output will be captured here:
+soc_project_Volume_Pregain_0_0_synth_1: /home/adosid/SoC_Design/vivado/soc_project.runs/soc_project_Volume_Pregain_0_0_synth_1/runme.log
+soc_project_xbar_0_synth_1: /home/adosid/SoC_Design/vivado/soc_project.runs/soc_project_xbar_0_synth_1/runme.log
+synth_1: /home/adosid/SoC_Design/vivado/soc_project.runs/synth_1/runme.log
+[Tue May  8 10:45:26 2018] Launched impl_1...
+Run output will be captured here: /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 6418.504 ; gain = 60.477 ; free physical = 5660 ; free virtual = 14609
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 
-launch_sdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 INFO: [Vivado 12-393] Launching SDK...
-INFO: [Vivado 12-417] Running xsdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
-file mkdir /home/adadek/SoC_Design/vivado/soc_project.sdk
-file copy -force /home/adadek/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
-
-launch_sdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 INFO: [Vivado 12-393] Launching SDK...
-INFO: [Vivado 12-417] Running xsdk -workspace /home/adadek/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+validate_bd_design -force
+save_bd_design
+Wrote  : </home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [BD 41-1662] The design 'soc_project.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.vhd
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/sim/soc_project.vhd
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hdl/soc_project_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_audio_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block FILTER_IIR_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block Volume_Pregain_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_auto_pc_0/soc_project_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project.hwh
+Generated Block Design Tcl file /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project_bd.tcl
+Generated Hardware Definition File /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP soc_project_auto_pc_0, cache-ID = 6ad8981a62bd9ad5; cache size = 10.797 MB.
+[Tue May  8 12:34:33 2018] Launched synth_1...
+Run output will be captured here: /home/adosid/SoC_Design/vivado/soc_project.runs/synth_1/runme.log
+[Tue May  8 12:34:33 2018] Launched impl_1...
+Run output will be captured here: /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 6548.965 ; gain = 7.992 ; free physical = 5513 ; free virtual = 14208
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+regenerate_bd_layout
+validate_bd_design -force
+save_bd_design
+Wrote  : </home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [BD 41-1662] The design 'soc_project.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.vhd
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/sim/soc_project.vhd
+VHDL Output written to : /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hdl/soc_project_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zed_audio_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block FILTER_IIR_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block Volume_Pregain_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_auto_pc_0/soc_project_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project.hwh
+Generated Block Design Tcl file /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/hw_handoff/soc_project_bd.tcl
+Generated Hardware Definition File /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/synth/soc_project.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP soc_project_auto_pc_0, cache-ID = 6ad8981a62bd9ad5; cache size = 10.797 MB.
+[Tue May  8 12:52:41 2018] Launched synth_1...
+Run output will be captured here: /home/adosid/SoC_Design/vivado/soc_project.runs/synth_1/runme.log
+[Tue May  8 12:52:41 2018] Launched impl_1...
+Run output will be captured here: /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 6580.980 ; gain = 0.000 ; free physical = 4738 ; free virtual = 13404
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+file copy -force /home/adosid/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adosid/SoC_Design/vivado/soc_project.sdk -hwspec /home/adosid/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
 exit
-INFO: [Common 17-206] Exiting Vivado at Mon May  7 17:18:46 2018...
+INFO: [Common 17-206] Exiting Vivado at Tue May  8 13:03:10 2018...
