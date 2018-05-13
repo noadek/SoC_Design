@@ -69,22 +69,25 @@ set rc [catch {
   set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/adosid/SoC_Design/vivado/soc_project.cache/wt [current_project]
-  set_property parent.project_path /home/adosid/SoC_Design/vivado/soc_project.xpr [current_project]
+  set_property webtalk.parent_dir /home/adadek/workspace/SoC_Design/vivado/soc_project.cache/wt [current_project]
+  set_property parent.project_path /home/adadek/workspace/SoC_Design/vivado/soc_project.xpr [current_project]
   set_property ip_repo_paths {
-  /home/adosid/SoC_Design/IPs/zedboard_audio
-  /home/adosid/SoC_Design/IPs/Volume_Pregain_1.0
-  /home/adosid/SoC_Design/IPs/FILTER_IIR_1.0
+  /home/adadek/workspace/SoC_Design/IPs/zedboard_audio
+  /home/adadek/workspace/SoC_Design/IPs/OLED/ZedBoard_OLED_1.0
+  /home/adadek/workspace/SoC_Design/IPs/Volume_Pregain_1.0
+  /home/adadek/workspace/SoC_Design/IPs/FILTER_IIR_1.0
+  /home/adadek/workspace/SoC_Design/ip_repo/AXI_AUDIO_1.0
 } [current_project]
-  set_property ip_output_repo /home/adosid/SoC_Design/vivado/soc_project.cache/ip [current_project]
+  set_property ip_output_repo /home/adadek/workspace/SoC_Design/vivado/soc_project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet /home/adosid/SoC_Design/vivado/soc_project.runs/synth_1/soc_project_wrapper.dcp
+  add_files -quiet /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/synth_1/soc_project_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/adosid/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd
+  add_files /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project.bd
   set_param project.isImplRun false
-  read_xdc /home/adosid/SoC_Design/IPs/zedboard_audio/constraints/zed_audio.xdc
+  read_xdc /home/adadek/workspace/SoC_Design/IPs/zedboard_audio/constraints/zed_audio.xdc
+  read_xdc /home/adadek/workspace/SoC_Design/IPs/OLED/oled_constraints.xdc
   set_param project.isImplRun true
   link_design -top soc_project_wrapper -part xc7z020clg484-1
   set_param project.isImplRun false

@@ -1,8 +1,8 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
---Date        : Tue May  8 18:20:30 2018
---Host        : lx24 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
+--Date        : Sun May 13 18:11:45 2018
+--Host        : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 --Command     : generate_target soc_project_wrapper.bd
 --Design      : soc_project_wrapper
 --Purpose     : IP block netlist
@@ -22,6 +22,7 @@ entity soc_project_wrapper is
     AC_MCLK : out STD_LOGIC;
     AC_SCK : out STD_LOGIC;
     AC_SDA : inout STD_LOGIC;
+    DC : out STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -42,7 +43,13 @@ entity soc_project_wrapper is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    RES : out STD_LOGIC;
+    SCLK : out STD_LOGIC;
+    SDIN : out STD_LOGIC;
+    VBAT : out STD_LOGIC;
+    VDD : out STD_LOGIC;
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 end soc_project_wrapper;
 
@@ -78,7 +85,14 @@ architecture STRUCTURE of soc_project_wrapper is
     AC_GPIO3 : in STD_LOGIC;
     AC_MCLK : out STD_LOGIC;
     AC_SCK : out STD_LOGIC;
-    AC_SDA : inout STD_LOGIC
+    AC_SDA : inout STD_LOGIC;
+    DC : out STD_LOGIC;
+    RES : out STD_LOGIC;
+    SCLK : out STD_LOGIC;
+    SDIN : out STD_LOGIC;
+    VBAT : out STD_LOGIC;
+    VDD : out STD_LOGIC;
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component soc_project;
 begin
@@ -93,6 +107,7 @@ soc_project_i: component soc_project
       AC_MCLK => AC_MCLK,
       AC_SCK => AC_SCK,
       AC_SDA => AC_SDA,
+      DC => DC,
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,
@@ -113,6 +128,12 @@ soc_project_i: component soc_project
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      RES => RES,
+      SCLK => SCLK,
+      SDIN => SDIN,
+      VBAT => VBAT,
+      VDD => VDD,
+      sws_8bits_tri_i(7 downto 0) => sws_8bits_tri_i(7 downto 0)
     );
 end STRUCTURE;

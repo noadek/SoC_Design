@@ -2,87 +2,92 @@
    ExpandedHierarchyInLayout: "",
    guistr: "# # String gsaved with Nlview 6.6.11  2017-06-12 bk=1.3860 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port AC_GPIO2 -pg 1 -y 1330 -defaultsOSRD
-preplace port DDR -pg 1 -y 980 -defaultsOSRD
-preplace port VBAT -pg 1 -y 1130 -defaultsOSRD
-preplace port AC_MCLK -pg 1 -y 1410 -defaultsOSRD
-preplace port AC_GPIO3 -pg 1 -y 1350 -defaultsOSRD
-preplace port AC_ADR0 -pg 1 -y 1270 -defaultsOSRD
-preplace port SCLK -pg 1 -y 1070 -defaultsOSRD
-preplace port AC_ADR1 -pg 1 -y 1290 -defaultsOSRD
-preplace port DC -pg 1 -y 1090 -defaultsOSRD
-preplace port AC_SCK -pg 1 -y 1430 -defaultsOSRD
-preplace port AC_SDA -pg 1 -y 1450 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 1000 -defaultsOSRD
-preplace port SDIN -pg 1 -y 1050 -defaultsOSRD
-preplace port VDD -pg 1 -y 1150 -defaultsOSRD
-preplace port RES -pg 1 -y 1110 -defaultsOSRD
-preplace port AC_GPIO0 -pg 1 -y 1310 -defaultsOSRD
-preplace port AC_GPIO1 -pg 1 -y 1310 -defaultsOSRD
-preplace inst mixer_0 -pg 1 -lvl 4 -y 900 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 4 -y 1400 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 1 -y 1070 -defaultsOSRD
-preplace inst FILTER_IIR_0 -pg 1 -lvl 5 -y 670 -defaultsOSRD
-preplace inst ZedboardOLED_0 -pg 1 -lvl 5 -y 1100 -defaultsOSRD
-preplace inst FILTER_IIR_1 -pg 1 -lvl 5 -y 450 -defaultsOSRD
-preplace inst Volume_Pregain_0 -pg 1 -lvl 5 -y 890 -defaultsOSRD
-preplace inst Volume_Pregain_1 -pg 1 -lvl 5 -y 240 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -y 560 -defaultsOSRD
-preplace inst AXI_AUDIO_0 -pg 1 -lvl 5 -y 70 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -y 840 -defaultsOSRD
-preplace inst zed_audio_0 -pg 1 -lvl 5 -y 1360 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 3 -y 1060 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 3 3 990J 990 NJ 990 2100J
-preplace netloc ps7_0_axi_periph_M02_AXI 1 4 1 1570
+preplace port AC_GPIO2 -pg 1 -y 1230 -defaultsOSRD
+preplace port DDR -pg 1 -y 1000 -defaultsOSRD
+preplace port VBAT -pg 1 -y 1410 -defaultsOSRD
+preplace port AC_MCLK -pg 1 -y 1210 -defaultsOSRD
+preplace port AC_GPIO3 -pg 1 -y 1250 -defaultsOSRD
+preplace port AC_ADR0 -pg 1 -y 1070 -defaultsOSRD
+preplace port SCLK -pg 1 -y 1350 -defaultsOSRD
+preplace port AC_ADR1 -pg 1 -y 1090 -defaultsOSRD
+preplace port sws_8bits -pg 1 -y 1530 -defaultsOSRD
+preplace port DC -pg 1 -y 1370 -defaultsOSRD
+preplace port AC_SCK -pg 1 -y 1230 -defaultsOSRD
+preplace port AC_SDA -pg 1 -y 1250 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 1020 -defaultsOSRD
+preplace port SDIN -pg 1 -y 1330 -defaultsOSRD
+preplace port VDD -pg 1 -y 1430 -defaultsOSRD
+preplace port RES -pg 1 -y 1390 -defaultsOSRD
+preplace port AC_GPIO0 -pg 1 -y 1110 -defaultsOSRD
+preplace port AC_GPIO1 -pg 1 -y 1210 -defaultsOSRD
+preplace inst mixer_0 -pg 1 -lvl 4 -y 680 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 4 -y 1110 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 5 -y 1530 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 1 -y 840 -defaultsOSRD
+preplace inst FILTER_IIR_0 -pg 1 -lvl 5 -y 660 -defaultsOSRD
+preplace inst ZedboardOLED_0 -pg 1 -lvl 5 -y 1380 -defaultsOSRD
+preplace inst FILTER_IIR_1 -pg 1 -lvl 5 -y 310 -defaultsOSRD
+preplace inst Volume_Pregain_0 -pg 1 -lvl 5 -y 880 -defaultsOSRD
+preplace inst Volume_Pregain_1 -pg 1 -lvl 5 -y 90 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -y 1400 -defaultsOSRD
+preplace inst AXI_AUDIO_0 -pg 1 -lvl 5 -y 490 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -y 1350 -defaultsOSRD
+preplace inst zed_audio_0 -pg 1 -lvl 5 -y 1160 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -y 1080 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 3 3 NJ 1000 NJ 1000 NJ
+preplace netloc ps7_0_axi_periph_M02_AXI 1 4 1 1610
 preplace netloc zed_audio_0_AC_ADR0 1 5 1 NJ
-preplace netloc ZedboardOLED_0_SDIN 1 5 1 N
-preplace netloc FILTER_IIR_1_AUDIO_OUT_L 1 3 3 1030 800 NJ 800 2080
-preplace netloc FILTER_IIR_0_AUDIO_OUT_L 1 3 3 1040 810 1620J 770 2020
-preplace netloc Volume_Pregain_1_OUT_VOLCTRL_L 1 4 2 1660 550 2070
-preplace netloc zed_audio_0_line_in_r 1 4 2 1680 1220 2020
-preplace netloc Volume_Pregain_0_OUT_VOLCTRL_R 1 4 2 1650 570 2060
-preplace netloc AC_GPIO2_1 1 0 5 NJ 1330 NJ 1330 NJ 1330 NJ 1330 NJ
+preplace netloc ZedboardOLED_0_SDIN 1 5 1 NJ
+preplace netloc FILTER_IIR_1_AUDIO_OUT_L 1 3 3 990 560 NJ 560 2080
+preplace netloc FILTER_IIR_0_AUDIO_OUT_L 1 3 3 1000 760 NJ 760 2080
+preplace netloc Volume_Pregain_1_OUT_VOLCTRL_L 1 4 2 1740 200 2110
+preplace netloc zed_audio_0_line_in_r 1 4 2 1750 990 2080
+preplace netloc Volume_Pregain_0_OUT_VOLCTRL_R 1 4 2 1710 1600 2100
+preplace netloc AC_GPIO2_1 1 0 5 20J 920 NJ 920 NJ 920 NJ 920 1620J
 preplace netloc zed_audio_0_AC_ADR1 1 5 1 NJ
 preplace netloc processing_system7_0_M_AXI_GP0 1 3 1 1010
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 3 560 720 980 330 1630
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 3 210 930 NJ 930 980
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 3 NJ 1390 1040 1050 1680
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 3 210 940 NJ 940 990
 preplace netloc zed_audio_0_AC_MCLK 1 5 1 NJ
-preplace netloc AC_GPIO1_1 1 0 5 NJ 1310 NJ 1310 NJ 1310 NJ 1310 NJ
-preplace netloc ps7_0_axi_periph_M03_AXI 1 4 1 1580
-preplace netloc ZedboardOLED_0_VBAT 1 5 1 N
-preplace netloc AXI_AUDIO_0_audio 1 4 2 1650 140 2070
+preplace netloc AC_GPIO1_1 1 0 5 NJ 1210 NJ 1210 NJ 1210 1020J 1060 1650J
+preplace netloc ps7_0_axi_periph_M03_AXI 1 4 1 1590
+preplace netloc ZedboardOLED_0_VBAT 1 5 1 NJ
+preplace netloc AXI_AUDIO_0_audio 1 4 2 1750 180 2090
 preplace netloc zed_audio_0_AC_GPIO0 1 5 1 NJ
-preplace netloc ps7_0_axi_periph_M01_AXI 1 4 1 1600
-preplace netloc ZedboardOLED_0_VDD 1 5 1 N
-preplace netloc AC_GPIO3_1 1 0 5 NJ 1350 NJ 1350 NJ 1350 NJ 1350 NJ
-preplace netloc xlconcat_0_dout 1 1 2 N 1070 NJ
-preplace netloc FILTER_IIR_1_AUDIO_OUT_R 1 3 3 1040 980 NJ 980 2090
-preplace netloc FILTER_IIR_0_AUDIO_OUT_R 1 3 3 1020 790 NJ 790 2030
-preplace netloc Volume_Pregain_1_OUT_VOLCTRL_R 1 4 2 1650 350 2060
-preplace netloc Volume_Pregain_0_OUT_RDY 1 4 2 1660 1200 2020
-preplace netloc xlconstant_0_dout 1 4 1 1630
-preplace netloc processing_system7_0_FIXED_IO 1 3 3 NJ 1000 NJ 1000 NJ
-preplace netloc ZedboardOLED_0_SCLK 1 5 1 N
-preplace netloc mixer_0_audio_mixed_a_b_left_out 1 4 1 1580
-preplace netloc Volume_Pregain_1_OUT_RDY 1 4 2 1640 340 2040
-preplace netloc zed_audio_0_line_in_l 1 4 2 1670 1210 2030
-preplace netloc Volume_Pregain_0_OUT_VOLCTRL_L 1 4 2 1640 560 2070
-preplace netloc ZedboardOLED_0_DC 1 5 1 N
-preplace netloc FILTER_IIR_1_FILTER_DONE 1 0 6 20 750 NJ 750 NJ 750 1040J 780 NJ 780 2040
-preplace netloc ps7_0_axi_periph_M05_AXI 1 4 1 1590
-preplace netloc ps7_0_axi_periph_M04_AXI 1 4 1 1590
+preplace netloc ps7_0_axi_periph_M01_AXI 1 4 1 1640
+preplace netloc ZedboardOLED_0_VDD 1 5 1 NJ
+preplace netloc AC_GPIO3_1 1 0 5 30J 1220 NJ 1220 NJ 1220 1000J 1160 1620J
+preplace netloc xlconcat_0_dout 1 1 2 NJ 840 570
+preplace netloc FILTER_IIR_1_AUDIO_OUT_R 1 3 3 1030 780 NJ 780 2100
+preplace netloc FILTER_IIR_0_AUDIO_OUT_R 1 3 3 1020 770 NJ 770 2070
+preplace netloc Volume_Pregain_1_OUT_VOLCTRL_R 1 4 2 1750 210 2100
+preplace netloc Volume_Pregain_0_OUT_RDY 1 4 2 1720 790 2070
+preplace netloc xlconstant_0_dout 1 4 1 1580
+preplace netloc ps7_0_axi_periph_M06_AXI 1 4 1 1590
+preplace netloc processing_system7_0_FIXED_IO 1 3 3 NJ 1020 NJ 1020 NJ
+preplace netloc ZedboardOLED_0_SCLK 1 5 1 NJ
+preplace netloc mixer_0_audio_mixed_a_b_left_out 1 4 1 1700
+preplace netloc Volume_Pregain_1_OUT_RDY 1 4 2 1730 190 2070
+preplace netloc zed_audio_0_line_in_l 1 4 2 1740 1010 2070
+preplace netloc Volume_Pregain_0_OUT_VOLCTRL_L 1 4 2 1730 980 2080
+preplace netloc axi_gpio_0_GPIO 1 5 1 NJ
+preplace netloc ZedboardOLED_0_DC 1 5 1 NJ
+preplace netloc FILTER_IIR_1_FILTER_DONE 1 0 6 30 410 NJ 410 NJ 410 NJ 410 NJ 410 2070
+preplace netloc ps7_0_axi_periph_M05_AXI 1 4 1 1700
+preplace netloc ps7_0_axi_periph_M04_AXI 1 4 1 1630
 preplace netloc Net 1 5 1 NJ
 preplace netloc zed_audio_0_AC_SCK 1 5 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 200 940 550 910 1000 340 1610
-preplace netloc ps7_0_axi_periph_M00_AXI 1 4 1 1620
-preplace netloc ZedboardOLED_0_RES 1 5 1 N
-preplace netloc FILTER_IIR_0_FILTER_DONE 1 0 6 10 310 NJ 310 NJ 310 NJ 310 1650J 330 2050
-preplace netloc mixer_0_audio_mixed_a_b_right_out 1 4 1 1570
-preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 2 2 550 440 NJ
-levelinfo -pg 1 -10 110 380 780 1310 1860 2120 -top 0 -bot 1500
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 220 1070 580 950 1030 950 1670
+preplace netloc ps7_0_axi_periph_M00_AXI 1 4 1 1600
+preplace netloc ZedboardOLED_0_RES 1 5 1 NJ
+preplace netloc FILTER_IIR_0_FILTER_DONE 1 0 6 30 930 NJ 930 NJ 930 NJ 930 1690J 970 2090
+preplace netloc mixer_0_audio_mixed_a_b_right_out 1 4 1 1660
+preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 2 2 580J 1260 N
+levelinfo -pg 1 0 120 400 790 1320 1910 2130 -top 0 -bot 1640
 ",
 }
 {
-   da_axi4_cnt: "6",
+   da_axi4_cnt: "7",
+   da_board_cnt: "1",
    da_ps7_cnt: "1",
 }

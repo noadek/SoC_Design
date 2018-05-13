@@ -104,3 +104,23 @@ save_bd_design
 validate_bd_design
 save_bd_design
 regenerate_bd_layout
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" intc_ip "/ps7_0_axi_periph" Clk_xbar "Auto" Clk_master "Auto" Clk_slave "Auto" }  [get_bd_intf_pins axi_gpio_0/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config {Board_Interface "sws_8bits ( DIP switches ) " }  [get_bd_intf_pins axi_gpio_0/GPIO]
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+validate_bd_design
+current_project project
+current_project soc_project
+save_bd_design
+validate_bd_design -force
+save_bd_design
+reset_run synth_1
+reset_run soc_project_processing_system7_0_0_synth_1
+reset_run soc_project_xbar_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1

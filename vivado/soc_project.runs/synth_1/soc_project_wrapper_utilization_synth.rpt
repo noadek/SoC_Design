@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
-| Date         : Tue May  8 18:21:50 2018
-| Host         : lx24 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
+| Date         : Sun May 13 18:22:30 2018
+| Host         : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 | Command      : report_utilization -file soc_project_wrapper_utilization_synth.rpt -pb soc_project_wrapper_utilization_synth.pb
 | Design       : soc_project_wrapper
 | Device       : 7z020clg484-1
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    8 |     0 |       200 |  4.00 |
+| Bonded IOB                  |   22 |     0 |       200 | 11.00 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         4 |  0.00 |
@@ -146,8 +146,8 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |    5 |                  IO |
-| IBUF     |    3 |                  IO |
+| OBUF     |   11 |                  IO |
+| IBUF     |   11 |                  IO |
 +----------+------+---------------------+
 
 
@@ -159,12 +159,19 @@ Table of Contents
 +------------------------------------+------+
 | soc_project_zed_audio_0_0          |    1 |
 | soc_project_xlconstant_0_1         |    1 |
+| soc_project_xlconcat_0_0           |    1 |
 | soc_project_xbar_0                 |    1 |
 | soc_project_rst_ps7_0_100M_0       |    1 |
 | soc_project_processing_system7_0_0 |    1 |
+| soc_project_mixer_0_0              |    1 |
+| soc_project_axi_gpio_0_0           |    1 |
 | soc_project_auto_pc_0              |    1 |
+| soc_project_ZedboardOLED_0_0       |    1 |
+| soc_project_Volume_Pregain_1_0     |    1 |
 | soc_project_Volume_Pregain_0_0     |    1 |
+| soc_project_FILTER_IIR_1_0         |    1 |
 | soc_project_FILTER_IIR_0_0         |    1 |
+| soc_project_AXI_AUDIO_0_0          |    1 |
 +------------------------------------+------+
 
 
