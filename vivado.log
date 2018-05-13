@@ -304,3 +304,16 @@ synth_1: /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/synth_1/runme
 [Sun May 13 18:12:38 2018] Launched impl_1...
 Run output will be captured here: /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/impl_1/runme.log
 launch_runs: Time (s): cpu = 00:00:32 ; elapsed = 00:00:57 . Memory (MB): peak = 7060.289 ; gain = 256.336 ; free physical = 8562 ; free virtual = 15380
+file copy -force /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file mkdir /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk
+file copy -force /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.

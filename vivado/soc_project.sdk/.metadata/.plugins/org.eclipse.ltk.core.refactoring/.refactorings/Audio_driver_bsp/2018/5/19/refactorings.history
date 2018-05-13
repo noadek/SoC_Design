@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Audio_driver_bsp/ps7_cortexa9_0/include/Audio_driver&apos; to &apos;Audio_driver.h&apos;" description="Rename resource &apos;Audio_driver&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ps7_cortexa9_0/include/Audio_driver" name="Audio_driver.h" stamp="1525793419454" updateReferences="true"/>
-</session>

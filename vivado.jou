@@ -124,3 +124,10 @@ reset_run soc_project_processing_system7_0_0_synth_1
 reset_run soc_project_xbar_0_synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
 wait_on_run impl_1
+file copy -force /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+file mkdir /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk
+file copy -force /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
+
+launch_sdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf

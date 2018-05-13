@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]/home/adadek/workspace/SoC_Design/sd-temp/FSBL.elf
+	/home/adadek/workspace/SoC_Design/sd-temp/soc_project_wrapper.bit
+	/home/adadek/workspace/SoC_Design/sd-temp/u-boot.elf
+}

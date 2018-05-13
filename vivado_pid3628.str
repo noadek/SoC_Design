@@ -13908,3 +13908,292 @@ selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports
 selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
 // Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
 dismissDialog("Bitstream Generation Completed"); // ah (cl)
+// [GUI Memory]: 209 MB (+2236kb) [04:55:27]
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconcat_0_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconcat_0_dout 
+// Elapsed time: 207 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ac (cl, Popup.HeavyWeightWindow)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// X (cl): Export Hardware: addNotify
+selectCheckBox(PAResourceItoN.NewExportHardwareDialog_INCLUDE_BITSTREAM, "Include bitstream", true); // g (N, X): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (X)
+// 'm' command handler elapsed time: 13 seconds
+selectButton("PAResourceItoN.NewExportHardwareDialog_EXPORTED_FILE_FOR_THIS_MODULE_WAS_Yes", "Yes"); // JButton (A, H)
+dismissDialog("Export Hardware"); // X (cl)
+// Tcl Message: file copy -force /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf  
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconcat_0_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconcat_0_dout 
+// Elapsed time: 23 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ac (cl, Popup.HeavyWeightWindow)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (cl): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+// 'o' command handler elapsed time: 5 seconds
+dismissDialog("Launch SDK"); // aa (cl)
+// Tcl Message: launch_sdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_interconnect_aresetn 
+// Elapsed time: 145 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ac (cl, Popup.HeavyWeightWindow)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// X (cl): Export Hardware: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (X)
+// 'm' command handler elapsed time: 4 seconds
+dismissDialog("Export Hardware"); // X (cl)
+// Tcl Message: file mkdir /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk 
+// Tcl Message: file copy -force /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/impl_1/soc_project_wrapper.sysdef /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf  
+// bs (cl):  Export Hardware : addNotify
+dismissDialog("Export Hardware"); // bs (cl)
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_RESET0_N 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_RESET0_N 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconcat_0_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconcat_0_dout 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ac (cl, Popup.HeavyWeightWindow)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (cl): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+// 'o' command handler elapsed time: 5 seconds
+dismissDialog("Launch SDK"); // aa (cl)
+// Tcl Message: launch_sdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_RESET0_N 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_RESET0_N 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// [GUI Memory]: 220 MB (+779kb) [05:07:48]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,988 MB. GUI used memory: 140 MB. Current time: 5/13/18 6:42:31 PM EEST
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /zed_audio_0_line_in_l 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /zed_audio_0_line_in_l 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /zed_audio_0_line_in_l 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /zed_audio_0_line_in_l 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_left_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_left_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_left_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_left_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_peripheral_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_peripheral_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_peripheral_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /rst_ps7_0_100M_peripheral_aresetn 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_0_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_0_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_0_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /xlconstant_0_dout 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ZedboardOLED_0_SCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ZedboardOLED_0_SCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ZedboardOLED_0_SCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ZedboardOLED_0_SCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ZedboardOLED_0_SCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ZedboardOLED_0_SCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /ZedboardOLED_0_SCLK 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_FILTER_DONE 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_FILTER_DONE 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_FILTER_DONE 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_FILTER_DONE 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_FILTER_DONE 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_FILTER_DONE 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO2_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_1_AUDIO_OUT_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /mixer_0_audio_mixed_a_b_right_out 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_VOLCTRL_R 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /zed_audio_0_line_in_l 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /zed_audio_0_line_in_l 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /Volume_Pregain_0_OUT_RDY 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /FILTER_IIR_0_AUDIO_OUT_L 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /processing_system7_0_FCLK_CLK0 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO1_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// CommandFailedException: ERROR: [BD 41-113] Interface Net not found: /AC_GPIO3_1 
+// Elapsed time: 1517 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // k (j, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,988 MB. GUI used memory: 137 MB. Current time: 5/13/18 7:12:31 PM EEST
