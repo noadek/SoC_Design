@@ -22,6 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../IPs/zedboard_audio"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../IPs/OLED/ZedBoard_OLED_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../IPs/Volume_Pregain_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../IPs/FILTER_IIR_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/AXI_AUDIO_1.0"/>
@@ -72,26 +73,26 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0.xci">
+          <Proxy FileSetName="soc_project_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_zed_audio_0_0/soc_project_zed_audio_0_0.xci">
           <Proxy FileSetName="soc_project_zed_audio_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_xbar_0/soc_project_xbar_0.xci">
-          <Proxy FileSetName="soc_project_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_Volume_Pregain_0_0/soc_project_Volume_Pregain_0_0.xci">
-          <Proxy FileSetName="soc_project_Volume_Pregain_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_rst_ps7_0_100M_0/soc_project_rst_ps7_0_100M_0.xci">
-          <Proxy FileSetName="soc_project_rst_ps7_0_100M_0"/>
+        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1.xci">
+          <Proxy FileSetName="soc_project_xlconstant_0_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_FILTER_IIR_0_0/soc_project_FILTER_IIR_0_0.xci">
           <Proxy FileSetName="soc_project_FILTER_IIR_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_processing_system7_0_0/soc_project_processing_system7_0_0.xci">
-          <Proxy FileSetName="soc_project_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_rst_ps7_0_100M_0/soc_project_rst_ps7_0_100M_0.xci">
+          <Proxy FileSetName="soc_project_rst_ps7_0_100M_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_xlconstant_0_1/soc_project_xlconstant_0_1.xci">
-          <Proxy FileSetName="soc_project_xlconstant_0_1"/>
+        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_Volume_Pregain_0_0/soc_project_Volume_Pregain_0_0.xci">
+          <Proxy FileSetName="soc_project_Volume_Pregain_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="soc_project.bd" FileRelPathName="ip/soc_project_xbar_0/soc_project_xbar_0.xci">
+          <Proxy FileSetName="soc_project_xbar_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/soc_project/hdl/soc_project_wrapper.vhd">
@@ -109,6 +110,12 @@
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
       <File Path="$PPRDIR/../IPs/zedboard_audio/constraints/zed_audio.xdc">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../IPs/OLED/oled_constraints.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

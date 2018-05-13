@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1525792834">
-  <File Type="PA-TCL" Name="soc_project_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="soc_project_wrapper_reports.tcl"/>
-  <File Type="RDS-RDS" Name="soc_project_wrapper.vds"/>
+  <File Type="PA-TCL" Name="soc_project_wrapper.tcl"/>
   <File Type="RDS-DCP" Name="soc_project_wrapper.dcp"/>
+  <File Type="RDS-RDS" Name="soc_project_wrapper.vds"/>
   <File Type="RDS-UTIL-PB" Name="soc_project_wrapper_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="soc_project_wrapper_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -43,11 +43,11 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="soc_project_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_project_xlconstant_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_Volume_Pregain_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_FILTER_IIR_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="soc_project_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_zed_audio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="soc_project_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="soc_project_xlconstant_0_1"/>
 </GenRun>
