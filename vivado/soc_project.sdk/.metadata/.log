@@ -4511,3 +4511,6 @@ java.lang.NullPointerException
 
 !ENTRY com.xilinx.sdk.utils 1 0 2018-05-13 18:51:34.286
 !MESSAGE Updating toolusage
+
+!ENTRY com.xilinx.sdk.utils 1 0 2018-05-14 01:59:48.204
+!MESSAGE Executed Webtalk command

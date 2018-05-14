@@ -317,3 +317,12 @@ launch_sdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -
 INFO: [Vivado 12-393] Launching SDK...
 INFO: [Vivado 12-417] Running xsdk -workspace /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk -hwspec /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_1
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_GPIO2_WIDTH {5} CONFIG.C_IS_DUAL {1} CONFIG.C_ALL_INPUTS_2 {1} CONFIG.GPIO2_BOARD_INTERFACE {btns_5bits} CONFIG.C_ALL_OUTPUTS_2 {0}] [get_bd_cells axi_gpio_0]
+endgroup
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May 14 02:00:07 2018...

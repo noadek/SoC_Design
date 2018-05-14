@@ -14,6 +14,8 @@
 #include "uiodriver.h"
 
 volatile int programError = 0;
+//get architecture specific page size
+unsigned pageSize;
 
 int main(int argc, char *argv[]){
 	printf("Ready to receive...\n");
@@ -94,13 +96,11 @@ void *receive_audio(void* fd)
  */
 void* get_virtual_address(const char* uio)
 {
-	//get architecture specific page size
-	unsigned pageSize = sysconf(_SC_PAGESIZE);
-	
+	pageSize = sysconf(_SC_PAGESIZE);
 	//open dev/uio#
 	int fd = open (uio, O_RDWR);
 	if (fd < 1) { 
-		perror(argv[0]); 
+		perror("Error opening uio"); 
 		programError = 1; 
 	}
 	
