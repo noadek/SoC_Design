@@ -40,37 +40,37 @@
 	    interrupt-parent = <&intc>;
 	    interrupts = < 0 29 1 >;
 	};
-	FILTER_IIR_0: FILTER_IIR@43C00000 {
+	FILTER_IIR_0: FILTER_IIR_0@43C00000 {
 	    compatible = "generic-uio";
 	    reg = < 0x43C00000 0x1000 >;
 	    interrupt-parent = <&intc>;
 	    interrupts = < 0 30 1 >;
 	};
-	FILTER_IIR_1: FILTER_IIR@43C40000 {
+	FILTER_IIR_1: FILTER_IIR_1@43C40000 {
 	    compatible = "generic-uio";
 	    reg = < 0x43C40000 0x1000 >;
 	    interrupt-parent = <&intc>;
 	    interrupts = < 0 31 1 >;
 	};
-	Volume_Pregain_0: Volume_Pregain@43C10000 {
+	Volume_Pregain_0: Volume_Pregain_0@43C10000 {
 	    compatible = "generic-uio";
 	    reg = < 0x43C10000 0x1000 >;
 	    interrupt-parent = <&intc>;
 	    interrupts = < 0 32 1 >;
 	};
-	Volume_Pregain_1: Volume_Pregain@43C30000 {
+	Volume_Pregain_1: Volume_Pregain_1@43C30000 {
 	    compatible = "generic-uio";
 	    reg = < 0x43C30000 0x1000 >;
 	    interrupt-parent = <&intc>;
 	    interrupts = < 0 33 1 >;
 	};
-	ZedboardOLED_0: ZedboardOLED@43C50000 {
+	ZedboardOLED_0: ZedboardOLED_0@43C50000 {
 	    compatible = "generic-uio";
 	    reg = <0x43C50000 0x1000>;
 	    interrupt-parent = <&intc>;
 	    interrupts = <0 34 1>;
 	};
-	axi_gpio_0: axi_gpio@41200000 {
+	axi_gpio_0: axi_gpio_0@41200000 {
 	    compatible = "xlnx,xps-gpio-1.00.a";
 	    reg = < 0x41200000 0x1000 >;
 	    gpio-controller;

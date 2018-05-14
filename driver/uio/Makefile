@@ -9,7 +9,7 @@ CC=$(CROSS_COMPILE)gcc
 all:
 	make -C ../../../linux/ M=$(PWD) modules
 # let's compile the userspace program
-	$(CC) -pthread -o mixer udpclient.c uiodriver.c
+	$(CC) uiodriver.c udpclient.c -o mixer -lpthread
  
 clean:
 	make -C ../../../linux/ M=$(PWD) clean
