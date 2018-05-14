@@ -4,7 +4,6 @@
 #define IP   				"10.255.255.255"
 #define PORT 				7891
 #define PACKET_SIZE        	512
-#define BYTES_RECEIVED 		1024
 
 #define UIO_AXI_AUDIO		"/dev/uio0"
 #define UIO_FILTER_LINE_IN	"/dev/uio1"
@@ -14,7 +13,7 @@
 #define UIO_OLED			"/dev/uio5"
 
 // AXI_AUDIO registers
-#define AUDIO_REGISTER 		*((int32_t *)(networkAudio + 0))
+#define AUDIO_REGISTER 			*((unsigned *)(networkAudio + 0))
 
 // Filter line in registers
 

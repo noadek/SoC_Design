@@ -61,27 +61,20 @@ int main(int argc, char *argv[]){
 		FILTER_NETWORK_REG_14 = FILTER_LINE_REG_14 = 0x0AFB0CCC;
 		
 		// reset and trigger filters
-		FILTER_LINE_RESET = 0;
-		FILTER_LINE_TRIGGER = 1;
-		
-		FILTER_NETWORK_RESET = 0;
-		FILTER_NETWORK_TRIGGER = 1;
+		FILTER_NETWORK_RESET = FILTER_LINE_RESET = 0;
+		FILTER_NETWORK_TRIGGER = FILTER_LINE_TRIGGER = 1;
 		
 		// set the default filters
-		FILTER_LINE_HIGH = 0;
-		FILTER_LINE_BAND = 0;
-		FILTER_LINE_LOW = 0;
-		
-		FILTER_NETWORK_HIGH = 0;
-		FILTER_NETWORK_BAND = 0;
-		FILTER_NETWORK_LOW = 0;
+		FILTER_NETWORK_HIGH = FILTER_LINE_HIGH = 0;
+		FILTER_NETWORK_BAND = FILTER_LINE_BAND = 0;
+		FILTER_NETWORK_LOW = FILTER_LINE_LOW = 0;
 		
 		// set default volume
 		VOLUME_LINE_1 = 256;
 		VOLUME_LINE_2 = 256;
 		
-		VOLUME_NETWORK_1 = 1024;
-		VOLUME_NETWORK_2 = 1024;
+		VOLUME_NETWORK_1 = 2048;
+		VOLUME_NETWORK_2 = 2048;
 		
 		// create data pipe
 		char* audioPipe = "/tmp/audiopipe";
@@ -151,7 +144,7 @@ void *receive_audio(void* fd)
     programError = udp_client_setup(IP, PORT);
     
     while (1) {
-		if (programError || udp_client_recv(buffer, BYTES_RECEIVED) == 1) {
+		if (programError || udp_client_recv(buffer, sizeof(buffer)) == 1) {
 			printf("Error occured while receiving.\n");
             break;
         }
