@@ -12,6 +12,16 @@
 #define UIO_VOLUME_NETWORK	"/dev/uio4"
 #define UIO_OLED			"/dev/uio5"
 
+#define VOLUME_UP			1
+#define VOLUME_DOWN			0
+
+// audio line
+#define LINE_IN				1
+#define	NETWORK				2
+
+#define LINE_OLED_PAGE		2
+#define NETWORK_OLED_PAGE	3
+
 // AXI_AUDIO registers
 #define AUDIO_REGISTER 			*((unsigned *)(networkAudio + 0))
 
@@ -77,6 +87,8 @@
 #define VOLUME_NETWORK_1   		*((unsigned *)(volumeNetwork + 0))
 #define VOLUME_NETWORK_2   		*((unsigned *)(volumeNetwork + 4))
 
+// OLED registers
+#define OLED_REG   				*((unsigned *)(oled + 0))
 
 /*
  * Macro for mapping physical address to a virtual address. 
@@ -96,5 +108,13 @@
  * to the FIFO pipe.
  */
 void* receive_audio(void*);
+
+void* receive_command();
+
+int setVolume(unsigned*, int, int);
+
+int setFilter(unsigned*);
+
+void print_status_oled();
 
 #endif

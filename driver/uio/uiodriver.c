@@ -11,6 +11,8 @@
 #include <errno.h>
 
 #include "udpclient.h"
+#include "ZedboardOLED.h"
+#include "keyboardinput.h" //to read getch data type from keyboard
 #include "uiodriver.h"
 
 volatile int programError = 0;
@@ -21,18 +23,19 @@ void *filterLineIn;
 void *filterNetwork;
 void *volumeLineIn;
 void *volumeNetwork;
+void *oled;
 int fd;
 
 int main(int argc, char *argv[]){
 	if (*argv[1] == 'p') {
         printf("::::START_USAGE::::\n");
         printf("FILTER EXAMPLE (high, band, low): %s f 1 0 0 \n", argv[0]);
-        printf("VOLUME EXAMPLE (left, right): %s v 4 -2 \n", argv[0]);
+        printf("VOLUME: Use 'q' and 'w' to control volume up ", argv[0]);
 		printf("Values should be multiples of 2.\n");
         printf("::::END_USAGE::::\n");
     }
     else {
-		printf("Ready to receive...\n");
+		printf("Audio mixer started\n\n");
 		
 		//get architecture specific page size
 		pageSize = sysconf(_SC_PAGESIZE);
@@ -43,6 +46,7 @@ int main(int argc, char *argv[]){
 		GET_VIRTUAL_ADDRESS(UIO_VOLUME_LINE_IN, volumeLineIn);
 		GET_VIRTUAL_ADDRESS(UIO_VOLUME_NETWORK, volumeNetwork);
 		GET_VIRTUAL_ADDRESS(UIO_AXI_AUDIO, networkAudio);
+		GET_VIRTUAL_ADDRESS(UIO_OLED, oled);
 		
 		FILTER_NETWORK_REG_0 = FILTER_LINE_REG_0 = 0x00002CB6;
 		FILTER_NETWORK_REG_1 = FILTER_LINE_REG_1 = 0x0000596C;
@@ -76,6 +80,9 @@ int main(int argc, char *argv[]){
 		VOLUME_NETWORK_1 = 2048;
 		VOLUME_NETWORK_2 = 2048;
 		
+		// print message on OLED
+		print_status_oled();
+		
 		// create data pipe
 		char* audioPipe = "/tmp/audiopipe";
 		int ret = mkfifo(audioPipe, 0666);
@@ -92,6 +99,14 @@ int main(int argc, char *argv[]){
 		pthread_t receiverThread;
 		int err1 = pthread_create( &receiverThread, NULL, receive_audio, (void*) &writeFd);
 		if (err1) {
+			printf("Error - pthread_create() return code: %d\n", err1);
+			return -1;
+		}
+		
+		// Create keyboard thread
+		pthread_t keyboardThread;
+		int err2 = pthread_create( &keyboardThread, NULL, receive_command, NULL);
+		if (err2) {
 			printf("Error - pthread_create() return code: %d\n", err1);
 			return -1;
 		}
@@ -114,6 +129,7 @@ int main(int argc, char *argv[]){
 		
 		// Wait till threads complete before main exits.
 		pthread_join(receiverThread, NULL);
+		pthread_join(keyboardThread, NULL);
 		
 		// remove the FIFO
 		unlink(audioPipe);
@@ -125,6 +141,7 @@ int main(int argc, char *argv[]){
 		munmap(volumeLineIn, pageSize);
 		munmap(volumeNetwork, pageSize);
 		munmap(networkAudio, pageSize);
+		munmap(oled, pageSize);
 		
 		printf("Closed!\n");
 	}
@@ -153,4 +170,152 @@ void *receive_audio(void* fd)
     }
     close(writeFd);
     pthread_exit(NULL);
+}
+
+/*
+ * Receives commands from keyboard
+ */
+void* receive_command()
+{
+	char key;
+	while(1) {
+		key = getch();
+		switch(key) {
+			// line in controls
+			case 'w':
+				// line in volume up for left side
+				setVolume(&VOLUME_LINE_1, VOLUME_UP, LINE_IN);
+				break;
+			case 'q':
+				// line in volume down for right side
+				setVolume(&VOLUME_LINE_1, VOLUME_DOWN, LINE_IN);
+				break;
+			case 'r':
+				// line network volume up for left
+				setVolume(&VOLUME_LINE_2, VOLUME_UP, LINE_IN);
+				break;
+			case 'e':
+				// line network volume up for left
+				setVolume(&VOLUME_LINE_2, VOLUME_DOWN, LINE_IN);
+				break;
+			case 't':
+				setFilter(&FILTER_LINE_HIGH);
+				print_status_oled();
+				break;
+			case 'y':
+				setFilter(&FILTER_LINE_BAND);
+				print_status_oled();
+				break;
+			case 'u':
+				setFilter(&FILTER_LINE_LOW);
+				print_status_oled();
+				break;
+				
+			// network controls
+			case 's':
+				// line in volume up for left side
+				setVolume(&VOLUME_NETWORK_1, VOLUME_UP, NETWORK);
+				break;
+			case 'a':
+				// line in volume down for right side
+				setVolume(&VOLUME_NETWORK_1, VOLUME_DOWN, NETWORK);
+				break;
+			case 'f':
+				// line network volume up for left
+				setVolume(&VOLUME_NETWORK_2, VOLUME_UP, NETWORK);
+				break;
+			case 'd':
+				// line network volume up for left
+				setVolume(&VOLUME_NETWORK_2, VOLUME_DOWN, NETWORK);
+				break;
+			case 'g':
+				setFilter(&FILTER_NETWORK_HIGH);
+				print_status_oled();
+				break;
+			case 'h':
+				setFilter(&FILTER_NETWORK_BAND);
+				print_status_oled();
+				break;
+			case 'j':
+				setFilter(&FILTER_NETWORK_LOW);
+				print_status_oled();
+				break;
+			default:
+				printf("Unknown command\n");
+		}
+	}
+}
+
+/*
+ * Sets the volume
+ * direction: VOLUME_UP(1) -up, VOLUME_DOWN(0) -down
+ */
+int setVolume(unsigned *volume, int direction, int audioLine)
+{
+	const int MAX = 14;
+	int lineInRange[] = {0, 16, 32, 64, 128, 256, 512, 1024, \
+		1536, 2048, 2560, 3072, 3584, 4096};
+	int networkRange[] = {1536, 2048, 2560, 3072, 3584, 4096, 4352,\
+		4608, 4864, 5376, 5632, 5888, 6144, 6400};
+		
+	int* volumeRange;
+	volumeRange = (audioLine == LINE_IN) ? lineInRange : networkRange;
+	
+	// check index of current volume
+	int index;
+	for (int i=0; i < MAX; i++) {
+		if (*volume == volumeRange[i]) {
+			index = i;
+		}
+	}
+	// increase or decrease volume
+	if (direction == VOLUME_UP) {
+		// check if max volume is reached
+		if (index == MAX-1) {
+			printf("Maximum volume reached.\n");
+			return 0;
+		}
+	
+		// set volume to next in line
+		*volume = volumeRange[++index];
+	} else { // VOLUME_DOWN
+		// check if lowest volume is reached
+		if (index == 0) {
+			printf("Muted!\n");
+			return 0;
+		}
+		// set volume to next in line
+		*volume = volumeRange[--index];
+	}	
+	
+	return 0;
+}
+
+/*
+ * Toggle filters
+ */
+int setFilter(unsigned *filter)
+{
+	*filter = !*filter;
+}
+
+/*
+ * prints the filter status on the OLED screen
+ */
+void print_status_oled()
+{
+	oled_clear(oled);
+	if (!oled_print_message("AUDIO MIXER", 0, oled)){
+		perror("Error: Failed to write in the OLED\n");
+	}
+	
+	char lineBuffer[16];
+	sprintf(lineBuffer, "Line H%d B%d L%d", 
+		FILTER_LINE_HIGH, FILTER_LINE_BAND, FILTER_LINE_LOW);
+	oled_print_message(lineBuffer, LINE_OLED_PAGE, oled);
+		
+	char networkBuffer[16];
+	sprintf(networkBuffer, "Network H%d B%d L%d", 
+		FILTER_NETWORK_HIGH, FILTER_NETWORK_BAND, FILTER_NETWORK_LOW);
+	oled_print_message(networkBuffer, NETWORK_OLED_PAGE, oled);
 }
