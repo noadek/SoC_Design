@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
---Date        : Sun May 13 18:11:45 2018
+--Date        : Tue May 15 15:16:35 2018
 --Host        : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 --Command     : generate_target soc_project_wrapper.bd
 --Design      : soc_project_wrapper
@@ -49,6 +49,7 @@ entity soc_project_wrapper is
     SDIN : out STD_LOGIC;
     VBAT : out STD_LOGIC;
     VDD : out STD_LOGIC;
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 end soc_project_wrapper;
@@ -77,6 +78,7 @@ architecture STRUCTURE of soc_project_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     AC_ADR0 : out STD_LOGIC;
     AC_ADR1 : out STD_LOGIC;
     AC_GPIO0 : out STD_LOGIC;
@@ -92,7 +94,7 @@ architecture STRUCTURE of soc_project_wrapper is
     SDIN : out STD_LOGIC;
     VBAT : out STD_LOGIC;
     VDD : out STD_LOGIC;
-    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component soc_project;
 begin
@@ -134,6 +136,7 @@ soc_project_i: component soc_project
       SDIN => SDIN,
       VBAT => VBAT,
       VDD => VDD,
+      leds_8bits_tri_o(7 downto 0) => leds_8bits_tri_o(7 downto 0),
       sws_8bits_tri_i(7 downto 0) => sws_8bits_tri_i(7 downto 0)
     );
 end STRUCTURE;

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
-| Date         : Sun May 13 18:25:41 2018
+| Date         : Tue May 15 15:23:48 2018
 | Host         : lx25 running 64-bit SUSE Linux Enterprise Desktop 12 SP2
 | Command      : report_timing_summary -file soc_project_wrapper_timing_summary_routed.rpt -warn_on_violation -rpx soc_project_wrapper_timing_summary_routed.rpx
 | Design       : soc_project_wrapper
@@ -103,7 +103,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 10 ports with no output delay specified. (HIGH)
+ There are 18 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -148,7 +148,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     -4.840    -1713.279                   1420                36848        0.052        0.000                      0                36848        3.000        0.000                       0                 13970  
+     -4.758     -489.332                    397                37017        0.053        0.000                      0                37017        3.000        0.000                       0                 14040  
 
 
 Timing constraints are not met.
@@ -173,9 +173,9 @@ clk_fpga_0           {0.000 5.000}      10.000          100.000
 
 Clock                    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----                    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-clk_fpga_0                -3.148    -1353.370                   1323                35922        0.052        0.000                      0                35922        3.000        0.000                       0                 13730  
+clk_fpga_0                -1.330     -140.537                    300                36091        0.053        0.000                      0                36091        3.000        0.000                       0                 13800  
   clk_feedback                                                                                                                                                        48.751        0.000                       0                     2  
-  zed_audio_clk_48M       12.525        0.000                      0                  469        0.078        0.000                      0                  469        9.437        0.000                       0                   238  
+  zed_audio_clk_48M       13.487        0.000                      0                  469        0.153        0.000                      0                  469        9.437        0.000                       0                   238  
 
 
 ------------------------------------------------------------------------------------------------
@@ -185,8 +185,8 @@ clk_fpga_0                -3.148    -1353.370                   1323            
 
 From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
 ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
-zed_audio_clk_48M  clk_fpga_0              -4.804     -224.432                     49                   49        0.558        0.000                      0                   49  
-clk_fpga_0         zed_audio_clk_48M       -4.840     -135.477                     48                   48        0.066        0.000                      0                   48  
+zed_audio_clk_48M  clk_fpga_0              -4.758     -226.296                     49                   49        0.565        0.000                      0                   49  
+clk_fpga_0         zed_audio_clk_48M       -3.748     -122.499                     48                   48        0.117        0.000                      0                   48  
 
 
 ------------------------------------------------------------------------------------------------
@@ -196,7 +196,7 @@ clk_fpga_0         zed_audio_clk_48M       -4.840     -135.477                  
 
 Path Group         From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
 ----------         ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
-**async_default**  clk_fpga_0         clk_fpga_0               5.196        0.000                      0                  408        0.533        0.000                      0                  408  
+**async_default**  clk_fpga_0         clk_fpga_0               5.617        0.000                      0                  408        0.290        0.000                      0                  408  
 
 
 ------------------------------------------------------------------------------------------------
@@ -209,28 +209,28 @@ Path Group         From Clock         To Clock               WNS(ns)      TNS(ns
 From Clock:  clk_fpga_0
   To Clock:  clk_fpga_0
 
-Setup :         1323  Failing Endpoints,  Worst Slack       -3.148ns,  Total Violation    -1353.370ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.052ns,  Total Violation        0.000ns
+Setup :          300  Failing Endpoints,  Worst Slack       -1.330ns,  Total Violation     -140.537ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.053ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (VIOLATED) :        -3.148ns  (required time - arrival time)
-  Source:                 soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/slv_reg15_reg[0]/C
+Slack (VIOLATED) :        -1.330ns  (required time - arrival time)
+  Source:                 soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/slv_reg15_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/ZFF_X0_reg[8]/R
+  Destination:            soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/ZFF_Y1_reg[19]/R
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        12.483ns  (logic 0.456ns (3.653%)  route 12.027ns (96.347%))
+  Data Path Delay:        10.693ns  (logic 0.456ns (4.264%)  route 10.237ns (95.736%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.082ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.734ns = ( 12.734 - 10.000 ) 
-    Source Clock Delay      (SCD):    2.931ns
-    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Path Skew:        -0.053ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.722ns = ( 12.722 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.004ns
+    Clock Pessimism Removal (CPR):    0.229ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.300ns
@@ -244,12 +244,12 @@ Slack (VIOLATED) :        -3.148ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.193     1.193    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.637     2.931    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/s00_axi_aclk
-    SLICE_X53Y60         FDRE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/slv_reg15_reg[0]/C
+                         net (fo=13800, routed)       1.710     3.004    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/s00_axi_aclk
+    SLICE_X64Y64         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/slv_reg15_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X53Y60         FDRE (Prop_fdre_C_Q)         0.456     3.387 r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/slv_reg15_reg[0]/Q
-                         net (fo=1819, routed)       12.027    15.414    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/slv_reg15_reg[0][0]
-    SLICE_X64Y10         FDRE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/ZFF_X0_reg[8]/R
+    SLICE_X64Y64         FDRE (Prop_fdre_C_Q)         0.456     3.460 r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/slv_reg15_reg[0]/Q
+                         net (fo=1819, routed)       10.237    13.697    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/slv_reg15_reg[0][0]
+    SLICE_X80Y59         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/ZFF_Y1_reg[19]/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -257,16 +257,16 @@ Slack (VIOLATED) :        -3.148ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.088    11.088    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.555    12.734    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/s00_axi_aclk
-    SLICE_X64Y10         FDRE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/ZFF_X0_reg[8]/C
-                         clock pessimism              0.115    12.849    
-                         clock uncertainty           -0.154    12.695    
-    SLICE_X64Y10         FDRE (Setup_fdre_C_R)       -0.429    12.266    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/ZFF_X0_reg[8]
+                         net (fo=13800, routed)       1.543    12.722    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/s00_axi_aclk
+    SLICE_X80Y59         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/ZFF_Y1_reg[19]/C
+                         clock pessimism              0.229    12.951    
+                         clock uncertainty           -0.154    12.797    
+    SLICE_X80Y59         FDRE (Setup_fdre_C_R)       -0.429    12.368    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/ZFF_Y1_reg[19]
   -------------------------------------------------------------------
-                         required time                         12.266    
-                         arrival time                         -15.414    
+                         required time                         12.368    
+                         arrival time                         -13.697    
   -------------------------------------------------------------------
-                         slack                                 -3.148    
+                         slack                                 -1.330    
 
 
 
@@ -274,20 +274,20 @@ Slack (VIOLATED) :        -3.148ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.052ns  (arrival time - required time)
-  Source:                 soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.RES_reg[58]/C
-                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/pgZFF_X1_quad_reg[58]/D
+Slack (MET) :             0.053ns  (arrival time - required time)
+  Source:                 soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/Y_out_double_reg[31]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/ZFF_Y1_reg[31]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.379ns  (logic 0.141ns (37.189%)  route 0.238ns (62.811%))
+  Data Path Delay:        0.379ns  (logic 0.141ns (37.188%)  route 0.238ns (62.812%))
   Logic Levels:           0  
-  Clock Path Skew:        0.256ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.182ns
-    Source Clock Delay      (SCD):    0.891ns
-    Clock Pessimism Removal (CPR):    0.035ns
+  Clock Path Skew:        0.263ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.191ns
+    Source Clock Delay      (SCD):    0.898ns
+    Clock Pessimism Removal (CPR):    0.030ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -296,12 +296,12 @@ Slack (MET) :             0.052ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.555     0.891    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/s00_axi_aclk
-    SLICE_X47Y31         FDCE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.RES_reg[58]/C
+                         net (fo=13800, routed)       0.562     0.898    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/s00_axi_aclk
+    SLICE_X49Y47         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/Y_out_double_reg[31]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X47Y31         FDCE (Prop_fdce_C_Q)         0.141     1.032 r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.RES_reg[58]/Q
-                         net (fo=5, routed)           0.238     1.270    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul_result[58]
-    SLICE_X53Y31         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/pgZFF_X1_quad_reg[58]/D
+    SLICE_X49Y47         FDRE (Prop_fdre_C_Q)         0.141     1.039 r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/Y_out_double_reg[31]/Q
+                         net (fo=1, routed)           0.238     1.277    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/Y_out_double[31]
+    SLICE_X46Y51         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/ZFF_Y1_reg[31]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -309,15 +309,15 @@ Slack (MET) :             0.052ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.816     1.182    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/s00_axi_aclk
-    SLICE_X53Y31         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/pgZFF_X1_quad_reg[58]/C
-                         clock pessimism             -0.035     1.147    
-    SLICE_X53Y31         FDRE (Hold_fdre_C_D)         0.071     1.218    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/pgZFF_X1_quad_reg[58]
+                         net (fo=13800, routed)       0.825     1.191    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/s00_axi_aclk
+    SLICE_X46Y51         FDRE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/ZFF_Y1_reg[31]/C
+                         clock pessimism             -0.030     1.161    
+    SLICE_X46Y51         FDRE (Hold_fdre_C_D)         0.063     1.224    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/ZFF_Y1_reg[31]
   -------------------------------------------------------------------
-                         required time                         -1.218    
-                         arrival time                           1.270    
+                         required time                         -1.224    
+                         arrival time                           1.277    
   -------------------------------------------------------------------
-                         slack                                  0.052    
+                         slack                                  0.053    
 
 
 
@@ -331,7 +331,7 @@ Period(ns):         10.000
 Sources:            { soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB18_X2Y4      soc_project_i/ZedboardOLED_0/inst/ZedboardOLED_v1_0_S00_AXI_inst/CHAR_LIB_COMP/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB18_X2Y14     soc_project_i/ZedboardOLED_0/inst/ZedboardOLED_v1_0_S00_AXI_inst/CHAR_LIB_COMP/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/CLKARDCLK
 Max Period        n/a     MMCME2_ADV/CLKIN1   n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKIN1
 Low Pulse Width   Slow    MMCME2_ADV/CLKIN1   n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKIN1
 High Pulse Width  Slow    MMCME2_ADV/CLKIN1   n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKIN1
@@ -365,27 +365,27 @@ Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       50.000    
 From Clock:  zed_audio_clk_48M
   To Clock:  zed_audio_clk_48M
 
-Setup :            0  Failing Endpoints,  Worst Slack       12.525ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.078ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       13.487ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.153ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        9.437ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             12.525ns  (required time - arrival time)
+Slack (MET) :             13.487ns  (required time - arrival time)
   Source:                 soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/CLKARDCLK
                             (rising edge-triggered cell RAMB18E1 clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
-  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[4]/CE
+  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[6]/CE
                             (rising edge-triggered cell FDRE clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
   Path Group:             zed_audio_clk_48M
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.833ns  (zed_audio_clk_48M rise@20.833ns - zed_audio_clk_48M rise@0.000ns)
-  Data Path Delay:        7.911ns  (logic 3.078ns (38.910%)  route 4.833ns (61.090%))
+  Data Path Delay:        6.950ns  (logic 3.056ns (43.974%)  route 3.894ns (56.026%))
   Logic Levels:           3  (LUT5=1 LUT6=2)
-  Clock Path Skew:        -0.027ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    6.343ns = ( 27.176 - 20.833 ) 
-    Source Clock Delay      (SCD):    6.972ns
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    6.340ns = ( 27.173 - 20.833 ) 
+    Source Clock Delay      (SCD):    6.968ns
     Clock Pessimism Removal (CPR):    0.602ns
   Clock Uncertainty:      0.165ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -399,24 +399,24 @@ Slack (MET) :             12.525ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.193     1.193    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.806     3.100    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=13800, routed)       1.806     3.100    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                       0.088     3.188 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.889     5.077    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     5.178 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         1.794     6.972    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/CLK_48
-    RAMB18_X0Y2          RAMB18E1                                     r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/CLKARDCLK
+                         net (fo=236, routed)         1.790     6.968    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/CLK_48
+    RAMB18_X0Y4          RAMB18E1                                     r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB18_X0Y2          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[1])
-                                                      2.454     9.426 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/DOADO[1]
-                         net (fo=28, routed)          2.473    11.899    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/DOADO[1]
-    SLICE_X2Y7           LUT5 (Prop_lut5_I3_O)        0.152    12.051 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/state[3]_i_10/O
-                         net (fo=2, routed)           0.652    12.704    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/state[3]_i_10_n_0
-    SLICE_X1Y8           LUT6 (Prop_lut6_I5_O)        0.348    13.052 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/bitcount[7]_i_4/O
-                         net (fo=1, routed)           1.009    14.061    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/skip_reg_3
-    SLICE_X1Y9           LUT6 (Prop_lut6_I1_O)        0.124    14.185 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount[7]_i_1/O
-                         net (fo=8, routed)           0.698    14.883    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount[7]_i_1_n_0
-    SLICE_X1Y12          FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[4]/CE
+    RAMB18_X0Y4          RAMB18E1 (Prop_ramb18e1_CLKARDCLK_DOADO[3])
+                                                      2.454     9.422 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/DOADO[3]
+                         net (fo=28, routed)          1.306    10.728    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/DOADO[3]
+    SLICE_X6Y12          LUT5 (Prop_lut5_I1_O)        0.150    10.878 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/state[3]_i_10/O
+                         net (fo=2, routed)           0.878    11.756    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/state[3]_i_10_n_0
+    SLICE_X6Y13          LUT6 (Prop_lut6_I5_O)        0.328    12.084 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/bitcount[7]_i_4/O
+                         net (fo=1, routed)           0.810    12.894    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/skip_reg_3
+    SLICE_X6Y14          LUT6 (Prop_lut6_I1_O)        0.124    13.018 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount[7]_i_1/O
+                         net (fo=8, routed)           0.900    13.918    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount[7]_i_1_n_0
+    SLICE_X5Y15          FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[6]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock zed_audio_clk_48M rise edge)
@@ -424,21 +424,21 @@ Slack (MET) :             12.525ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.833 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.088    21.921    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    22.012 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.612    23.625    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=13800, routed)       1.612    23.625    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                       0.083    23.708 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.725    25.433    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    25.524 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         1.652    27.176    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/CLK_48
-    SLICE_X1Y12          FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[4]/C
-                         clock pessimism              0.602    27.778    
-                         clock uncertainty           -0.165    27.613    
-    SLICE_X1Y12          FDRE (Setup_fdre_C_CE)      -0.205    27.408    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[4]
+                         net (fo=236, routed)         1.649    27.173    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/CLK_48
+    SLICE_X5Y15          FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[6]/C
+                         clock pessimism              0.602    27.775    
+                         clock uncertainty           -0.165    27.610    
+    SLICE_X5Y15          FDRE (Setup_fdre_C_CE)      -0.205    27.405    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_i3c2/bitcount_reg[6]
   -------------------------------------------------------------------
-                         required time                         27.408    
-                         arrival time                         -14.883    
+                         required time                         27.405    
+                         arrival time                         -13.918    
   -------------------------------------------------------------------
-                         slack                                 12.525    
+                         slack                                 13.487    
 
 
 
@@ -446,20 +446,20 @@ Slack (MET) :             12.525ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.078ns  (arrival time - required time)
-  Source:                 soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[7]/C
-                            (rising edge-triggered cell FDRE clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
-  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[2]_srl5/D
-                            (rising edge-triggered cell SRL16E clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
+Slack (MET) :             0.153ns  (arrival time - required time)
+  Source:                 soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg_cooolgate_en_gate_1_cooolDelFlop/C
+                            (rising edge-triggered cell FDCE clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
+  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/ENARDEN
+                            (rising edge-triggered cell RAMB18E1 clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
   Path Group:             zed_audio_clk_48M
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (zed_audio_clk_48M rise@0.000ns - zed_audio_clk_48M rise@0.000ns)
-  Data Path Delay:        0.208ns  (logic 0.141ns (67.788%)  route 0.067ns (32.212%))
+  Data Path Delay:        0.325ns  (logic 0.164ns (50.395%)  route 0.161ns (49.605%))
   Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.737ns
-    Source Clock Delay      (SCD):    2.118ns
-    Clock Pessimism Removal (CPR):    0.606ns
+  Clock Path Skew:        0.076ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.788ns
+    Source Clock Delay      (SCD):    2.128ns
+    Clock Pessimism Removal (CPR):    0.584ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -468,17 +468,17 @@ Slack (MET) :             0.078ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.597     0.933    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=13800, routed)       0.597     0.933    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                       0.050     0.983 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.529     1.511    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.537 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         0.581     2.118    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
-    SLICE_X55Y48         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[7]/C
+                         net (fo=236, routed)         0.591     2.128    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/CLK_48
+    SLICE_X10Y12         FDCE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg_cooolgate_en_gate_1_cooolDelFlop/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X55Y48         FDRE (Prop_fdre_C_Q)         0.141     2.259 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[7]/Q
-                         net (fo=2, routed)           0.067     2.326    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/p_0_in[0]
-    SLICE_X54Y48         SRL16E                                       r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[2]_srl5/D
+    SLICE_X10Y12         FDCE (Prop_fdce_C_Q)         0.164     2.292 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg_cooolgate_en_gate_1_cooolDelFlop/Q
+                         net (fo=1, routed)           0.161     2.453    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg_cooolgate_en_sig_1
+    RAMB18_X0Y4          RAMB18E1                                     r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/ENARDEN
   -------------------------------------------------------------------    -------------------
 
                          (clock zed_audio_clk_48M rise edge)
@@ -486,21 +486,21 @@ Slack (MET) :             0.078ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.864     1.230    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=13800, routed)       0.864     1.230    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                       0.053     1.283 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.576     1.859    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.888 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         0.849     2.737    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
-    SLICE_X54Y48         SRL16E                                       r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[2]_srl5/CLK
-                         clock pessimism             -0.606     2.131    
-    SLICE_X54Y48         SRL16E (Hold_srl16e_CLK_D)
-                                                      0.117     2.248    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[2]_srl5
+                         net (fo=236, routed)         0.900     2.788    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/CLK_48
+    RAMB18_X0Y4          RAMB18E1                                     r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/CLKARDCLK
+                         clock pessimism             -0.584     2.204    
+    RAMB18_X0Y4          RAMB18E1 (Hold_ramb18e1_CLKARDCLK_ENARDEN)
+                                                      0.096     2.300    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg
   -------------------------------------------------------------------
-                         required time                         -2.248    
-                         arrival time                           2.326    
+                         required time                         -2.300    
+                         arrival time                           2.453    
   -------------------------------------------------------------------
-                         slack                                  0.078    
+                         slack                                  0.153    
 
 
 
@@ -514,10 +514,10 @@ Period(ns):         20.833
 Sources:            { soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0 }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.576         20.833      18.257     RAMB18_X0Y2      soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.576         20.833      18.257     RAMB18_X0Y4      soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg/CLKARDCLK
 Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       20.833      192.527    MMCME2_ADV_X1Y0  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
-Low Pulse Width   Fast    SRL16E/CLK          n/a            0.980         10.417      9.437      SLICE_X62Y92     soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_reg[102]_srl8/CLK
-High Pulse Width  Fast    SRL16E/CLK          n/a            0.980         10.417      9.437      SLICE_X54Y48     soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[2]_srl5/CLK
+Low Pulse Width   Slow    SRLC32E/CLK         n/a            0.980         10.417      9.437      SLICE_X30Y117    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_in_reg[31]_srl32/CLK
+High Pulse Width  Slow    SRL16E/CLK          n/a            0.980         10.417      9.437      SLICE_X34Y85     soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/bclk_delay_reg[2]_srl5/CLK
 
 
 
@@ -525,26 +525,26 @@ High Pulse Width  Fast    SRL16E/CLK          n/a            0.980         10.41
 From Clock:  zed_audio_clk_48M
   To Clock:  clk_fpga_0
 
-Setup :           49  Failing Endpoints,  Worst Slack       -4.804ns,  Total Violation     -224.432ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.558ns,  Total Violation        0.000ns
+Setup :           49  Failing Endpoints,  Worst Slack       -4.758ns,  Total Violation     -226.296ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.565ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (VIOLATED) :        -4.804ns  (required time - arrival time)
-  Source:                 soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_reg[14]/C
+Slack (VIOLATED) :        -4.758ns  (required time - arrival time)
+  Source:                 soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
-  Destination:            soc_project_i/zed_audio_0/U0/line_in_r_reg[14]/D
+  Destination:            soc_project_i/zed_audio_0/U0/line_in_l_reg[3]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            0.833ns  (clk_fpga_0 rise@230.000ns - zed_audio_clk_48M rise@229.167ns)
-  Data Path Delay:        0.976ns  (logic 0.456ns (46.708%)  route 0.520ns (53.292%))
+  Data Path Delay:        0.904ns  (logic 0.456ns (50.423%)  route 0.448ns (49.577%))
   Logic Levels:           0  
-  Clock Path Skew:        -4.060ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.719ns = ( 232.719 - 230.000 ) 
-    Source Clock Delay      (SCD):    6.894ns = ( 236.061 - 229.167 ) 
+  Clock Path Skew:        -4.075ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.821ns = ( 232.821 - 230.000 ) 
+    Source Clock Delay      (SCD):    7.011ns = ( 236.178 - 229.167 ) 
     Clock Pessimism Removal (CPR):    0.115ns
   Clock Uncertainty:      0.520ns  ((TSJ^2 + TIJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -559,17 +559,17 @@ Slack (VIOLATED) :        -4.804ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000   229.167 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.193   230.360    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101   230.461 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.806   232.267    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=13800, routed)       1.806   232.267    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                       0.088   232.355 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.889   234.244    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101   234.345 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         1.716   236.061    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
-    SLICE_X63Y92         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_reg[14]/C
+                         net (fo=236, routed)         1.833   236.178    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
+    SLICE_X40Y120        FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X63Y92         FDRE (Prop_fdre_C_Q)         0.456   236.517 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_reg[14]/Q
-                         net (fo=1, routed)           0.520   237.037    soc_project_i/zed_audio_0/U0/audio_r_out[14]
-    SLICE_X63Y93         FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_r_reg[14]/D
+    SLICE_X40Y120        FDRE (Prop_fdre_C_Q)         0.456   236.634 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_reg[3]/Q
+                         net (fo=1, routed)           0.448   237.082    soc_project_i/zed_audio_0/U0/audio_l_out[3]
+    SLICE_X39Y120        FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_l_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -577,16 +577,16 @@ Slack (VIOLATED) :        -4.804ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000   230.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.088   231.088    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   231.179 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.540   232.719    soc_project_i/zed_audio_0/U0/clk_100
-    SLICE_X63Y93         FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_r_reg[14]/C
-                         clock pessimism              0.115   232.834    
-                         clock uncertainty           -0.520   232.314    
-    SLICE_X63Y93         FDRE (Setup_fdre_C_D)       -0.081   232.233    soc_project_i/zed_audio_0/U0/line_in_r_reg[14]
+                         net (fo=13800, routed)       1.642   232.821    soc_project_i/zed_audio_0/U0/clk_100
+    SLICE_X39Y120        FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_l_reg[3]/C
+                         clock pessimism              0.115   232.936    
+                         clock uncertainty           -0.520   232.416    
+    SLICE_X39Y120        FDRE (Setup_fdre_C_D)       -0.092   232.324    soc_project_i/zed_audio_0/U0/line_in_l_reg[3]
   -------------------------------------------------------------------
-                         required time                        232.233    
-                         arrival time                        -237.037    
+                         required time                        232.324    
+                         arrival time                        -237.082    
   -------------------------------------------------------------------
-                         slack                                 -4.804    
+                         slack                                 -4.758    
 
 
 
@@ -594,19 +594,19 @@ Slack (VIOLATED) :        -4.804ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.558ns  (arrival time - required time)
-  Source:                 soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_reg[13]/C
+Slack (MET) :             0.565ns  (arrival time - required time)
+  Source:                 soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
-  Destination:            soc_project_i/zed_audio_0/U0/line_in_l_reg[13]/D
+  Destination:            soc_project_i/zed_audio_0/U0/line_in_r_reg[1]/D
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk_fpga_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - zed_audio_clk_48M rise@0.000ns)
-  Data Path Delay:        0.192ns  (logic 0.141ns (73.464%)  route 0.051ns (26.535%))
+  Data Path Delay:        0.198ns  (logic 0.141ns (71.038%)  route 0.057ns (28.962%))
   Logic Levels:           0  
-  Clock Path Skew:        -0.933ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.213ns
-    Source Clock Delay      (SCD):    2.116ns
+  Clock Path Skew:        -0.934ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.287ns
+    Source Clock Delay      (SCD):    2.191ns
     Clock Pessimism Removal (CPR):    0.030ns
   Clock Uncertainty:      0.520ns  ((TSJ^2 + TIJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -621,17 +621,17 @@ Slack (MET) :             0.558ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.597     0.933    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=13800, routed)       0.597     0.933    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                       0.050     0.983 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.529     1.511    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.537 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         0.579     2.116    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
-    SLICE_X56Y94         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_reg[13]/C
+                         net (fo=236, routed)         0.653     2.191    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
+    SLICE_X29Y118        FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X56Y94         FDRE (Prop_fdre_C_Q)         0.141     2.257 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_l_out_reg[13]/Q
-                         net (fo=1, routed)           0.051     2.308    soc_project_i/zed_audio_0/U0/audio_l_out[13]
-    SLICE_X57Y94         FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_l_reg[13]/D
+    SLICE_X29Y118        FDRE (Prop_fdre_C_Q)         0.141     2.332 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/audio_r_out_reg[1]/Q
+                         net (fo=1, routed)           0.057     2.389    soc_project_i/zed_audio_0/U0/audio_r_out[1]
+    SLICE_X28Y118        FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_r_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -639,16 +639,16 @@ Slack (MET) :             0.558ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.847     1.213    soc_project_i/zed_audio_0/U0/clk_100
-    SLICE_X57Y94         FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_l_reg[13]/C
-                         clock pessimism             -0.030     1.183    
-                         clock uncertainty            0.520     1.703    
-    SLICE_X57Y94         FDRE (Hold_fdre_C_D)         0.047     1.750    soc_project_i/zed_audio_0/U0/line_in_l_reg[13]
+                         net (fo=13800, routed)       0.921     1.287    soc_project_i/zed_audio_0/U0/clk_100
+    SLICE_X28Y118        FDRE                                         r  soc_project_i/zed_audio_0/U0/line_in_r_reg[1]/C
+                         clock pessimism             -0.030     1.257    
+                         clock uncertainty            0.520     1.777    
+    SLICE_X28Y118        FDRE (Hold_fdre_C_D)         0.047     1.824    soc_project_i/zed_audio_0/U0/line_in_r_reg[1]
   -------------------------------------------------------------------
-                         required time                         -1.750    
-                         arrival time                           2.308    
+                         required time                         -1.824    
+                         arrival time                           2.389    
   -------------------------------------------------------------------
-                         slack                                  0.558    
+                         slack                                  0.565    
 
 
 
@@ -658,26 +658,26 @@ Slack (MET) :             0.558ns  (arrival time - required time)
 From Clock:  clk_fpga_0
   To Clock:  zed_audio_clk_48M
 
-Setup :           48  Failing Endpoints,  Worst Slack       -4.840ns,  Total Violation     -135.477ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.066ns,  Total Violation        0.000ns
+Setup :           48  Failing Endpoints,  Worst Slack       -3.748ns,  Total Violation     -122.499ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.117ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (VIOLATED) :        -4.840ns  (required time - arrival time)
-  Source:                 soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[23]/C
+Slack (VIOLATED) :        -3.748ns  (required time - arrival time)
+  Source:                 soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[11]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[31]/D
+  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[19]/D
                             (rising edge-triggered cell FDRE clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
   Path Group:             zed_audio_clk_48M
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            0.833ns  (zed_audio_clk_48M rise@20.833ns - clk_fpga_0 rise@20.000ns)
-  Data Path Delay:        8.521ns  (logic 0.580ns (6.807%)  route 7.941ns (93.193%))
+  Data Path Delay:        7.554ns  (logic 0.580ns (7.678%)  route 6.974ns (92.322%))
   Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        3.335ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    6.227ns = ( 27.060 - 20.833 ) 
-    Source Clock Delay      (SCD):    3.007ns = ( 23.007 - 20.000 ) 
+  Clock Path Skew:        3.411ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    6.225ns = ( 27.059 - 20.833 ) 
+    Source Clock Delay      (SCD):    2.929ns = ( 22.929 - 20.000 ) 
     Clock Pessimism Removal (CPR):    0.115ns
   Clock Uncertainty:      0.520ns  ((TSJ^2 + TIJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -692,14 +692,14 @@ Slack (VIOLATED) :        -4.840ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.193    21.193    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101    21.294 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.713    23.007    soc_project_i/zed_audio_0/U0/clk_100
-    SLICE_X60Y23         FDRE                                         r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[23]/C
+                         net (fo=13800, routed)       1.635    22.929    soc_project_i/zed_audio_0/U0/clk_100
+    SLICE_X52Y87         FDRE                                         r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X60Y23         FDRE (Prop_fdre_C_Q)         0.456    23.463 r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[23]/Q
-                         net (fo=1, routed)           7.941    31.404    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/hphone_r_freeze_100_reg[23][23]
-    SLICE_X61Y24         LUT4 (Prop_lut4_I0_O)        0.124    31.528 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[31]_i_1/O
-                         net (fo=1, routed)           0.000    31.528    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[31]_i_1_n_0
-    SLICE_X61Y24         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[31]/D
+    SLICE_X52Y87         FDRE (Prop_fdre_C_Q)         0.456    23.385 r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[11]/Q
+                         net (fo=1, routed)           6.974    30.359    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/hphone_r_freeze_100_reg[23][11]
+    SLICE_X54Y87         LUT4 (Prop_lut4_I0_O)        0.124    30.483 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[19]_i_1/O
+                         net (fo=1, routed)           0.000    30.483    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[19]_i_1_n_0
+    SLICE_X54Y87         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[19]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock zed_audio_clk_48M rise edge)
@@ -707,21 +707,21 @@ Slack (VIOLATED) :        -4.840ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    20.833 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.088    21.921    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    22.012 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.612    23.625    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=13800, routed)       1.612    23.625    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
                                                       0.083    23.708 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.725    25.433    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    25.524 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         1.536    27.060    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
-    SLICE_X61Y24         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[31]/C
-                         clock pessimism              0.115    27.175    
-                         clock uncertainty           -0.520    26.655    
-    SLICE_X61Y24         FDRE (Setup_fdre_C_D)        0.032    26.687    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[31]
+                         net (fo=236, routed)         1.535    27.059    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
+    SLICE_X54Y87         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[19]/C
+                         clock pessimism              0.115    27.174    
+                         clock uncertainty           -0.520    26.654    
+    SLICE_X54Y87         FDRE (Setup_fdre_C_D)        0.081    26.735    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[19]
   -------------------------------------------------------------------
-                         required time                         26.687    
-                         arrival time                         -31.528    
+                         required time                         26.735    
+                         arrival time                         -30.483    
   -------------------------------------------------------------------
-                         slack                                 -4.840    
+                         slack                                 -3.748    
 
 
 
@@ -729,20 +729,20 @@ Slack (VIOLATED) :        -4.840ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.066ns  (arrival time - required time)
-  Source:                 soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[9]/C
+Slack (MET) :             0.117ns  (arrival time - required time)
+  Source:                 soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[19]/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[17]/D
+  Destination:            soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[27]/D
                             (rising edge-triggered cell FDRE clocked by zed_audio_clk_48M  {rise@0.000ns fall@10.417ns period=20.833ns})
   Path Group:             zed_audio_clk_48M
-  Path Type:              Hold (Min at Fast Process Corner)
+  Path Type:              Hold (Min at Slow Process Corner)
   Requirement:            0.000ns  (zed_audio_clk_48M rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        2.464ns  (logic 0.186ns (7.550%)  route 2.278ns (92.450%))
+  Data Path Delay:        5.100ns  (logic 0.467ns (9.158%)  route 4.633ns (90.842%))
   Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        1.786ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.728ns
-    Source Clock Delay      (SCD):    0.912ns
-    Clock Pessimism Removal (CPR):    0.030ns
+  Clock Path Skew:        4.132ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    6.890ns
+    Source Clock Delay      (SCD):    2.643ns
+    Clock Pessimism Removal (CPR):    0.115ns
   Clock Uncertainty:      0.520ns  ((TSJ^2 + TIJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.300ns
@@ -754,38 +754,38 @@ Slack (MET) :             0.066ns  (arrival time - required time)
                          (clock clk_fpga_0 rise edge)
                                                       0.000     0.000 r  
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.310     0.310    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.576     0.912    soc_project_i/zed_audio_0/U0/clk_100
-    SLICE_X60Y20         FDRE                                         r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[9]/C
+                         net (fo=1, routed)           1.088     1.088    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     1.179 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=13800, routed)       1.464     2.643    soc_project_i/zed_audio_0/U0/clk_100
+    SLICE_X52Y89         FDRE                                         r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[19]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X60Y20         FDRE (Prop_fdre_C_Q)         0.141     1.053 r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[9]/Q
-                         net (fo=1, routed)           2.278     3.330    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/hphone_r_freeze_100_reg[23][9]
-    SLICE_X61Y20         LUT4 (Prop_lut4_I0_O)        0.045     3.375 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[17]_i_1/O
-                         net (fo=1, routed)           0.000     3.375    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[17]_i_1_n_0
-    SLICE_X61Y20         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[17]/D
+    SLICE_X52Y89         FDRE (Prop_fdre_C_Q)         0.367     3.010 r  soc_project_i/zed_audio_0/U0/hphone_r_freeze_100_reg[19]/Q
+                         net (fo=1, routed)           4.633     7.642    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/hphone_r_freeze_100_reg[23][19]
+    SLICE_X54Y90         LUT4 (Prop_lut4_I0_O)        0.100     7.742 r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[27]_i_1/O
+                         net (fo=1, routed)           0.000     7.742    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out[27]_i_1_n_0
+    SLICE_X54Y90         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[27]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock zed_audio_clk_48M rise edge)
                                                       0.000     0.000 r  
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
-                         net (fo=1, routed)           0.337     0.337    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.864     1.230    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
+                         net (fo=1, routed)           1.193     1.193    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=13800, routed)       1.806     3.100    soc_project_i/zed_audio_0/U0/i_clocking/clk_100
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                      0.053     1.283 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.576     1.859    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.888 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
-                         net (fo=236, routed)         0.840     2.728    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
-    SLICE_X61Y20         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[17]/C
-                         clock pessimism             -0.030     2.698    
-                         clock uncertainty            0.520     3.218    
-    SLICE_X61Y20         FDRE (Hold_fdre_C_D)         0.091     3.309    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[17]
+                                                      0.088     3.188 r  soc_project_i/zed_audio_0/U0/i_clocking/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.889     5.077    soc_project_i/zed_audio_0/U0/i_clocking/zed_audio_clk_48M
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     5.178 r  soc_project_i/zed_audio_0/U0/i_clocking/clkout1_buf/O
+                         net (fo=236, routed)         1.712     6.890    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/CLK_48
+    SLICE_X54Y90         FDRE                                         r  soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[27]/C
+                         clock pessimism             -0.115     6.775    
+                         clock uncertainty            0.520     7.295    
+    SLICE_X54Y90         FDRE (Hold_fdre_C_D)         0.330     7.625    soc_project_i/zed_audio_0/U0/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[27]
   -------------------------------------------------------------------
-                         required time                         -3.309    
-                         arrival time                           3.375    
+                         required time                         -7.625    
+                         arrival time                           7.742    
   -------------------------------------------------------------------
-                         slack                                  0.066    
+                         slack                                  0.117    
 
 
 
@@ -796,27 +796,27 @@ Path Group:  **async_default**
 From Clock:  clk_fpga_0
   To Clock:  clk_fpga_0
 
-Setup :            0  Failing Endpoints,  Worst Slack        5.196ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.533ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        5.617ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.290ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             5.196ns  (required time - arrival time)
-  Source:                 soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/state_reg_reg/C
+Slack (MET) :             5.617ns  (required time - arrival time)
+  Source:                 soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/state_reg_reg/C
                             (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/ShiftAdd.RES_reg[32]/CLR
+  Destination:            soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/ShiftAdd.RES_reg[53]/CLR
                             (recovery check against rising-edge clock clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             **async_default**
   Path Type:              Recovery (Max at Slow Process Corner)
   Requirement:            10.000ns  (clk_fpga_0 rise@10.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        4.121ns  (logic 0.580ns (14.074%)  route 3.541ns (85.926%))
+  Data Path Delay:        3.866ns  (logic 0.642ns (16.607%)  route 3.224ns (83.393%))
   Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        -0.124ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.660ns = ( 12.660 - 10.000 ) 
-    Source Clock Delay      (SCD):    3.014ns
-    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Path Skew:        -0.002ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.784ns = ( 12.784 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.015ns
+    Clock Pessimism Removal (CPR):    0.229ns
   Clock Uncertainty:      0.154ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.300ns
@@ -830,14 +830,14 @@ Slack (MET) :             5.196ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.193     1.193    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.720     3.014    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/s00_axi_aclk
-    SLICE_X61Y31         FDRE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/state_reg_reg/C
+                         net (fo=13800, routed)       1.721     3.015    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/s00_axi_aclk
+    SLICE_X82Y95         FDRE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/state_reg_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X61Y31         FDRE (Prop_fdre_C_Q)         0.456     3.470 r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/state_reg_reg/Q
-                         net (fo=13, routed)          1.406     4.876    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/state_reg_reg
-    SLICE_X56Y17         LUT5 (Prop_lut5_I2_O)        0.124     5.000 f  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/ShiftAdd.sr_recalc_i_2__3/O
-                         net (fo=35, routed)          2.135     7.135    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/ShiftAdd.sr_recalc_i_2__3_n_0
-    SLICE_X51Y8          FDCE                                         f  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/ShiftAdd.RES_reg[32]/CLR
+    SLICE_X82Y95         FDRE (Prop_fdre_C_Q)         0.518     3.533 r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/state_reg_reg/Q
+                         net (fo=13, routed)          1.524     5.057    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/state_reg_reg
+    SLICE_X94Y93         LUT5 (Prop_lut5_I2_O)        0.124     5.181 f  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/ShiftAdd.sr_recalc_i_2__4/O
+                         net (fo=35, routed)          1.700     6.881    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/ShiftAdd.sr_recalc_i_2__4_n_0
+    SLICE_X96Y88         FDCE                                         f  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/ShiftAdd.RES_reg[53]/CLR
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -845,16 +845,16 @@ Slack (MET) :             5.196ns  (required time - arrival time)
     PS7_X0Y0             PS7                          0.000    10.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           1.088    11.088    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.179 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       1.481    12.660    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/s00_axi_aclk
-    SLICE_X51Y8          FDCE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/ShiftAdd.RES_reg[32]/C
-                         clock pessimism              0.230    12.890    
-                         clock uncertainty           -0.154    12.736    
-    SLICE_X51Y8          FDCE (Recov_fdce_C_CLR)     -0.405    12.331    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_R/mul/ShiftAdd.RES_reg[32]
+                         net (fo=13800, routed)       1.605    12.784    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/s00_axi_aclk
+    SLICE_X96Y88         FDCE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/ShiftAdd.RES_reg[53]/C
+                         clock pessimism              0.229    13.013    
+                         clock uncertainty           -0.154    12.859    
+    SLICE_X96Y88         FDCE (Recov_fdce_C_CLR)     -0.361    12.498    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_HP_L/mul/ShiftAdd.RES_reg[53]
   -------------------------------------------------------------------
-                         required time                         12.331    
-                         arrival time                          -7.135    
+                         required time                         12.498    
+                         arrival time                          -6.881    
   -------------------------------------------------------------------
-                         slack                                  5.196    
+                         slack                                  5.617    
 
 
 
@@ -862,19 +862,19 @@ Slack (MET) :             5.196ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.533ns  (arrival time - required time)
-  Source:                 soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/q_reg_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.RES_reg[35]/CLR
+Slack (MET) :             0.290ns  (arrival time - required time)
+  Source:                 soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/s_trigger_reg/C
+                            (rising edge-triggered cell FDSE clocked by clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/ShiftAdd.RES_reg[36]/CLR
                             (removal check against rising-edge clock clk_fpga_0  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             **async_default**
   Path Type:              Removal (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
-  Data Path Delay:        0.706ns  (logic 0.186ns (26.350%)  route 0.520ns (73.650%))
+  Data Path Delay:        0.471ns  (logic 0.186ns (39.529%)  route 0.285ns (60.471%))
   Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.264ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.220ns
-    Source Clock Delay      (SCD):    0.926ns
+  Clock Path Skew:        0.272ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.195ns
+    Source Clock Delay      (SCD):    0.893ns
     Clock Pessimism Removal (CPR):    0.030ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -884,14 +884,14 @@ Slack (MET) :             0.533ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.310     0.310    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.590     0.926    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/s00_axi_aclk
-    SLICE_X81Y48         FDRE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/q_reg_reg[1]/C
+                         net (fo=13800, routed)       0.557     0.893    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/s00_axi_aclk
+    SLICE_X45Y51         FDSE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/s_trigger_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X81Y48         FDRE (Prop_fdre_C_Q)         0.141     1.067 r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/q_reg_reg[1]/Q
-                         net (fo=12, routed)          0.198     1.264    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/q_reg_reg__0[1]
-    SLICE_X80Y50         LUT5 (Prop_lut5_I1_O)        0.045     1.309 f  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.sr_recalc_i_2__0/O
-                         net (fo=35, routed)          0.322     1.631    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.sr_recalc_i_2__0_n_0
-    SLICE_X89Y52         FDCE                                         f  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.RES_reg[35]/CLR
+    SLICE_X45Y51         FDSE (Prop_fdse_C_Q)         0.141     1.034 r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/s_trigger_reg/Q
+                         net (fo=2, routed)           0.120     1.154    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/s_trigger
+    SLICE_X45Y51         LUT5 (Prop_lut5_I4_O)        0.045     1.199 f  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/ShiftAdd.sr_recalc_i_2/O
+                         net (fo=35, routed)          0.164     1.363    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/ShiftAdd.sr_recalc_i_2_n_0
+    SLICE_X44Y45         FDCE                                         f  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/ShiftAdd.RES_reg[36]/CLR
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_fpga_0 rise edge)
@@ -899,15 +899,15 @@ Slack (MET) :             0.533ns  (arrival time - required time)
     PS7_X0Y0             PS7                          0.000     0.000 r  soc_project_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
                          net (fo=1, routed)           0.337     0.337    soc_project_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  soc_project_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
-                         net (fo=13730, routed)       0.854     1.220    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/s00_axi_aclk
-    SLICE_X89Y52         FDCE                                         r  soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.RES_reg[35]/C
-                         clock pessimism             -0.030     1.190    
-    SLICE_X89Y52         FDCE (Remov_fdce_C_CLR)     -0.092     1.098    soc_project_i/FILTER_IIR_0/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_L/mul/ShiftAdd.RES_reg[35]
+                         net (fo=13800, routed)       0.829     1.195    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/s00_axi_aclk
+    SLICE_X44Y45         FDCE                                         r  soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/ShiftAdd.RES_reg[36]/C
+                         clock pessimism             -0.030     1.165    
+    SLICE_X44Y45         FDCE (Remov_fdce_C_CLR)     -0.092     1.073    soc_project_i/FILTER_IIR_1/U0/FILTER_IIR_v1_0_S00_AXI_inst/Filter_Top_Level_inst/IIR_LP_R/mul/ShiftAdd.RES_reg[36]
   -------------------------------------------------------------------
-                         required time                         -1.098    
-                         arrival time                           1.631    
+                         required time                         -1.073    
+                         arrival time                           1.363    
   -------------------------------------------------------------------
-                         slack                                  0.533    
+                         slack                                  0.290    
 
 
 

@@ -1,0 +1,1 @@
+cmd_/home/adadek/workspace/SoC_Design/driver/gpio/gpio.ko := arm-linux-gnueabihf-ld -EL -r  -T /home/adadek/workspace/xilinx_linux/scripts/module-common.lds --build-id  -o /home/adadek/workspace/SoC_Design/driver/gpio/gpio.ko /home/adadek/workspace/SoC_Design/driver/gpio/gpio.o /home/adadek/workspace/SoC_Design/driver/gpio/gpio.mod.o ;  true

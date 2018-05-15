@@ -53,6 +53,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_Zed
 # IP: bd/soc_project/ip/soc_project_axi_gpio_0_0/soc_project_axi_gpio_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_axi_gpio_0_0 || ORIG_REF_NAME==soc_project_axi_gpio_0_0} -quiet] -quiet
 
+# IP: bd/soc_project/ip/soc_project_axi_gpio_1_0/soc_project_axi_gpio_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_axi_gpio_1_0 || ORIG_REF_NAME==soc_project_axi_gpio_1_0} -quiet] -quiet
+
 # IP: bd/soc_project/ip/soc_project_auto_pc_0/soc_project_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==soc_project_auto_pc_0 || ORIG_REF_NAME==soc_project_auto_pc_0} -quiet] -quiet
 

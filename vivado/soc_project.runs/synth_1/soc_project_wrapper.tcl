@@ -49,6 +49,9 @@ set_property used_in_implementation false [get_files -all /home/adadek/workspace
 set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_axi_gpio_0_0/soc_project_axi_gpio_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_axi_gpio_0_0/soc_project_axi_gpio_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_axi_gpio_0_0/soc_project_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_axi_gpio_1_0/soc_project_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_axi_gpio_1_0/soc_project_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_axi_gpio_1_0/soc_project_axi_gpio_1_0.xdc]
 set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/ip/soc_project_auto_pc_0/soc_project_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/adadek/workspace/SoC_Design/vivado/soc_project.srcs/sources_1/bd/soc_project/soc_project_ooc.xdc]
 

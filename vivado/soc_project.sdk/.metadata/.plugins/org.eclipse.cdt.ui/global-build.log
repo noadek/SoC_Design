@@ -1,4 +1,4 @@
-18:46:47 **** Build of project FSBL_bsp ****
+15:28:18 **** Build of project FSBL_bsp ****
 make -k all 
 Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src
 make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
@@ -149,87 +149,7 @@ Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
 make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Compiling scutimer
 Finished building libraries
-18:46:57 **** Build of configuration Debug for project FSBL ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/fsbl_handoff.S
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_handoff.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.o" -o "src/fsbl_handoff.o" "../src/fsbl_handoff.S"
-Finished building: ../src/fsbl_handoff.S
- 
-Building file: ../src/fsbl_hooks.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_hooks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_hooks.d" -MT"src/fsbl_hooks.o" -o "src/fsbl_hooks.o" "../src/fsbl_hooks.c"
-Finished building: ../src/fsbl_hooks.c
- 
-Building file: ../src/image_mover.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/image_mover.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.o" -o "src/image_mover.o" "../src/image_mover.c"
-Finished building: ../src/image_mover.c
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building file: ../src/md5.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/md5.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/md5.d" -MT"src/md5.o" -o "src/md5.o" "../src/md5.c"
-Finished building: ../src/md5.c
- 
-Building file: ../src/nand.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/nand.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.o" -o "src/nand.o" "../src/nand.c"
-Finished building: ../src/nand.c
- 
-Building file: ../src/nor.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/nor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.o" -o "src/nor.o" "../src/nor.c"
-Finished building: ../src/nor.c
- 
-Building file: ../src/pcap.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/pcap.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.o" -o "src/pcap.o" "../src/pcap.c"
-Finished building: ../src/pcap.c
- 
-Building file: /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/ps7_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.o" -o "src/ps7_init.o" "/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.c"
-Finished building: /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.c
- 
-Building file: ../src/qspi.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/qspi.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.o" -o "src/qspi.o" "../src/qspi.c"
-Finished building: ../src/qspi.c
- 
-Building file: ../src/rsa.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/rsa.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rsa.d" -MT"src/rsa.o" -o "src/rsa.o" "../src/rsa.c"
-Finished building: ../src/rsa.c
- 
-Building file: ../src/sd.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/sd.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.o" -o "src/sd.o" "../src/sd.c"
-Finished building: ../src/sd.c
- 
-Building target: FSBL.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../FSBL_bsp/ps7_cortexa9_0/lib -o "FSBL.elf"  ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lrsa,-lxil,-lgcc,-lc,--end-group
-Finished building target: FSBL.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size FSBL.elf  |tee "FSBL.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  79052	  11484	  74360	 164896	  28420	FSBL.elf
-Finished building: FSBL.elf.size
- 
-18:46:59 **** Auto Build of configuration Debug for project FSBL ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-12:19:58 **** Build of project Project_bsp ****
+15:28:27 **** Auto Build of project FSBL_bsp ****
 make -k all 
 Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src
 make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
@@ -237,6 +157,8 @@ Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
 make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_4/src
 make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xilrsa_v1_4/src
+make -C ps7_cortexa9_0/libsrc/xilrsa_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src
 make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Running Make include in ps7_cortexa9_0/libsrc/AXI_AUDIO_v1_0/src
@@ -273,18 +195,21 @@ Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Running Make include in ps7_cortexa9_0/libsrc/Volume_Pregain_v1_0/src
 make -C ps7_cortexa9_0/libsrc/Volume_Pregain_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xilffs_v3_7/src
+make -C ps7_cortexa9_0/libsrc/xilffs_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
 make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src
 make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Compiling dmaps
-arm-none-eabi-ar: creating ../../../lib/libxil.a
 Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
 make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Compiling ddrps
 Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_4/src
 make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Compiling qspips
+Running Make libs in ps7_cortexa9_0/libsrc/xilrsa_v1_4/src
+make -C ps7_cortexa9_0/libsrc/xilrsa_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src
 make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Compiling gpiops
@@ -360,648 +285,89 @@ Volume_Pregain_selftest.c:52:63: warning: comparison between signed and unsigned
 Volume_Pregain_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
   int Index;
       ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/xilffs_v3_7/src
+make -C ps7_cortexa9_0/libsrc/xilffs_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+Compiling XilFFs Library
 Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
 make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 Compiling scutimer
 Finished building libraries
-
-**** Build of configuration Debug for project Project ****
-
-Nothing to build for project Project
-12:20:33 **** Auto Build of configuration Debug for project Project ****
+15:28:37 **** Build of configuration Debug for project FSBL ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  
+Building file: ../src/fsbl_handoff.S
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_handoff.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.o" -o "src/fsbl_handoff.o" "../src/fsbl_handoff.S"
+Finished building: ../src/fsbl_handoff.S
+ 
+Building file: ../src/fsbl_hooks.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/fsbl_hooks.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_hooks.d" -MT"src/fsbl_hooks.o" -o "src/fsbl_hooks.o" "../src/fsbl_hooks.c"
+Finished building: ../src/fsbl_hooks.c
+ 
+Building file: ../src/image_mover.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/image_mover.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.o" -o "src/image_mover.o" "../src/image_mover.c"
+Finished building: ../src/image_mover.c
+ 
 Building file: ../src/main.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 Finished building: ../src/main.c
  
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-../../Project_bsp/ps7_cortexa9_0/lib/libxil.a(xil-crt0.o): In function `_start':
-xil-crt0.S:(.text+0x68): undefined reference to `main'
-collect2: error: ld returned 1 exit status
-make: *** [Project.elf] Error 1
-makefile:39: recipe for target 'Project.elf' failed
-12:20:42 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
+Building file: ../src/md5.c
 Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/md5.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/md5.d" -MT"src/md5.o" -o "src/md5.o" "../src/md5.c"
+Finished building: ../src/md5.c
  
-Building target: Project.elf
+Building file: ../src/nand.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/nand.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.o" -o "src/nand.o" "../src/nand.c"
+Finished building: ../src/nand.c
+ 
+Building file: ../src/nor.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/nor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.o" -o "src/nor.o" "../src/nor.c"
+Finished building: ../src/nor.c
+ 
+Building file: ../src/pcap.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/pcap.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.o" -o "src/pcap.o" "../src/pcap.c"
+Finished building: ../src/pcap.c
+ 
+Building file: /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/ps7_init.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.o" -o "src/ps7_init.o" "/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.c"
+Finished building: /home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0/ps7_init.c
+ 
+Building file: ../src/qspi.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/qspi.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.o" -o "src/qspi.o" "../src/qspi.c"
+Finished building: ../src/qspi.c
+ 
+Building file: ../src/rsa.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/rsa.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rsa.d" -MT"src/rsa.o" -o "src/rsa.o" "../src/rsa.c"
+Finished building: ../src/rsa.c
+ 
+Building file: ../src/sd.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -I"/home/adadek/workspace/SoC_Design/vivado/soc_project.sdk/soc_project_wrapper_hw_platform_0" -c -fmessage-length=0 -MT"src/sd.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../FSBL_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.o" -o "src/sd.o" "../src/sd.c"
+Finished building: ../src/sd.c
+ 
+Building target: FSBL.elf
 Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../FSBL_bsp/ps7_cortexa9_0/lib -o "FSBL.elf"  ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lrsa,-lxil,-lgcc,-lc,--end-group
+Finished building target: FSBL.elf
  
 Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
+arm-none-eabi-size FSBL.elf  |tee "FSBL.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  22844	   1148	  22568	  46560	   b5e0	Project.elf
-Finished building: Project.elf.size
+  79052	  11484	  74360	 164896	  28420	FSBL.elf
+Finished building: FSBL.elf.size
  
-12:22:45 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-12:22:45 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-12:24:23 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:27:6: warning: unused variable 'coef_reg14' [-Wunused-variable]
-  u32 coef_reg14 = 0x0AFB0CCC;
-      ^~~~~~~~~~
-../src/main.c:26:6: warning: unused variable 'coef_reg13' [-Wunused-variable]
-  u32 coef_reg13 = 0x00000000;
-      ^~~~~~~~~~
-../src/main.c:25:6: warning: unused variable 'coef_reg12' [-Wunused-variable]
-  u32 coef_reg12 = 0x12BEC333;
-      ^~~~~~~~~~
-../src/main.c:24:6: warning: unused variable 'coef_reg11' [-Wunused-variable]
-  u32 coef_reg11 = 0xDA82799A;
-      ^~~~~~~~~~
-../src/main.c:23:6: warning: unused variable 'coef_reg10' [-Wunused-variable]
-  u32 coef_reg10 = 0x12BEC333;
-      ^~~~~~~~~~
-../src/main.c:22:6: warning: unused variable 'coef_reg9' [-Wunused-variable]
-  u32 coef_reg9 = 0x3164DB93;
-      ^~~~~~~~~
-../src/main.c:21:6: warning: unused variable 'coef_reg8' [-Wunused-variable]
-  u32 coef_reg8 = 0x9464B81B;
-      ^~~~~~~~~
-../src/main.c:20:6: warning: unused variable 'coef_reg7' [-Wunused-variable]
-  u32 coef_reg7 = 0xF8B26DCA;
-      ^~~~~~~~~
-../src/main.c:19:6: warning: unused variable 'coef_reg6' [-Wunused-variable]
-  u32 coef_reg6 = 0x00000000;
-      ^~~~~~~~~
-../src/main.c:18:6: warning: unused variable 'coef_reg5' [-Wunused-variable]
-  u32 coef_reg5 = 0x074D9236;
-      ^~~~~~~~~
-../src/main.c:17:6: warning: unused variable 'coef_reg4' [-Wunused-variable]
-  u32 coef_reg4 = 0x3F690C9D;
-      ^~~~~~~~~
-../src/main.c:16:6: warning: unused variable 'coef_reg3' [-Wunused-variable]
-  u32 coef_reg3 = 0x8097A63A;
-      ^~~~~~~~~
-../src/main.c:15:6: warning: unused variable 'coef_reg2' [-Wunused-variable]
-  u32 coef_reg2 = 0x00002CB6;
-      ^~~~~~~~~
-../src/main.c:14:6: warning: unused variable 'coef_reg1' [-Wunused-variable]
-  u32 coef_reg1 = 0x0000596C;
-      ^~~~~~~~~
-../src/main.c:13:6: warning: unused variable 'coef_reg0' [-Wunused-variable]
-  u32 coef_reg0 = 0x00002CB6;
-      ^~~~~~~~~
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22524	   1148	  22568	  46240	   b4a0	Project.elf
-Finished building: Project.elf.size
- 
-12:25:11 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:27:6: warning: unused variable 'coef_reg14' [-Wunused-variable]
-  u32 coef_reg14 = 0x0AFB0CCC;
-      ^~~~~~~~~~
-../src/main.c:26:6: warning: unused variable 'coef_reg13' [-Wunused-variable]
-  u32 coef_reg13 = 0x00000000;
-      ^~~~~~~~~~
-../src/main.c:25:6: warning: unused variable 'coef_reg12' [-Wunused-variable]
-  u32 coef_reg12 = 0x12BEC333;
-      ^~~~~~~~~~
-../src/main.c:24:6: warning: unused variable 'coef_reg11' [-Wunused-variable]
-  u32 coef_reg11 = 0xDA82799A;
-      ^~~~~~~~~~
-../src/main.c:23:6: warning: unused variable 'coef_reg10' [-Wunused-variable]
-  u32 coef_reg10 = 0x12BEC333;
-      ^~~~~~~~~~
-../src/main.c:22:6: warning: unused variable 'coef_reg9' [-Wunused-variable]
-  u32 coef_reg9 = 0x3164DB93;
-      ^~~~~~~~~
-../src/main.c:21:6: warning: unused variable 'coef_reg8' [-Wunused-variable]
-  u32 coef_reg8 = 0x9464B81B;
-      ^~~~~~~~~
-../src/main.c:20:6: warning: unused variable 'coef_reg7' [-Wunused-variable]
-  u32 coef_reg7 = 0xF8B26DCA;
-      ^~~~~~~~~
-../src/main.c:19:6: warning: unused variable 'coef_reg6' [-Wunused-variable]
-  u32 coef_reg6 = 0x00000000;
-      ^~~~~~~~~
-../src/main.c:18:6: warning: unused variable 'coef_reg5' [-Wunused-variable]
-  u32 coef_reg5 = 0x074D9236;
-      ^~~~~~~~~
-../src/main.c:17:6: warning: unused variable 'coef_reg4' [-Wunused-variable]
-  u32 coef_reg4 = 0x3F690C9D;
-      ^~~~~~~~~
-../src/main.c:16:6: warning: unused variable 'coef_reg3' [-Wunused-variable]
-  u32 coef_reg3 = 0x8097A63A;
-      ^~~~~~~~~
-../src/main.c:15:6: warning: unused variable 'coef_reg2' [-Wunused-variable]
-  u32 coef_reg2 = 0x00002CB6;
-      ^~~~~~~~~
-../src/main.c:14:6: warning: unused variable 'coef_reg1' [-Wunused-variable]
-  u32 coef_reg1 = 0x0000596C;
-      ^~~~~~~~~
-../src/main.c:13:6: warning: unused variable 'coef_reg0' [-Wunused-variable]
-  u32 coef_reg0 = 0x00002CB6;
-      ^~~~~~~~~
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22460	   1148	  22568	  46176	   b460	Project.elf
-Finished building: Project.elf.size
- 
-12:26:14 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-12:32:44 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:30:6: warning: unused variable 'low_pass' [-Wunused-variable]
-  u32 low_pass = 0;
-      ^~~~~~~~
-../src/main.c:29:6: warning: unused variable 'band_pass' [-Wunused-variable]
-  u32 band_pass = 0;
-      ^~~~~~~~~
-../src/main.c:28:6: warning: unused variable 'high_pass' [-Wunused-variable]
-  u32 high_pass = 0;
-      ^~~~~~~~~
-../src/main.c:27:6: warning: unused variable 'coef_reg14' [-Wunused-variable]
-  u32 coef_reg14 = 0x0AFB0CCC;
-      ^~~~~~~~~~
-../src/main.c:26:6: warning: unused variable 'coef_reg13' [-Wunused-variable]
-  u32 coef_reg13 = 0x00000000;
-      ^~~~~~~~~~
-../src/main.c:25:6: warning: unused variable 'coef_reg12' [-Wunused-variable]
-  u32 coef_reg12 = 0x12BEC333;
-      ^~~~~~~~~~
-../src/main.c:24:6: warning: unused variable 'coef_reg11' [-Wunused-variable]
-  u32 coef_reg11 = 0xDA82799A;
-      ^~~~~~~~~~
-../src/main.c:23:6: warning: unused variable 'coef_reg10' [-Wunused-variable]
-  u32 coef_reg10 = 0x12BEC333;
-      ^~~~~~~~~~
-../src/main.c:22:6: warning: unused variable 'coef_reg9' [-Wunused-variable]
-  u32 coef_reg9 = 0x3164DB93;
-      ^~~~~~~~~
-../src/main.c:21:6: warning: unused variable 'coef_reg8' [-Wunused-variable]
-  u32 coef_reg8 = 0x9464B81B;
-      ^~~~~~~~~
-../src/main.c:20:6: warning: unused variable 'coef_reg7' [-Wunused-variable]
-  u32 coef_reg7 = 0xF8B26DCA;
-      ^~~~~~~~~
-../src/main.c:19:6: warning: unused variable 'coef_reg6' [-Wunused-variable]
-  u32 coef_reg6 = 0x00000000;
-      ^~~~~~~~~
-../src/main.c:18:6: warning: unused variable 'coef_reg5' [-Wunused-variable]
-  u32 coef_reg5 = 0x074D9236;
-      ^~~~~~~~~
-../src/main.c:17:6: warning: unused variable 'coef_reg4' [-Wunused-variable]
-  u32 coef_reg4 = 0x3F690C9D;
-      ^~~~~~~~~
-../src/main.c:16:6: warning: unused variable 'coef_reg3' [-Wunused-variable]
-  u32 coef_reg3 = 0x8097A63A;
-      ^~~~~~~~~
-../src/main.c:15:6: warning: unused variable 'coef_reg2' [-Wunused-variable]
-  u32 coef_reg2 = 0x00002CB6;
-      ^~~~~~~~~
-../src/main.c:14:6: warning: unused variable 'coef_reg1' [-Wunused-variable]
-  u32 coef_reg1 = 0x0000596C;
-      ^~~~~~~~~
-../src/main.c:13:6: warning: unused variable 'coef_reg0' [-Wunused-variable]
-  u32 coef_reg0 = 0x00002CB6;
-      ^~~~~~~~~
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  19480	   1148	  22568	  43196	   a8bc	Project.elf
-Finished building: Project.elf.size
- 
-12:33:09 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  19288	   1148	  22568	  43004	   a7fc	Project.elf
-Finished building: Project.elf.size
- 
-12:34:03 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22844	   1148	  22568	  46560	   b5e0	Project.elf
-Finished building: Project.elf.size
- 
-12:34:08 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-12:34:42 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22844	   1148	  22568	  46560	   b5e0	Project.elf
-Finished building: Project.elf.size
- 
-12:34:46 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-14:47:15 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-14:47:37 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22844	   1148	  22568	  46560	   b5e0	Project.elf
-Finished building: Project.elf.size
- 
-14:47:42 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-14:48:05 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22844	   1148	  22568	  46560	   b5e0	Project.elf
-Finished building: Project.elf.size
- 
-14:48:17 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22844	   1148	  22568	  46560	   b5e0	Project.elf
-Finished building: Project.elf.size
- 
-14:59:05 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-14:59:08 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:70:20: warning: implicit declaration of function 'read' [-Wimplicit-function-declaration]
-   int bytes_read = read("test.wav", &audioChunk, sizeof(short));
-                    ^~~~
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  19536	   1148	  22568	  43252	   a8f4	Project.elf
-Finished building: Project.elf.size
- 
-14:59:14 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-14:59:50 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-15:00:54 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-15:01:55 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:70:20: warning: implicit declaration of function 'read' [-Wimplicit-function-declaration]
-   int bytes_read = read("test.wav", &audioChunk, sizeof(short));
-                    ^~~~
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22292	   1148	  22568	  46008	   b3b8	Project.elf
-Finished building: Project.elf.size
- 
-15:02:02 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-15:02:57 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:68:9: error: 'true' undeclared (first use in this function)
-  while (true) {
-         ^~~~
-../src/main.c:68:9: note: each undeclared identifier is reported only once for each function it appears in
-../src/main.c:70:20: warning: implicit declaration of function 'read' [-Wimplicit-function-declaration]
-   int bytes_read = read("test.wav", &audioChunk, sizeof(short));
-                    ^~~~
-src/subdir.mk:21: recipe for target 'src/main.o' failed
-make: *** [src/main.o] Error 1
-15:03:06 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:70:20: warning: implicit declaration of function 'read' [-Wimplicit-function-declaration]
-   int bytes_read = read("test.wav", &audioChunk, sizeof(short));
-                    ^~~~
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22292	   1148	  22568	  46008	   b3b8	Project.elf
-Finished building: Project.elf.size
- 
-15:03:41 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:71:25: warning: passing argument 1 of 'read' makes integer from pointer without a cast [-Wint-conversion]
-   int bytes_read = read("test.wav", &audioChunk, sizeof(short));
-                         ^~~~~~~~~~
-In file included from /cad/x_17/SDK/2017.3/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/ctype.h:4:0,
-                 from ../../Project_bsp/ps7_cortexa9_0/include/xil_printf.h:8,
-                 from ../src/main.c:2:
-/cad/x_17/SDK/2017.3/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/unistd.h:163:25: note: expected 'int' but argument is of type 'char *'
- _READ_WRITE_RETURN_TYPE _EXFUN(read, (int __fd, void *__buf, size_t __nbyte ));
-                         ^
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22292	   1148	  22568	  46008	   b3b8	Project.elf
-Finished building: Project.elf.size
- 
-15:05:07 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:71:12: warning: implicit declaration of function 'open' [-Wimplicit-function-declaration]
-   int fd = open("test.wav", O_RDONLY|O_NONBLOCK);
-            ^~~~
-../src/main.c:71:29: error: 'O_RDONLY' undeclared (first use in this function)
-   int fd = open("test.wav", O_RDONLY|O_NONBLOCK);
-                             ^~~~~~~~
-../src/main.c:71:29: note: each undeclared identifier is reported only once for each function it appears in
-../src/main.c:71:38: error: 'O_NONBLOCK' undeclared (first use in this function)
-   int fd = open("test.wav", O_RDONLY|O_NONBLOCK);
-                                      ^~~~~~~~~~
-src/subdir.mk:21: recipe for target 'src/main.o' failed
-make: *** [src/main.o] Error 1
-15:06:07 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22356	   1148	  22568	  46072	   b3f8	Project.elf
-Finished building: Project.elf.size
- 
-15:06:17 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-15:08:18 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22356	   1148	  22568	  46072	   b3f8	Project.elf
-Finished building: Project.elf.size
- 
-15:08:23 **** Incremental Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-make: Nothing to be done for 'main-build'.
-15:09:01 **** Auto Build of configuration Debug for project Project ****
-make pre-build main-build 
-a9-linaro-pre-build-step
- 
-Building file: ../src/main.c
-Invoking: ARM v7 gcc compiler
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Project_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building target: Project.elf
-Invoking: ARM v7 gcc linker
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Project_bsp/ps7_cortexa9_0/lib -o "Project.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-Finished building target: Project.elf
- 
-Invoking: ARM v7 Print Size
-arm-none-eabi-size Project.elf  |tee "Project.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  22364	   1148	  22568	  46080	   b400	Project.elf
-Finished building: Project.elf.size
- 
-15:09:10 **** Incremental Build of configuration Debug for project Project ****
+15:28:39 **** Auto Build of configuration Debug for project FSBL ****
 make pre-build main-build 
 a9-linaro-pre-build-step
  

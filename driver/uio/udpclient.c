@@ -65,7 +65,7 @@ int udp_client_setup(char *broadcast_address, int broadcast_port){
  * Error code: 0 - normal exit, 1 - error
  */
 
-int udp_client_recv(short *buffer,int buffer_size ){
+int udp_client_recv(short int *buffer,int buffer_size ){
     if((recvfrom(client_socket,buffer,buffer_size,0,(struct sockaddr *)&receiving_address,&addr_size)) != -1 )
         return 0;
     else

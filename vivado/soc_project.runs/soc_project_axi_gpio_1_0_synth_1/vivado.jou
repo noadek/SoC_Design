@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Tue May 15 15:16:50 2018
+# Process ID: 5573
+# Current directory: /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/soc_project_axi_gpio_1_0_synth_1
+# Command line: vivado -log soc_project_axi_gpio_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_project_axi_gpio_1_0.tcl
+# Log file: /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/soc_project_axi_gpio_1_0_synth_1/soc_project_axi_gpio_1_0.vds
+# Journal file: /home/adadek/workspace/SoC_Design/vivado/soc_project.runs/soc_project_axi_gpio_1_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source soc_project_axi_gpio_1_0.tcl -notrace

@@ -25,14 +25,11 @@ void *volumeLineIn;
 void *volumeNetwork;
 void *oled;
 int fd;
+int IRQEnable;
 
 int main(int argc, char *argv[]){
 	if (*argv[1] == 'p') {
-        printf("::::START_USAGE::::\n");
-        printf("FILTER EXAMPLE (high, band, low): %s f 1 0 0 \n", argv[0]);
-        printf("VOLUME: Use 'q' and 'w' to control volume up ", argv[0]);
-		printf("Values should be multiples of 2.\n");
-        printf("::::END_USAGE::::\n");
+        display_help();
     }
     else {
 		printf("Audio mixer started\n\n");
@@ -45,8 +42,8 @@ int main(int argc, char *argv[]){
 		GET_VIRTUAL_ADDRESS(UIO_FILTER_NETWORK, filterNetwork);
 		GET_VIRTUAL_ADDRESS(UIO_VOLUME_LINE_IN, volumeLineIn);
 		GET_VIRTUAL_ADDRESS(UIO_VOLUME_NETWORK, volumeNetwork);
-		GET_VIRTUAL_ADDRESS(UIO_AXI_AUDIO, networkAudio);
 		GET_VIRTUAL_ADDRESS(UIO_OLED, oled);
+		GET_VIRTUAL_ADDRESS(UIO_AXI_AUDIO, networkAudio);
 		
 		FILTER_NETWORK_REG_0 = FILTER_LINE_REG_0 = 0x00002CB6;
 		FILTER_NETWORK_REG_1 = FILTER_LINE_REG_1 = 0x0000596C;
@@ -112,18 +109,22 @@ int main(int argc, char *argv[]){
 		}
 		
 		//Read audio data from the FIFO pipe and put data into audio register
-		int16_t audioChunk;
+		short int audioChunk;
 		while (1) {
 			if (programError) {
 				printf("Exiting....\n");
 				break;
 			}
-			int bytes_read = read(readFd, &audioChunk, sizeof(int16_t));
+			int bytes_read = read(readFd, &audioChunk, sizeof(short int));
 			if (bytes_read < 0) {
 				continue;
 			}
+			
 			// sign extend 16 bit data and put in register
-			AUDIO_REGISTER = (int32_t) audioChunk;
+			read(fd, &IRQEnable, sizeof(IRQEnable));
+			IRQEnable = 1; 
+			write (fd, &IRQEnable, sizeof(IRQEnable));
+			AUDIO_REGISTER = (int32_t)audioChunk;			
 		}
 		close(readFd);
 		
@@ -153,10 +154,10 @@ int main(int argc, char *argv[]){
  * Receives data from the network and writes
  * to the FIFO pipe.
  */
-void *receive_audio(void* fd)
+void *receive_audio(void* fd1)
 {
-    int writeFd = (*(int*)fd);
-    int16_t buffer[PACKET_SIZE];
+    int writeFd = (*(int*)fd1);
+    short int buffer[PACKET_SIZE];
     
     programError = udp_client_setup(IP, PORT);
     
@@ -167,6 +168,9 @@ void *receive_audio(void* fd)
         }
         // write to FIFO
         write(writeFd, buffer, sizeof(buffer));
+         
+        IRQEnable = 1; 
+        write (fd, &IRQEnable, sizeof(IRQEnable));
     }
     close(writeFd);
     pthread_exit(NULL);
@@ -178,66 +182,85 @@ void *receive_audio(void* fd)
 void* receive_command()
 {
 	char key;
+	int level;
+	
 	while(1) {
 		key = getch();
 		switch(key) {
+			case 'p':
+				display_help();
+				break;
 			// line in controls
 			case 'w':
-				// line in volume up for left side
-				setVolume(&VOLUME_LINE_1, VOLUME_UP, LINE_IN);
-				break;
 			case 'q':
-				// line in volume down for right side
-				setVolume(&VOLUME_LINE_1, VOLUME_DOWN, LINE_IN);
+				// Volume for line -in left
+				if (key == 'w') {
+					level = setVolume(&VOLUME_LINE_1, VOLUME_UP, LINE_IN);
+				} else {
+					level = setVolume(&VOLUME_LINE_1, VOLUME_DOWN, LINE_IN);
+				}
+				printf("Line-in left vol: %d\n", level);
 				break;
 			case 'r':
-				// line network volume up for left
-				setVolume(&VOLUME_LINE_2, VOLUME_UP, LINE_IN);
-				break;
 			case 'e':
-				// line network volume up for left
-				setVolume(&VOLUME_LINE_2, VOLUME_DOWN, LINE_IN);
+				// line in volume up for right side
+				if (key == 'r') {
+					level = setVolume(&VOLUME_LINE_2, VOLUME_UP, LINE_IN);
+				} else {
+					level = setVolume(&VOLUME_LINE_2, VOLUME_DOWN, LINE_IN);
+				}
+				printf("Line-in right vol: %d\n", level);
 				break;
 			case 't':
 				setFilter(&FILTER_LINE_HIGH);
+				printf("Line-in High pass: %s\n", (FILTER_LINE_HIGH) ? "on" : "off");
 				print_status_oled();
 				break;
 			case 'y':
 				setFilter(&FILTER_LINE_BAND);
+				printf("Line-in Band pass: %s\n", (FILTER_LINE_BAND) ? "on" : "off");
 				print_status_oled();
 				break;
 			case 'u':
 				setFilter(&FILTER_LINE_LOW);
+				printf("Line-in low pass: %s\n", (FILTER_LINE_LOW) ? "on" : "off");
 				print_status_oled();
 				break;
 				
 			// network controls
 			case 's':
-				// line in volume up for left side
-				setVolume(&VOLUME_NETWORK_1, VOLUME_UP, NETWORK);
-				break;
 			case 'a':
-				// line in volume down for right side
-				setVolume(&VOLUME_NETWORK_1, VOLUME_DOWN, NETWORK);
+				// network volume down for left side
+				if (key == 's') {
+					level = setVolume(&VOLUME_NETWORK_1, VOLUME_UP, NETWORK);
+				} else {
+					level = setVolume(&VOLUME_NETWORK_1, VOLUME_DOWN, NETWORK);
+				}
+				printf("Network left vol: %d\n", level);
 				break;
 			case 'f':
-				// line network volume up for left
-				setVolume(&VOLUME_NETWORK_2, VOLUME_UP, NETWORK);
-				break;
 			case 'd':
-				// line network volume up for left
-				setVolume(&VOLUME_NETWORK_2, VOLUME_DOWN, NETWORK);
+				// network volume down for right side
+				if (key == 'f') {
+					level = setVolume(&VOLUME_NETWORK_2, VOLUME_UP, NETWORK);
+				} else {
+					level = setVolume(&VOLUME_NETWORK_2, VOLUME_DOWN, NETWORK);
+				}
+				printf("Network right vol: %d\n", level);
 				break;
 			case 'g':
 				setFilter(&FILTER_NETWORK_HIGH);
+				printf("Network high pass: %s\n", (FILTER_NETWORK_HIGH) ? "on" : "off");
 				print_status_oled();
 				break;
 			case 'h':
 				setFilter(&FILTER_NETWORK_BAND);
+				printf("Network band pass: %s\n", (FILTER_NETWORK_BAND) ? "on" : "off");
 				print_status_oled();
 				break;
 			case 'j':
 				setFilter(&FILTER_NETWORK_LOW);
+				printf("Network low pass: %s\n", (FILTER_NETWORK_LOW) ? "on" : "off");
 				print_status_oled();
 				break;
 			default:
@@ -272,23 +295,20 @@ int setVolume(unsigned *volume, int direction, int audioLine)
 	if (direction == VOLUME_UP) {
 		// check if max volume is reached
 		if (index == MAX-1) {
-			printf("Maximum volume reached.\n");
-			return 0;
+			return index;
 		}
-	
 		// set volume to next in line
 		*volume = volumeRange[++index];
 	} else { // VOLUME_DOWN
 		// check if lowest volume is reached
 		if (index == 0) {
-			printf("Muted!\n");
-			return 0;
+			return index;
 		}
 		// set volume to next in line
 		*volume = volumeRange[--index];
 	}	
 	
-	return 0;
+	return index;
 }
 
 /*
@@ -318,4 +338,16 @@ void print_status_oled()
 	sprintf(networkBuffer, "Network H%d B%d L%d", 
 		FILTER_NETWORK_HIGH, FILTER_NETWORK_BAND, FILTER_NETWORK_LOW);
 	oled_print_message(networkBuffer, NETWORK_OLED_PAGE, oled);
+}
+
+/*
+ * Display the help menu
+ */
+void display_help()
+{
+	printf("\n::::START_USAGE::::\n");
+	printf("FILTER EXAMPLE (high, band, low): f 1 0 0 \n");
+	printf("VOLUME: Use 'q' and 'w' to control volume up ");
+	printf("Press p to display this help.\n");
+	printf("::::END_USAGE::::\n");
 }

@@ -4,6 +4,7 @@
 #define IP   				"10.255.255.255"
 #define PORT 				7891
 #define PACKET_SIZE        	512
+#define	BYTES_RECEIVED		1024
 
 #define UIO_AXI_AUDIO		"/dev/uio0"
 #define UIO_FILTER_LINE_IN	"/dev/uio1"
@@ -116,5 +117,7 @@ int setVolume(unsigned*, int, int);
 int setFilter(unsigned*);
 
 void print_status_oled();
+
+void display_help();
 
 #endif

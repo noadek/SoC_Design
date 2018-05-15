@@ -75,6 +75,11 @@
 	    reg = < 0x41200000 0x1000 >;
 	    gpio-controller;
 	};
+	axi_gpio_1: axi_gpio_1@41200000 {
+	    compatible = "xlnx,xps-gpio-1.00.a";
+	    reg = < 0x41210000 0x1000 >;
+	    gpio-controller;
+	};
 };
 
 &clkc {
