@@ -13,6 +13,22 @@
 #define UIO_VOLUME_NETWORK	"/dev/uio4"
 #define UIO_OLED			"/dev/uio5"
 
+#define SW_L_FILTER_HIGH	"/sys/class/gpio/gpio992/value"
+#define SW_L_FILTER_BAND	"/sys/class/gpio/gpio993/value"
+#define SW_L_FILTER_LOW		"/sys/class/gpio/gpio994/value"
+
+#define LED_L_FILTER_HIGH	"/sys/class/gpio/gpio960/value"
+#define LED_L_FILTER_BAND	"/sys/class/gpio/gpio961/value"
+#define LED_L_FILTER_LOW	"/sys/class/gpio/gpio962/value"
+
+#define SW_N_FILTER_HIGH	"/sys/class/gpio/gpio995/value"
+#define SW_N_FILTER_BAND	"/sys/class/gpio/gpio996/value"
+#define SW_N_FILTER_LOW		"/sys/class/gpio/gpio997/value"
+
+#define LED_N_FILTER_HIGH	"/sys/class/gpio/gpio963/value"
+#define LED_N_FILTER_BAND	"/sys/class/gpio/gpio964/value"
+#define LED_N_FILTER_LOW	"/sys/class/gpio/gpio965/value"
+
 #define VOLUME_UP			1
 #define VOLUME_DOWN			0
 
@@ -105,12 +121,25 @@
 		MAP_SHARED, fd, pageSize * 0);\
 		
 /*
+ * Network receiver thread handler
  * Receives data from the network and writes
  * to the FIFO pipe.
  */
 void* receive_audio(void*);
-
+/*
+ * Keyboard thread handler
+ * Receives commands from keyboard
+ */
 void* receive_command();
+/*
+ * Switch thread handler
+ */
+void* switch_command();
+
+int process_switch(FILE* sw, FILE* led, const char* swAddr, 
+	const char* ledAddr, int* filter);
+	
+void led_status(char* ledAddr, int filter);
 
 int setVolume(unsigned*, int, int);
 

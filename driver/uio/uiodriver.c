@@ -104,9 +104,17 @@ int main(int argc, char *argv[]){
 		pthread_t keyboardThread;
 		int err2 = pthread_create( &keyboardThread, NULL, receive_command, NULL);
 		if (err2) {
-			printf("Error - pthread_create() return code: %d\n", err1);
+			printf("Error - pthread_create() return code: %d\n", err2);
 			return -1;
 		}
+		
+		// Create keyboard thread
+		/*pthread_t switchThread;
+		int err3 = pthread_create( &switchThread, NULL, switch_command, NULL);
+		if (err3) {
+			printf("Error - pthread_create() return code: %d\n", err3);
+			return -1;
+		}*/
 		
 		//Read audio data from the FIFO pipe and put data into audio register
 		short int audioChunk;
@@ -115,22 +123,23 @@ int main(int argc, char *argv[]){
 				printf("Exiting....\n");
 				break;
 			}
-			int bytes_read = read(readFd, &audioChunk, sizeof(short int));
-			if (bytes_read < 0) {
+			int bytesRead = read(readFd, &audioChunk, BYTES_RECEIVED);
+			/*if (bytesRead < 0) {
 				continue;
-			}
+			}*/
 			
 			// sign extend 16 bit data and put in register
 			read(fd, &IRQEnable, sizeof(IRQEnable));
 			IRQEnable = 1; 
 			write (fd, &IRQEnable, sizeof(IRQEnable));
-			AUDIO_REGISTER = (int32_t)audioChunk;			
+			AUDIO_REGISTER = (int)audioChunk;
 		}
 		close(readFd);
 		
 		// Wait till threads complete before main exits.
 		pthread_join(receiverThread, NULL);
 		pthread_join(keyboardThread, NULL);
+		//pthread_join(switchThread, NULL);
 		
 		// remove the FIFO
 		unlink(audioPipe);
@@ -168,7 +177,6 @@ void *receive_audio(void* fd1)
         }
         // write to FIFO
         write(writeFd, buffer, sizeof(buffer));
-         
         IRQEnable = 1; 
         write (fd, &IRQEnable, sizeof(IRQEnable));
     }
@@ -213,18 +221,18 @@ void* receive_command()
 				break;
 			case 't':
 				setFilter(&FILTER_LINE_HIGH);
+				led_status(LED_L_FILTER_HIGH, FILTER_LINE_HIGH);
 				printf("Line-in High pass: %s\n", (FILTER_LINE_HIGH) ? "on" : "off");
-				print_status_oled();
 				break;
 			case 'y':
 				setFilter(&FILTER_LINE_BAND);
+				led_status(LED_L_FILTER_BAND, FILTER_LINE_BAND);
 				printf("Line-in Band pass: %s\n", (FILTER_LINE_BAND) ? "on" : "off");
-				print_status_oled();
 				break;
 			case 'u':
 				setFilter(&FILTER_LINE_LOW);
+				led_status(LED_L_FILTER_LOW, FILTER_LINE_LOW);
 				printf("Line-in low pass: %s\n", (FILTER_LINE_LOW) ? "on" : "off");
-				print_status_oled();
 				break;
 				
 			// network controls
@@ -250,24 +258,83 @@ void* receive_command()
 				break;
 			case 'g':
 				setFilter(&FILTER_NETWORK_HIGH);
+				led_status(LED_N_FILTER_HIGH, FILTER_NETWORK_HIGH);
 				printf("Network high pass: %s\n", (FILTER_NETWORK_HIGH) ? "on" : "off");
-				print_status_oled();
 				break;
 			case 'h':
 				setFilter(&FILTER_NETWORK_BAND);
+				led_status(LED_N_FILTER_BAND, FILTER_NETWORK_BAND);
 				printf("Network band pass: %s\n", (FILTER_NETWORK_BAND) ? "on" : "off");
-				print_status_oled();
 				break;
 			case 'j':
 				setFilter(&FILTER_NETWORK_LOW);
+				led_status(LED_N_FILTER_LOW, FILTER_NETWORK_LOW);
 				printf("Network low pass: %s\n", (FILTER_NETWORK_LOW) ? "on" : "off");
-				print_status_oled();
 				break;
 			default:
 				printf("Unknown command\n");
 		}
 	}
 }
+
+/*void* switch_command()
+{
+	int swLineHF = 0;
+	// open files
+	FILE *swLineHigh;
+	FILE *ledLineHigh;
+	
+	while(1) {
+		process_switch(swLineHigh, ledLineHigh, SW_L_FILTER_HIGH, 
+			LED_L_FILTER_HIGH, &FILTER_LINE_HIGH);
+			
+		sleep(10);
+	}
+	
+	fclose(swLineHigh);
+	fclose(ledLineHigh);
+}*/
+
+/*
+ * Process switch and led 
+
+int process_switch(FILE* sw, FILE* led, const char* swAddr, 
+	const char* ledAddr, int* filter)
+{
+	int currentValue;
+	
+	sw = fopen(SW_L_FILTER_HIGH, "r");
+	fscanf(sw, "%d", &currentValue);
+	
+	if (*filter != currentValue) {
+		*filter = currentValue;
+		
+		// turn on/off led
+		led = fopen(LED_L_FILTER_HIGH, "w");
+		fprintf(led, "%d", currentValue);
+		
+		printf("Current value of switch = %d\n", currentValue);
+		print_status_oled();
+	}
+	
+	fclose(sw);
+	fclose(led);
+	
+	return 0;
+} */
+
+void led_status(char* ledAddr, int filter)
+{
+	FILE* led;
+	led = fopen(ledAddr, "w");
+	if (filter == 1) {
+		fprintf(led, "1");
+	} else {
+		fprintf(led, "0");
+	}
+	fclose(led);
+}
+
 
 /*
  * Sets the volume
@@ -317,6 +384,7 @@ int setVolume(unsigned *volume, int direction, int audioLine)
 int setFilter(unsigned *filter)
 {
 	*filter = !*filter;
+	print_status_oled();
 }
 
 /*
