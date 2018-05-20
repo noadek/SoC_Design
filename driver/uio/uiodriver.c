@@ -414,8 +414,11 @@ void print_status_oled()
 void display_help()
 {
 	printf("\n::::START_USAGE::::\n");
-	printf("FILTER EXAMPLE (high, band, low): f 1 0 0 \n");
-	printf("VOLUME: Use 'q' and 'w' to control volume up ");
+	printf("Line in VOLUME: Use 'q', 'w' to control left volume up/down and 'e', 'r' for right volume up/down\n");
+	printf("Network VOLUME: Use 'a', 's' to control left volume up/down and 'd', 'f' for right volume up/down\n");
+	printf("Press a key to apply/turn off a filter\n");
+	printf("FILTER for Line-in (high, band, low): t, y, u\n");
+	printf("FILTER for Network Audio (high, band, low): g, h, j\n");
 	printf("Press p to display this help.\n");
 	printf("::::END_USAGE::::\n");
 }
